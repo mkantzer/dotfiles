@@ -1,20 +1,14 @@
 { config, lib, ... }:
 
-let
-  inherit (lib) mkIf;
-  mkIfCaskPresent = cask: mkIf (lib.any (x: x == cask) config.homebrew.casks);
-  brewEnabled = config.homebrew.enable;
-in
-
 {
-  environment.shellInit = mkIf brewEnabled ''
-    eval "$(${config.homebrew.brewPrefix}/brew shellenv)"
+  environment.shellInit = ''
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   '';
 
   # https://docs.brew.sh/Shell-Completion#configuring-completions-in-fish
   # For some reason if the Fish completions are added at the end of `fish_complete_path` they don't
   # seem to work, but they do work if added at the start.
-  programs.fish.interactiveShellInit = mkIf brewEnabled ''
+  programs.fish.interactiveShellInit = ''
     if test -d (brew --prefix)"/share/fish/completions"
       set -p fish_complete_path (brew --prefix)/share/fish/completions
     end
@@ -24,17 +18,16 @@ in
     end
   '';
 
-  # Configuration related to casks
-  environment.variables.SSH_AUTH_SOCK = mkIfCaskPresent "1password-cli"
-    "/Users/${config.users.primaryUser.username}/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock";
-
   homebrew = {
     enable = true;
-    autoUpdate = true;
-    cleanup = "zap";
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "zap";
+      upgrade = true;
+    };
     global = {
       brewfile = true;
-      noLock = true;
+      lockfiles = false;
     };
 
     # Prefer installing application from the Mac App Store

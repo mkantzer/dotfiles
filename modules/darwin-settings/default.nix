@@ -2,7 +2,7 @@
   system = {
     defaults = {
       NSGlobalDomain = {
-        "com.apple.trackpad.scaling" = "1";
+        "com.apple.trackpad.scaling" = 1.0;
         "com.apple.swipescrolldirection" = true;
         AppleInterfaceStyle = "Dark";
         AppleInterfaceStyleSwitchesAutomatically = false;

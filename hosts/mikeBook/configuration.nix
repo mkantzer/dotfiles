@@ -3,9 +3,9 @@
 {
   imports = [
     ../../modules
+    ../../modules/fonts
+    ../../modules/homebrew
     ../../modules/darwin-settings
-    ../../modules/bluetooth.nix
-    ../../modules/laptop.nix
 
     ./users/mk5r.nix
   ];
@@ -23,8 +23,8 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-  services.mosh.enable = true;
+  # services.openssh.enable = true;
+  # programs.mosh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -32,5 +32,5 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  system.stateVersion = "21.11"; # Did you read the comment?
+  system.stateVersion = 4; # Did you read the comment?
 }

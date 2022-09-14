@@ -117,9 +117,9 @@
     nodePackages.node2nix
     yarn2nix
     statix # lints and suggestions for the Nix programming language
-  # ] ++ lib.optionals stdenv.isDarwin [
-  #   cocoapods
-  #   m-cli # useful macOS CLI commands
-  #   prefmanager # tool for working with macOS defaults
+    # ] ++ lib.optionals stdenv.isDarwin [
+    #   cocoapods
+    #   m-cli # useful macOS CLI commands
+    #   prefmanager # tool for working with macOS defaults
   ];
 }

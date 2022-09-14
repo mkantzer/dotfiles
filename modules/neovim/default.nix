@@ -9,7 +9,7 @@
       vim-cue
       vim-markdown
 
-      autopairs
+      auto-pairs
 
       vim-gitgutter
       nvim-tree-lua

@@ -2,15 +2,14 @@
 
 {
   imports = [
-    ./options.nix
+    # ./options.nix
     ../themes/theme.nix
     ./bottom
     ./git
     ./fish
     ./neovim
     ./packages
-    ./fonts
-    ./nushell
+    # ./nushell
     ./zoxide
   ];
 

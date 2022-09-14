@@ -5,12 +5,12 @@
     ../../../users/mk5r.nix
   ];
 
-  home-manager.users.zaechus = {
+
+
+  home-manager.users.mk5r = {
     imports = [
       ../../../modules/home.nix
-      ../../../modules/homebrew
       ../../../themes/tokyonight
-      ../../../modules/darwin-settings
       # ../../../modules/graphical-home.nix
       # ../../../modules/thinkpad-home.nix
     ];

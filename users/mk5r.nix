@@ -5,7 +5,7 @@
   };
 
   users.users.mk5r = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    # isNormalUser = true;
+    # extraGroups = [ "wheel" ];
   };
 }

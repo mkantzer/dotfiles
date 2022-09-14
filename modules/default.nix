@@ -17,7 +17,6 @@
     settings.auto-optimise-store = true;
     gc = {
       automatic = true;
-      dates = "weekly";
       options = "--delete-older-than 32d";
     };
   };
@@ -35,15 +34,21 @@
       ripgrep
       zinfo
     ];
-  environment.defaultPackages = [ pkgs.helix ];
+  # environment.defaultPackages = [ pkgs.helix ];
   environment.variables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
     SHELL = "${pkgs.fish}/bin/fish";
   };
 
-  users.defaultUserShell = pkgs.fish;
-  environment.shells = [ 
+
+  # Make Fish the default shell
+  # users.defaultUserShell = pkgs.fish;
+  # Since it's not possible to declare default shell in macOS, run this command after build
+  system.activationScripts.postActivation.text = ''sudo chsh -s ${pkgs.fish}/bin/fish'';
+
+
+  environment.shells = [
     pkgs.fish
     pkgs.bashInteractive
     pkgs.zsh
