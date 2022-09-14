@@ -36,11 +36,17 @@
     ];
   environment.defaultPackages = [ pkgs.helix ];
   environment.variables = {
-    EDITOR = "hx";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+    SHELL = "${pkgs.fish}/bin/fish";
   };
 
-  users.defaultUserShell = pkgs.nushell;
-  environment.shells = [ pkgs.nushell ];
+  users.defaultUserShell = pkgs.fish;
+  environment.shells = [ 
+    pkgs.fish
+    pkgs.bashInteractive
+    pkgs.zsh
+  ];
 
   environment.shellAliases = {
     l = "exa --icons --color=always";
@@ -48,9 +54,9 @@
     nix-query = "nix-store -q --references /run/current-system/sw | rg -v man | sed 's/^[^-]*-//g' | sed 's/-[0-9].*//g' | rg -v '^nix' | sort -u | $PAGER";
   };
 
-  services.getty = {
-    greetingLine = "NixOS ${builtins.substring 0 5 config.system.nixos.label} (\\m) - \\l";
-    helpLine = lib.mkForce "";
-  };
-  users.motd = "\nHello, sailor!\n\n";
+  # services.getty = {
+  #   greetingLine = "NixOS ${builtins.substring 0 5 config.system.nixos.label} (\\m) - \\l";
+  #   helpLine = lib.mkForce "";
+  # };
+  # users.motd = "\nHello, sailor!\n\n";
 }

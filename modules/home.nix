@@ -2,13 +2,16 @@
 
 {
   imports = [
-    ./options.nix
     ../themes/theme.nix
+    # ./options.nix
     ./bottom
+    ./fish
+    ./fonts
     ./git
-    ./helix
+    ./packages
+    # ./helix
     ./nushell
-    ./starship
+    # ./starship
     ./zoxide
   ];
 

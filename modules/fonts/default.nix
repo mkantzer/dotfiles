@@ -4,6 +4,7 @@
   fonts = {
     fonts = with pkgs; [
       dejavu_fonts
+      JetBrainsMono
       fira
       fira-code
       (nerdfonts.override { fonts = [ "FiraCode" ]; })

@@ -6,8 +6,12 @@
 
     plugins = with pkgs.vimPlugins; [
       vim-nix
-      vim-gitgutter
+      vim-cue
+      vim-markdown
 
+      autopairs
+
+      vim-gitgutter
       nvim-tree-lua
       toggleterm-nvim
 
