@@ -8,7 +8,9 @@
   home-manager.users.zaechus = {
     imports = [
       ../../../modules/home.nix
+      ../../../modules/homebrew
       ../../../themes/tokyonight
+      ../../../modules/darwin-settings
       # ../../../modules/graphical-home.nix
       # ../../../modules/thinkpad-home.nix
     ];

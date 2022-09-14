@@ -3,8 +3,8 @@
 {
   imports = [
     ../../modules
+    ../../modules/darwin-settings
     ../../modules/bluetooth.nix
-    ../../modules/home.nix
     ../../modules/laptop.nix
 
     ./users/mk5r.nix
