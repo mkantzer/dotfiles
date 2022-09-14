@@ -6,8 +6,8 @@
 { config, pkgs, lib, ... }:
 
 {
-  boot.loader.timeout = 1;
-  powerManagement.cpuFreqGovernor = "schedutil";
+  # boot.loader.timeout = 1;
+  # powerManagement.cpuFreqGovernor = "schedutil";
 
   nix = {
     package = pkgs.nixFlakes;
@@ -28,6 +28,7 @@
       zinfo = pkgs.callPackage ../pkgs/zinfo { };
     in
     with pkgs; [
+      terminal-notifier
       exa
       fd
       ouch
