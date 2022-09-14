@@ -11,7 +11,7 @@
   ];
 
   # Set your time zone.
-  time.timeZone = "America/New-York";
+  time.timeZone = "America/New_York";
 
   # Hostname
   networking.hostName = "mikeBook";
