@@ -27,6 +27,17 @@
     formatter.x86_64-linux = nixpkgs-unstable.legacyPackages.x86_64-linux.nixpkgs-fmt;
 
     darwinConfigurations = {
+      mikeBook = darwin.lib.darwinSystem {
+        system = "x86_64-darwin";
+        modules = [
+          ./hosts/mikeBook/configuration.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
+        ];
+      };
       workBook = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [

@@ -12,6 +12,7 @@
       diff.colorMoved = "default";
       init.defaultBranch = "main";
       pull.rebase = false;
+      push.autoSetupRemote = true;
     };
 
     ignores = [
