@@ -5,7 +5,7 @@
   };
 
   users.users.mkantzer = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    # isNormalUser = true;
+    # extraGroups = [ "wheel" ];
   };
 }

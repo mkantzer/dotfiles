@@ -2,12 +2,12 @@
 
 {
   imports = [
-    ../../../users/mk5r.nix
+    ../../../users/mkantzer.nix
   ];
 
 
 
-  home-manager.users.mk5r = {
+  home-manager.users.mkantzer = {
     imports = [
       ../../../modules/home.nix
       ../../../themes/tokyonight
