@@ -14,7 +14,13 @@
       # ../../../modules/graphical-home.nix
       # ../../../modules/thinkpad-home.nix
     ];
-
-    # programs.alacritty.settings.font.size = lib.mkOverride 0 10.0;
   };
+
+  users.users.mk5r = {
+    imports = [
+      ../../../modules/ssh
+    ];
+  };
+
+  # programs.alacritty.settings.font.size = lib.mkOverride 0 10.0;
 }
