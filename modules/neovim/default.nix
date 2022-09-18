@@ -3,6 +3,7 @@
 {
   programs.neovim = {
     enable = true;
+    coc.enable = true;
 
     plugins = with pkgs.vimPlugins; [
       vim-nix
@@ -10,6 +11,9 @@
       vim-markdown
 
       auto-pairs
+
+      coc-nvim
+      nvim-lspconfig
 
       vim-gitgutter
       nvim-tree-lua
@@ -30,3 +34,4 @@
     extraConfig = builtins.readFile ./init.vim;
   };
 }
+

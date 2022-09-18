@@ -29,6 +29,7 @@
   services.nix-daemon.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+  
   environment.systemPackages =
     let
       zinfo = pkgs.callPackage ../pkgs/zinfo { };
@@ -56,17 +57,13 @@
     SHELL = "${pkgs.fish}/bin/fish";
   };
 
-
   # Make Fish the default shell
   # users.defaultUserShell = pkgs.fish;
   # Since it's not possible to declare default shell in macOS, run this command after build
   system.activationScripts.postActivation.text = ''sudo chsh -s ${pkgs.fish}/bin/fish'';
 
 
-
   environment.shellAliases = {
-    l = "exa --icons --color=always";
-    ll = "l -aalg";
     nix-query = "nix-store -q --references /run/current-system/sw | rg -v man | sed 's/^[^-]*-//g' | sed 's/-[0-9].*//g' | rg -v '^nix' | sort -u | $PAGER";
   };
 

@@ -37,6 +37,13 @@
   # Remove ASAP: only here for temp development while getting configs (like vscode) ready
   programs.go.enable = true;
 
+  programs.zoxide = {
+    enable = true;
+    # enableBashIntegration = true;
+    # enableZshIntegration = true;
+    # enableFishIntegration = true;
+  };
+
   home.packages = with pkgs; [
     # Some basics
     bottom # fancy version of `top` with ASCII graphs
