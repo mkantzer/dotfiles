@@ -52,11 +52,22 @@
     };
 
     nixosConfigurations = {
-      homePi = nixpkgs-unstable.lib.nixosSystem {
-        system = "x86_64-linux";
+      testVM = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        modules = [
+          ./hosts/testVM/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
+        ];
+      };
+      homePi = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
         modules = [
           ./hosts/homePi/configuration.nix
-          home-manager-unstable.nixosModules.home-manager
+          home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

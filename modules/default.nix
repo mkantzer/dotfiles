@@ -14,6 +14,10 @@
     # useDaemon = true;
     extraOptions = ''
       experimental-features = nix-command flakes
+      keep-outputs = true
+      keep-derivations = true
+    '' + lib.optionalString (pkgs.system == "aarch64-darwin") ''
+      extra-platforms = x86_64-darwin aarch64-darwin
     '';
     settings.auto-optimise-store = true;
     gc = {
@@ -37,7 +41,15 @@
       ripgrep
       zinfo
     ];
+
   # environment.defaultPackages = [ pkgs.helix ];
+
+  environment.shells = with pkgs; [
+    bashInteractive
+    fish
+    zsh
+  ];
+
   environment.variables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
@@ -51,11 +63,6 @@
   system.activationScripts.postActivation.text = ''sudo chsh -s ${pkgs.fish}/bin/fish'';
 
 
-  environment.shells = [
-    pkgs.fish
-    pkgs.bashInteractive
-    pkgs.zsh
-  ];
 
   environment.shellAliases = {
     l = "exa --icons --color=always";

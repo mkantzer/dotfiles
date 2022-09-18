@@ -2,14 +2,16 @@
 
 {
   imports = [
-    ../../../users/mkantzer.nix
+    ../../../users/work-user.nix
+
   ];
 
 
 
   home-manager.users.mkantzer = {
     imports = [
-      ../../../modules/home.nix
+      ./git.nix
+
       ../../../themes/tokyonight
       # ../../../modules/graphical-home.nix
       # ../../../modules/thinkpad-home.nix

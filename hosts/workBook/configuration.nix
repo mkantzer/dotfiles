@@ -2,14 +2,13 @@
 
 {
   imports = [
-    ../../modules
-    ../../modules/ssh
-    ../../modules/fonts
-    ../../modules/homebrew
-    ../../modules/darwin-settings
+    # ../../modules
+    # ../../modules/ssh
+    # ../../modules/fonts
+    # ../../modules/homebrew
+    # ../../modules/darwin-settings
 
     ./users/work-user.nix
-    ./git.nix
   ];
 
   # Set your time zone.

@@ -63,6 +63,12 @@
     # Configuration that should be above `loginShellInit` and `interactiveShellInit`.
     shellInit = ''
       set -U fish_term24bit 1
+
+      for p in (string split : ${config.environment.systemPath})
+        if not contains $p $fish_user_paths
+          set -g fish_user_paths $fish_user_paths $p
+        end
+      end
     '';
 
     interactiveShellInit = ''
