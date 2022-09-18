@@ -6,7 +6,7 @@
     # ../../modules/ssh
     # ../../modules/fonts
     # ../../modules/homebrew
-    # ../../modules/darwin-settings
+    ../../modules/darwin-settings
 
     ./users/work-user.nix
   ];

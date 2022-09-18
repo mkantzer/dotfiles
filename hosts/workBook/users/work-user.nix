@@ -3,7 +3,6 @@
 {
   imports = [
     ../../../users/work-user.nix
-
   ];
 
 
@@ -13,6 +12,8 @@
       ./git.nix
 
       ../../../themes/tokyonight
+      
+      ../../../modules/bottom
       # ../../../modules/graphical-home.nix
       # ../../../modules/thinkpad-home.nix
     ];
