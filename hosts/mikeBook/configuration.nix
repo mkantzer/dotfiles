@@ -3,9 +3,7 @@
 {
   imports = [
     ../../modules
-    # ../../modules/ssh
     ../../modules/fonts
-    ../../modules/homebrew
     ../../modules/darwin-settings
 
     ./users/mk5r.nix
