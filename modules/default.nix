@@ -26,11 +26,16 @@
     };
   };
 
+  nix.configureBuildUsers = true;
   services.nix-daemon.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowBroken = true;
-  
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowBroken = true;
+  };
+
+  programs.nix-index.enable = true;
+
   environment.systemPackages =
     let
       zinfo = pkgs.callPackage ../pkgs/zinfo { };
