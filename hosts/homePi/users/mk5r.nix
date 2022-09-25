@@ -7,20 +7,13 @@
 
   home-manager.users.mk5r = {
     imports = [
-      # ../../../modules/bottom
-      # ../../../modules/fish
-      # ../../../modules/git
-      # ../../../modules/neovim
-      # ../../../modules/packages
-      # ../../../modules/tmux
-      # ../../../modules/vim
-      # ../../../modules/zoxide
-      # ../../../modules/zsh
-      # ../../../themes/tokyonight
-      # ../../../modules/graphical-home.nix
-      # ../../../modules/thinkpad-home.nix
-      # ../../../modules/dev/home.nix
-      # ../../../modules/dev/rust/home.nix
+      ../../../modules/fish
+      ../../../modules/git
+      ../../../modules/neovim
+      ../../../modules/packages
+      ../../../modules/zsh
+
+      ../../../themes/tokyonight
     ];
 
     # bt = {

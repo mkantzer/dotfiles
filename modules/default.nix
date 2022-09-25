@@ -29,6 +29,7 @@
   services.nix-daemon.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowBroken = true;
   
   environment.systemPackages =
     let

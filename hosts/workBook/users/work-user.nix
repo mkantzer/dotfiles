@@ -3,6 +3,7 @@
 {
   imports = [
     ../../../users/work-user.nix
+    ../../../modules/homebrew
   ];
 
 
@@ -11,13 +12,13 @@
     imports = [
       ./git.nix
 
-      ../../../themes/tokyonight
-      
-      ../../../modules/bottom
-      # ../../../modules/graphical-home.nix
-      # ../../../modules/thinkpad-home.nix
-    ];
+      ../../../modules/fish
+      ../../../modules/git
+      ../../../modules/neovim
+      ../../../modules/packages
+      ../../../modules/zsh
 
-    # programs.alacritty.settings.font.size = lib.mkOverride 0 10.0;
+      ../../../themes/tokyonight
+    ];
   };
 }

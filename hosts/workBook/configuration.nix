@@ -2,10 +2,8 @@
 
 {
   imports = [
-    # ../../modules
-    # ../../modules/ssh
-    # ../../modules/fonts
-    # ../../modules/homebrew
+    ../../modules
+    ../../modules/fonts
     ../../modules/darwin-settings
 
     ./users/work-user.nix

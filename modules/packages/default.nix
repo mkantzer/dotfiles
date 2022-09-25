@@ -1,6 +1,12 @@
 { config, lib, pkgs, ... }:
 
 {
+
+  programs.bottom = {
+    enable = true;
+    settings.flags.regex = true;
+  };
+
   # Bat, a substitute for cat.
   # https://github.com/sharkdp/bat
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.bat.enable

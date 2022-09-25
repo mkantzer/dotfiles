@@ -25,8 +25,6 @@
   # services.openssh.enable = true;
   # programs.mosh.enable = true;
 
-
-
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
