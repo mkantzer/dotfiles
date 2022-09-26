@@ -50,7 +50,7 @@ EOF
 
 # Get this repo
 cd ~/.config
-git clone git@github.com:mkantzer/nixpkgs.git
+git clone git@github.com:mkantzer/dotfiles.git
 
 # Until this is addressed https://github.com/LnL7/nix-darwin/issues/149
 sudo mv /etc/nix/nix.conf /etc/nix/.nix-darwin.bkp.nix.conf
