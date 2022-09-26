@@ -2,7 +2,6 @@
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
-    enableBashCompletion = true;
     enableCompletion = true;
     enableSyntaxHighlighting = true;
     defaultKeymap = "viins";
