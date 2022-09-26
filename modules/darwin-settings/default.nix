@@ -72,4 +72,5 @@
       remapCapsLockToEscape = true;
     };
   };
+  security.pam.enableSudoTouchIdAuth = true;
 }
