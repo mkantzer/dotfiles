@@ -8,7 +8,7 @@
   home-manager.users.mk5r = {
     imports = [
 
-      
+
       ../../../modules/fish
       ../../../modules/git
       ../../../modules/neovim
