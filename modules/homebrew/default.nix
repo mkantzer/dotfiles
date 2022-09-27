@@ -104,8 +104,8 @@
       "visual-studio-code"
       "iterm2"
       # "amethyst"
-      # "balenaetcher"
-      # "discord"
+      "balenaetcher"
+      "discord"
       "firefox"
       # "google-chrome"
       "google-drive"
@@ -116,7 +116,6 @@
       # "obsidian"
       # "signal"
       # "steam"
-      # "visual-studio-code"
     ];
 
     # For cli packages that aren't currently available for macOS in `nixpkgs`.Packages should be
