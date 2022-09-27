@@ -102,6 +102,7 @@
       "soundsource"
       # "loopback"
       "visual-studio-code"
+      "iterm2"
       # "amethyst"
       # "balenaetcher"
       # "discord"
