@@ -5,6 +5,7 @@
     ../../modules
     ../../modules/fonts
     ../../modules/darwin-settings
+    ../../modules/iterm2
 
     ./users/mk5r.nix
   ];
