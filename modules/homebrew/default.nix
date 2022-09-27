@@ -100,7 +100,7 @@
       "bartender"
       "rectangle-pro"
       "soundsource"
-      "loopback"
+      # "loopback"
       "visual-studio-code"
       # "amethyst"
       # "balenaetcher"
@@ -127,7 +127,7 @@
       "docker-credential-helper-ecr"
       "kube-ps1"
       # "avr-gcc"
-      "steampipe"
+      # "steampipe"
     ];
   };
 }
