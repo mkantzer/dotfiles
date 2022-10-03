@@ -1,5 +1,7 @@
 { pkgs, ... }:
 
+
+# TODO: Change terminals to use these fonts?
 {
   fonts = {
     fonts = with pkgs; [
