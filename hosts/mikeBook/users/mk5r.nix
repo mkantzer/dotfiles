@@ -13,6 +13,7 @@
       ../../../modules/git
       ../../../modules/neovim
       ../../../modules/packages
+      ../../../modules/vscode
       ../../../modules/zsh
 
       ../../../themes/tokyonight
