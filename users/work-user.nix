@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  home-manager.users.mk5r = {
+  home-manager.users.mkantzer = {
     programs.git = {
       userName = "mkantzer-drizly";
       userEmail = "mike.kantzer@drizly.com";
