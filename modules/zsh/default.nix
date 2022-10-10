@@ -6,8 +6,13 @@
     enableSyntaxHighlighting = true;
     defaultKeymap = "viins";
 
+    # shellInit = ''
+    #   path+=("/etc/profiles/per-user/$(whoami)/bin")
+    # '';
+
     initExtra = ''
-      path=("$HOME/.cargo/bin" $path)
+      # path=("$HOME/.cargo/bin" $path)
+      path+=("/etc/profiles/per-user/$(whoami)/bin")
       path+=("$HOME/.local/bin")
 
       lt() {
@@ -21,6 +26,7 @@
     '';
   };
 
+
   home.sessionVariables = {
     MANPAGER = "sh -c 'col -bx | bat -l man -p'";
     PAGER = "bat";
@@ -30,8 +36,7 @@
     diff = "diff --color";
     doas = "sudo";
     ip = "ip -c";
-    l = "exa --icons --color=always";
-    ll = "l -aalg";
+    # l = "exa --icons --color=always";
     lisosort = "exa -lRs size --no-permissions --no-user --no-time ~/images/disk/**/*.iso";
     pp = "ping 1.1.1.1";
     watch = "watch -c -n 1 ";

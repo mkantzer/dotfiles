@@ -12,28 +12,72 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, home-manager-unstable, ... }: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, home-manager-unstable, darwin, agenix, ... }: {
     formatter.x86_64-linux = nixpkgs-unstable.legacyPackages.x86_64-linux.nixpkgs-fmt;
 
-    nixosConfigurations = {
-      cybros = nixpkgs-unstable.lib.nixosSystem {
-        system = "x86_64-linux";
+    darwinConfigurations = {
+      mikeBook = darwin.lib.darwinSystem {
+        system = "x86_64-darwin";
         modules = [
-          ./hosts/cybros/configuration.nix
-          home-manager-unstable.nixosModules.home-manager
+          ./hosts/mikeBook/configuration.nix
+          home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
           }
         ];
       };
+      workBook = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          ./hosts/workBook/configuration.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
+        ];
+      };
+    };
 
-      gantrithor = nixpkgs.lib.nixosSystem {
+    nixosConfigurations = {
+      testVM = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        modules = [
+          ./hosts/testVM/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
+        ];
+      };
+      homePi = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        modules = [
+          ./hosts/homePi/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
+        ];
+      };
+      mikeBox = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/gantrithor/configuration.nix
+          ./hosts/mikeBox/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -43,13 +87,13 @@
       };
     };
 
-    homeConfigurations = {
-      "lizzie@sparkle3" = home-manager-unstable.lib.homeManagerConfiguration {
-        pkgs = nixpkgs-unstable.legacyPackages."x86_64-linux";
-        modules = [
-          ./hosts/sparkle3/lizzie/home.nix
-        ];
-      };
-    };
+    # homeConfigurations = {
+    #   "lizzie@sparkle3" = home-manager-unstable.lib.homeManagerConfiguration {
+    #     pkgs = nixpkgs-unstable.legacyPackages."x86_64-linux";
+    #     modules = [
+    #       ./hosts/sparkle3/lizzie/home.nix
+    #     ];
+    #   };
+    # };
   };
 }
