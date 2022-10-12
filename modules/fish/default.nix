@@ -71,7 +71,9 @@
       end
       fish_add_path --prepend --move /nix/var/nix/profiles/default/bin
       fish_add_path --prepend --move /etc/profiles/per-user/(whoami)/bin
-      fish_add_path --prepend --move  /Users/(whoami)/.nix-profile/bin
+      fish_add_path --prepend --move /Users/(whoami)/.nix-profile/bin
+      fish_add_path --prepend --move '/Applications/Visual Studio Code.app/Contents/Resources/app/bin'
+
     '';
 
     loginShellInit  = ''
