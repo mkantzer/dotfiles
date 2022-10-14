@@ -16,6 +16,7 @@
     if test -d (brew --prefix)"/share/fish/vendor_completions.d"
       set -p fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
     end
+
   '';
 
   homebrew = {
@@ -38,7 +39,7 @@
     # `mas list > mas.csv` to get list, then can rearrange by hand to get a CSV.
     # Can then sort via `sort -k[column] -t[delimeter] [filename]
     # masApps = {
-    #   # "1Password 7" = 1333542190;
+    #   # "1Password 8" = 1333542190;
     #   # "Bakery" = 1575220747;
     #   # "CARROT Weather" = 993487541;
     #   "Craft" = 1487937127;
@@ -103,6 +104,7 @@
       # "loopback"
       "visual-studio-code"
       "iterm2"
+      "mimestream"
       # "amethyst"
       "balenaetcher"
       "discord"

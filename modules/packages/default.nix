@@ -45,7 +45,7 @@
 
   programs.zoxide = {
     enable = true;
-    enableBashIntegration = true;
+    # enableBashIntegration = true;
     enableZshIntegration = true;
     enableFishIntegration = true;
   };
@@ -90,6 +90,7 @@
 
     # Cloud Stuff
     kubectl
+    krew
     kubectx
     kubecfg
     kustomize

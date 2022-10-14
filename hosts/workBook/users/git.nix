@@ -22,16 +22,14 @@
           gh pr create \
             --assignee @me \
             --title "''${branch_title}" \
-            --reviewer drizlyinc/hades \
-            --reviewer drizlyinc/cloud-services \
+            --reviewer drizlyinc/chades \
             --body "TICKET: [''${branch_board}-''${branch_ticket}](https://drizly.atlassian.net/browse/''${branch_board}-''${branch_ticket}) 
            ''${pr_message}"
         else
           gh pr create \
             --assignee @me \
             --title "''${branch_title}" \
-            --reviewer drizlyinc/hades \
-            --reviewer drizlyinc/cloud-services \
+            --reviewer drizlyinc/chades \
             --body "TICKET: not found in branch name.
             ''${pr_message}"
         fi

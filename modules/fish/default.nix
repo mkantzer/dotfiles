@@ -13,6 +13,15 @@
           sha256 = "/r+vaJIQ+yi7YDN7AThRKWDimdDuVmeYcg7t0GzebZE=";
         };
       }
+      {
+        name = "fzf.fish";
+        src = pkgs.fetchFromGitHub {
+          owner = "PatrickF1";
+          repo = "fzf.fish";
+          rev = "v9.4";
+          sha256 = "11fs3wihjid0k4bdllac8d1sah31z5hdl8g58sbr0302p7mgzyif";
+        };
+      }
     ];
 
     functions = { };
@@ -73,7 +82,7 @@
       fish_add_path --prepend --move /etc/profiles/per-user/(whoami)/bin
       fish_add_path --prepend --move /Users/(whoami)/.nix-profile/bin
       fish_add_path --prepend --move '/Applications/Visual Studio Code.app/Contents/Resources/app/bin'
-
+      fish_add_path /users/(whoami)/.krew/bin
     '';
 
     loginShellInit  = ''
@@ -83,17 +92,17 @@
       set -g fish_greeting ""
       ${pkgs.thefuck}/bin/thefuck --alias | source
 
-      # Set Fish colors that aren't dependant the `$term_background`.
-      set -g fish_color_quote        cyan      # color of commands
-      set -g fish_color_redirection  brmagenta # color of IO redirections
-      set -g fish_color_end          blue      # color of process separators like ';' and '&'
-      set -g fish_color_error        red       # color of potential errors
-      set -g fish_color_match        --reverse # color of highlighted matching parenthesis
-      set -g fish_color_search_match --background=yellow
-      set -g fish_color_selection    --reverse # color of selected text (vi mode)
-      set -g fish_color_operator     green     # color of parameter expansion operators like '*' and '~'
-      set -g fish_color_escape       red       # color of character escapes like '\n' and and '\x70'
-      set -g fish_color_cancel       red       # color of the '^C' indicator on a canceled command
+      # # Set Fish colors that aren't dependant the `$term_background`.
+      # set -g fish_color_quote        cyan      # color of commands
+      # set -g fish_color_redirection  brmagenta # color of IO redirections
+      # set -g fish_color_end          blue      # color of process separators like ';' and '&'
+      # set -g fish_color_error        red       # color of potential errors
+      # set -g fish_color_match        --reverse # color of highlighted matching parenthesis
+      # set -g fish_color_search_match --background=yellow
+      # set -g fish_color_selection    --reverse # color of selected text (vi mode)
+      # set -g fish_color_operator     green     # color of parameter expansion operators like '*' and '~'
+      # set -g fish_color_escape       red       # color of character escapes like '\n' and and '\x70'
+      # set -g fish_color_cancel       red       # color of the '^C' indicator on a canceled command
 
 
       # Tide Configuration
