@@ -37,7 +37,7 @@
       zinfo = pkgs.callPackage ../pkgs/zinfo { };
     in
     with pkgs; [
-      terminal-notifier
+      # terminal-notifier
       exa
       fd
       ouch
