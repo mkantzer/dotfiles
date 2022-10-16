@@ -1,8 +1,14 @@
 {
-  
+
   nix.configureBuildUsers = true;
   services.nix-daemon.enable = true;
   programs.nix-index.enable = true;
+
+  environment.systemPackages =
+    with pkgs; [
+      terminal-notifier
+    ];
+
 
   system = {
     defaults = {
