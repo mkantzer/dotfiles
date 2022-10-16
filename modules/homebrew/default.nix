@@ -94,31 +94,28 @@
 
     # If an app isn't available in the Mac App Store, or the version in the App Store has
     # limitiations, e.g., Transmit, install the Homebrew Cask.
-    casks = [
-      "alt-tab"
-      "1password"
-      "1password-cli"
-      "bartender"
-      "rectangle-pro"
-      "soundsource"
-      # "loopback"
-      "visual-studio-code"
-      "iterm2"
-      "mimestream"
-      # "amethyst"
-      "balenaetcher"
-      "discord"
-      "firefox"
-      # "google-chrome"
-      "google-drive"
-      # "gpg-suite"
-      "hammerspoon"
-      "keybase"
-      "qmk-toolbox"
-      # "obsidian"
-      # "signal"
-      # "steam"
-    ];
+    # casks = [
+    #   "alt-tab"
+    #   "1password"
+    #   "1password-cli"
+    #   "bartender"
+    #   "rectangle-pro"
+    #   "soundsource"
+    #   # "loopback"
+    #   "visual-studio-code"
+    #   "iterm2"
+    #   "mimestream"
+    #   "balenaetcher"
+    #   "discord"
+    #   "firefox"
+    #   # "google-chrome"
+    #   "google-drive"
+    #   # "gpg-suite"
+    #   "keybase"
+    #   "qmk-toolbox"
+    #   # "signal"
+    #   # "steam"
+    # ];
 
     # For cli packages that aren't currently available for macOS in `nixpkgs`.Packages should be
     # installed in `../home/default.nix` whenever possible.
