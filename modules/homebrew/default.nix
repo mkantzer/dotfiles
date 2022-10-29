@@ -16,7 +16,6 @@
     if test -d (brew --prefix)"/share/fish/vendor_completions.d"
       set -p fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
     end
-
   '';
 
   homebrew = {
@@ -90,6 +89,7 @@
       "osx-cross/avr"
       "osx-cross/arm"
       "turbot/tap"
+      "helm/tap"
     ];
 
     # If an app isn't available in the Mac App Store, or the version in the App Store has
@@ -125,6 +125,11 @@
       "switchaudio-osx"
       "docker-credential-helper-ecr"
       "kube-ps1"
+      "tfenv"
+      "go"
+      # "gcloud"
+      # "chart-releaser"
+      # "chart-testing"
       # "avr-gcc"
       # "steampipe"
     ];

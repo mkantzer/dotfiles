@@ -78,6 +78,10 @@
           set -g fish_user_paths $p $fish_user_paths
         end
       end
+
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+      fish_add_path /usr/local/bin
+
       fish_add_path --prepend --move /nix/var/nix/profiles/default/bin
       fish_add_path --prepend --move /etc/profiles/per-user/(whoami)/bin
       fish_add_path --prepend --move /Users/(whoami)/.nix-profile/bin

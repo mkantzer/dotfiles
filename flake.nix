@@ -6,7 +6,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-22.05";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     home-manager-unstable = {
       url = "github:nix-community/home-manager";
@@ -14,7 +14,7 @@
     };
     darwin = {
       url = "github:lnl7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     agenix = {
       url = "github:ryantm/agenix";
@@ -42,7 +42,7 @@
         system = "aarch64-darwin";
         modules = [
           ./hosts/workBook/configuration.nix
-          home-manager.darwinModules.home-manager
+          home-manager-unstable.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

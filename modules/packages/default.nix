@@ -40,8 +40,8 @@
   # https://github.com/ajeetdsouza/zoxide
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.zoxide.enable
 
-  # Remove ASAP: only here for temp development while getting configs (like vscode) ready
-  programs.go.enable = true;
+  # # Remove ASAP: only here for temp development while getting configs (like vscode) ready
+  # programs.go.enable = true;
 
   programs.zoxide = {
     enable = true;
@@ -105,8 +105,8 @@
     chart-testing
     # kube-prompt # seriously, pretty sure it's borken
 
-    terraform-docs
-    terraform_1
+    # terraform-docs
+    # terraform
     terragrunt
 
     jq

@@ -20,5 +20,7 @@
 
       ../../../themes/tokyonight
     ];
+    home.stateVersion = "21.11";
   };
+
 }
