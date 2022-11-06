@@ -61,66 +61,44 @@
       });
 
 
-
-
-
-
       darwinConfigurations = rec {
         workBook = darwin.lib.darwinSystem {
           pkgs = legacyPackages."aarch64-darwin";
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/workBook ];
         };
-        # mikeBook = darwin.lib.darwinSystem {
-        #   system = "x86_64-darwin";
-        #   modules = [
-        #     ./hosts/mikeBook/configuration.nix
-        #     home-manager.darwinModules.home-manager
-        #     {
-        #       home-manager.useGlobalPkgs = true;
-        #       home-manager.useUserPackages = true;
-        #     }
-        #   ];
-        # };
+
+        mikeBook = darwin.lib.darwinSystem {
+          pkgs = legacyPackages."x86_64-darwin";
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/mikeBook ];
+        };
       };
 
-      # nixosConfigurations = {
-      #   testVM = nixpkgs.lib.nixosSystem {
-      #     system = "aarch64-linux";
-      #     modules = [
-      #       ./hosts/testVM/configuration.nix
-      #       home-manager.nixosModules.home-manager
-      #       {
-      #         home-manager.useGlobalPkgs = true;
-      #         home-manager.useUserPackages = true;
-      #       }
-      #     ];
-      #   };
-      #   homePi = nixpkgs.lib.nixosSystem {
-      #     system = "aarch64-linux";
-      #     modules = [
-      #       ./hosts/homePi/configuration.nix
-      #       home-manager.nixosModules.home-manager
-      #       {
-      #         home-manager.useGlobalPkgs = true;
-      #         home-manager.useUserPackages = true;
-      #       }
-      #     ];
-      #   };
-      #   mikeBox = nixpkgs.lib.nixosSystem {
-      #     system = "x86_64-linux";
-      #     modules = [
-      #       ./hosts/mikeBox/configuration.nix
-      #       home-manager.nixosModules.home-manager
-      #       {
-      #         home-manager.useGlobalPkgs = true;
-      #         home-manager.useUserPackages = true;
-      #       }
-      #     ];
-      #   };
-      # };
+      nixosConfigurations = {
+        homePi = nixpkgs.lib.nixosSystem {
+          pkgs = legacyPackages."aarch64-linux";
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/homePi ];
+        };
+      };
 
       homeConfigurations = {
+        "mk5r@workBook" =home-manager.lib.homeManagerConfiguration {
+          pkgs = legacyPackages."aarch64s-darwin";
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home/mk5r/workBook.nix ];
+        };
+        "mk5r@mikeBook" =home-manager.lib.homeManagerConfiguration {
+          pkgs = legacyPackages."x86_64-darwin";
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home/mk5r/mikeBook.nix ];
+        };
+        "mk5r@homePi" = home-manager.lib.homeManagerConfiguration {
+          pkgs = legacyPackages."aarch64-linux";
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home/mk5r/homePi.nix ];
+        };
         # For easy bootstraping from a nixos live usb
         "nixos@nixos" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages."x86_64-linux";
