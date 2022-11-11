@@ -80,12 +80,12 @@
       };
 
       homeConfigurations = {
-        "mk5r@workBook" =home-manager.lib.homeManagerConfiguration {
-          pkgs = legacyPackages."aarch64s-darwin";
+        "mkantzer@workBook" = home-manager.lib.homeManagerConfiguration {
+          pkgs = legacyPackages."aarch64-darwin";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/mk5r/workBook.nix ];
+          modules = [ ./home/mkantzer/workBook.nix ];
         };
-        "mk5r@mikeBook" =home-manager.lib.homeManagerConfiguration {
+        "mk5r@mikeBook" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages."x86_64-darwin";
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home/mk5r/mikeBook.nix ];
