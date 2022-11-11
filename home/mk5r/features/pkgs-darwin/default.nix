@@ -100,7 +100,7 @@
     awscli2
     kubernetes-helm
     argo
-    argocd
+    # argocd
     chart-testing
     # kube-prompt # seriously, pretty sure it's borken
 
