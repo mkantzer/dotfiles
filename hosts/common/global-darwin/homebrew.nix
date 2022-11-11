@@ -2,7 +2,7 @@
 
 {
   environment.shellInit = ''
-    eval "$(/usr/local/bin/brew shellenv)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   '';
 
   # https://docs.brew.sh/Shell-Completion#configuring-completions-in-fish
@@ -108,7 +108,7 @@
     #   "mimestream"
     #   "balenaetcher"
       # "discord"
-    #   "firefox"
+      "firefox"
     #   # "google-chrome"
     #   "google-drive"
     #   # "gpg-suite"

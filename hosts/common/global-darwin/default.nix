@@ -4,5 +4,6 @@
   imports = [
     ../global
     ./system.nix
+    ./homebrew.nix
   ] ++ (builtins.attrValues outputs.darwinModules);
 }
