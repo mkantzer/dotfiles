@@ -3,6 +3,8 @@
   imports = [
     ../common/global-darwin
     ../common/users/mk5r.nix
+
+    ../common/optional/fonts.nix
   ];
 
   # Hostname
