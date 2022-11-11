@@ -1,9 +1,9 @@
 { config, lib, ... }:
 
 {
-  # environment.shellInit = ''
-  #   eval "$(/opt/homebrew/bin/brew shellenv)"
-  # '';
+  environment.shellInit = ''
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  '';
 
   # https://docs.brew.sh/Shell-Completion#configuring-completions-in-fish
   # For some reason if the Fish completions are added at the end of `fish_complete_path` they don't
