@@ -2,7 +2,7 @@
 
 {
   environment.shellInit = ''
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    eval "$(/usr/local/bin/brew shellenv)"
   '';
 
   # https://docs.brew.sh/Shell-Completion#configuring-completions-in-fish
