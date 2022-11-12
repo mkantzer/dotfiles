@@ -11,12 +11,11 @@ in
         sha256 = "06g0061xm48i5w7gz5sm5x5ps6cnipqv1m483f8i9mmhlz77hvlw";
     }}/raspberry-pi/4"
 
-    # ./home-automation.nix
+    ../common/global
+    ../common/users/mk5r.nix
 
-    ../../modules
-    ../../modules/fonts
-
-    ./users/mk5r.nix
+    ../common/optional/fonts.nix
+    ./services
   ];
 
   fileSystems = {

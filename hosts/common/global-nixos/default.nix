@@ -2,7 +2,7 @@
 { lib, inputs, outputs, ... }:
 {
   imports = [
-    # ./fish.nix
+    ../global
     ./locale.nix
     # ./nix.nix
     # ./openssh.nix
