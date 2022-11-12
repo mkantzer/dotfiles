@@ -1,8 +1,8 @@
-## Should be able to copy-cat spotifyd or yabai to actually make this work, ideally leveraging the plist thing
+Note: the JSON files are not used, they're here "just in case"
 
+Another note: Might do something like:
 
-
-
+```
 { config, lib, pkgs,  ... }:
 with lib;
 
@@ -23,3 +23,6 @@ in
   };
 
 }
+```
+
+To remove from a mostly-hardcoded string into nix. Probably don't need to do that though.
