@@ -9,20 +9,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hardware.url = "github:nixos/nixos-hardware";
-    nix-colors.url = "github:misterio77/nix-colors";
-    flake-utils.url = "github:numtide/flake-utils";
+    # flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs = { self, nixpkgs, home-manager, darwin, agenix, ... }@inputs:
@@ -103,4 +98,14 @@
         };
       };
     };
+
+    # homeConfigurations = {
+    #   "lizzie@sparkle3" = home-manager-unstable.lib.homeManagerConfiguration {
+    #     pkgs = nixpkgs-unstable.legacyPackages."x86_64-linux";
+    #     modules = [
+    #       ./hosts/sparkle3/lizzie/home.nix
+    #     ];
+    #   };
+    # };
+  };
 }
