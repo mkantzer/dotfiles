@@ -43,36 +43,32 @@
       #   # "CARROT Weather" = 993487541;
       "Craft" = 1487937127;
       "Dark Noise" = 1465439395;
-      # "Deliveries" = 290986013;
       "Drafts" = 1435957248;
       "EventScripts" = 525319418;
       "Fantastical" = 975937182;
       "GIFwrapped" = 782319880;
       #   "GarageBand" = 682658836;
       #   "GoodNotes" = 1444383602;
-      #   "Hyperspace Desktop" = 1454139710;
-      #   "Jayson" = 1468691718;
+      "Hyperspace Desktop" = 1454139710;
       #   "Keeper Password Manager" = 414781829;
       #   "Keynote" = 409183694;
       "Kindle" = 405399194;
       #   "Kosmik" = 1479810209;
       #   "Matter" = 1548677272;
-      #   "Microsoft OneNote" = 784801555;
-      #   # "MindNode"                = 1289197285;
+      "Microsoft OneNote" = 784801555;
       "Muse" = 1501563902;
       "Notability" = 360593530;
       "Numbers" = 409203825;
       "Pages" = 409201541;
-      #   "Parcel" = 639968404;
+      "Parcel" = 639968404;
       "Slack" = 803453959;
-      #   "Steam Link" = 1246969117;
+      "Steam Link" = 1246969117;
       "Super Agent" = 1568262835;
       "Telegram" = 747648890;
       "Todoist" = 585829637;
       #   "Tripsy" = 1429967544;
       #   "Tweetbot" = 1384080005;
       #   "UTM" = 1538878817;
-      #   "Vulcan" = 1533712040;
       #   # "Xcode" = 497799835;
       #   # "iMovie" = 408981434;
     };
@@ -123,6 +119,8 @@
       "mas"
       "qmk/qmk/qmk"
       "switchaudio-osx"
+      "docker"
+      "docker-compose"
       "docker-credential-helper-ecr"
       "kube-ps1"
       "tfenv"
