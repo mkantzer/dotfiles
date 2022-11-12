@@ -98,14 +98,4 @@
         };
       };
     };
-
-    # homeConfigurations = {
-    #   "lizzie@sparkle3" = home-manager-unstable.lib.homeManagerConfiguration {
-    #     pkgs = nixpkgs-unstable.legacyPackages."x86_64-linux";
-    #     modules = [
-    #       ./hosts/sparkle3/lizzie/home.nix
-    #     ];
-    #   };
-    # };
-  };
 }
