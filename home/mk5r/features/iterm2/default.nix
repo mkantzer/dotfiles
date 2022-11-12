@@ -3115,7 +3115,7 @@
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>fish</string>
+			<string>/Users/${config.home.username}/.nix-profile/bin/fish</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>

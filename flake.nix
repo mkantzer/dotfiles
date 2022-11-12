@@ -17,10 +17,11 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-colors.url = "github:misterio77/nix-colors";
     # flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, home-manager, darwin, agenix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, darwin, agenix, nix-colors, ... }@inputs:
     let
       inherit (nixpkgs.lib) filterAttrs traceVal;
       inherit (builtins) mapAttrs elem;
