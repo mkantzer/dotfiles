@@ -18,6 +18,8 @@ in
     ./services
   ];
 
+  time.timeZone = "America/New_York"
+
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-label/NIXOS_SD";
