@@ -1,6 +1,6 @@
 {
   imports = [
-    ./homeAssistant
+    ./homeAssistant.nix
   ];
 
   virtualisation.docker.enable = true;
