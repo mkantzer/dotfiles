@@ -1,8 +1,7 @@
 { config, lib, ... }:
 
 {
-  home.file."Library/Application Scripts/net.mousedown.EventScripts/switchAudioPlugIn.sh".text = ''
-#!/bin/bash
+  home.file."Library/Application Scripts/net.mousedown.EventScripts/switchAudioPlugIn.sh".text = ''#!/bin/bash
 
 sleep 1
 
@@ -18,8 +17,7 @@ else
   echo "not switching"
 fi
   '';
-  home.file."Library/Application Scripts/net.mousedown.EventScripts/switchAudioPlugOut.sh".text = ''
-#!/bin/bash
+  home.file."Library/Application Scripts/net.mousedown.EventScripts/switchAudioPlugOut.sh".text = ''#!/bin/bash
 
 sleep 1
 
