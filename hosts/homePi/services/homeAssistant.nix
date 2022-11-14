@@ -1,7 +1,7 @@
 # shttps://www.reddit.com/r/NixOS/comments/to3iop/is_this_possible_on_nixos_home_assistant_and/i27o3m0/
 { config, pkgs, userParams, ... }:
 let 
-  containerDataPath = "/home/${config.home.username}/DockerData";
+  containerDataPath = "/home/mk5r/DockerData";
   # network = "homeassistant_network";
   network = "host";
 in
