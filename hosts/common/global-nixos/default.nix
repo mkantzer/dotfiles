@@ -21,4 +21,11 @@
     # Add terminfo files
     enableAllTerminfo = true;
   };
+
+  services.openssh = {
+    enable = true;
+    passwordAuthentication = false;
+    kbdInteractiveAuthentication = false;
+    permitRootLogin = "yes";
+  };
 }
