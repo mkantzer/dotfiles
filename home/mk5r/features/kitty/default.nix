@@ -7,7 +7,7 @@
   programs.kitty = {
     enable = true;
     settings = {
-      shell = "fish";
+      shell = "${pkgs.fish}/bin/fish";
       font_size = "16.0";
       font_family = "FiraCode Nerd Font";
       bold_font = "auto";
@@ -37,6 +37,12 @@
       color13 = "#be5046";
       color14 = "#56b6c2";
       color15 = "#abb2bf";
+
+
+      tab_bar_edge = "top";
+      tab_bar_align = "center";
+      tab_bar_style = "fade";
+      shell_integration = "enabled";
     };
   };
 }
