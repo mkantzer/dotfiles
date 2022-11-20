@@ -108,6 +108,7 @@
       "google-chrome"
       "google-drive"
       "zoom"
+      "openvpn-connect"
       # "keybase"
       # "qmk-toolbox"
       # "signal"
