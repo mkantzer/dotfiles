@@ -7,7 +7,7 @@
   programs.kitty = {
     enable = true;
     settings = {
-      shell = pkgs.fish;
+      shell = "fish";
       font_size = "16.0";
       font_family = "FiraCode Nerd Font";
       bold_font = "auto";
