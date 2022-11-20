@@ -107,7 +107,7 @@
       "discord"
       "google-chrome"
       "google-drive"
-      "gpg-suite"
+      "zoom"
       # "keybase"
       # "qmk-toolbox"
       # "signal"
