@@ -99,6 +99,7 @@
       "rectangle-pro"
       "soundsource"
       "loopback"
+      "kitty"
       "visual-studio-code"
       "iterm2"
       "mimestream"
@@ -107,9 +108,9 @@
       "google-chrome"
       "google-drive"
       "gpg-suite"
-      "keybase"
-      #   "qmk-toolbox"
-      #   # "signal"
+      # "keybase"
+      # "qmk-toolbox"
+      # "signal"
       "steam"
     ];
 
