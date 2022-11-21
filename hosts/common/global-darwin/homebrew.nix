@@ -39,6 +39,7 @@
     # Can then sort via `sort -k[column] -t[delimeter] [filename]
     masApps = {
       #   # "1Password 8" = 1333542190;
+      "1Blocker" = 1365531024;
       #   # "Bakery" = 1575220747;
       #   # "CARROT Weather" = 993487541;
       "Craft" = 1487937127;
@@ -96,6 +97,7 @@
       "1password"
       "1password-cli"
       "bartender"
+      "docker"
       "rectangle-pro"
       "soundsource"
       "loopback"
@@ -121,8 +123,8 @@
       "mas"
       "qmk/qmk/qmk"
       "switchaudio-osx"
-      "docker"
-      "docker-compose"
+      # "docker"
+      # "docker-compose"
       "docker-credential-helper-ecr"
       "kube-ps1"
       "tfenv"
