@@ -28,8 +28,12 @@
 
     shellAliases = with pkgs; {
       # Nix related
-      drb = "darwin-rebuild build --flake ~/.config/dotfiles";
+      drb = "darwin-rebuild build  --flake ~/.config/dotfiles";
+      nrb = "nixos-rebuild  build  --flake ~/.config/dotfiles";
+      hmb = "home-manager   build  --flake ~/.config/dotfiles";
       drs = "darwin-rebuild switch --flake ~/.config/dotfiles";
+      nrs = "nixos-rebuild  switch --flake ~/.config/dotfiles";
+      hms = "home-manager   switch --flake ~/.config/dotfiles";
       flakeup = "nix flake update ~/.config/dotfiles";
       nb = "nix build";
       nd = "nix develop";
