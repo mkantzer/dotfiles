@@ -111,6 +111,8 @@
       "google-drive"
       "zoom"
       "openvpn-connect"
+      "pocket-casts"
+      "spotify"
       # "keybase"
       # "qmk-toolbox"
       # "signal"
