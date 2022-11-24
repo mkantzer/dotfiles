@@ -43,6 +43,8 @@
       tab_bar_align = "center";
       tab_bar_style = "fade";
       shell_integration = "enabled";
+      
+      copy_on_select = "clipboard";
     };
   };
 }
