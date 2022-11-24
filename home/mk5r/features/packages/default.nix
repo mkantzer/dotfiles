@@ -49,92 +49,99 @@
     enableFishIntegration = true;
   };
 
-  home.packages = with pkgs; [
-    # Some basics
-    bottom # fancy version of `top` with ASCII graphs
-    coreutils
-    moreutils
-    curl
+  home.packages =
+    let
+      distroSpecific =
+        if pkgs.stdenv.isDarwin
+        then [ ]
+        else with pkgs; [ tshm ];
+    in
+    with pkgs; [
+      # Some basics
+      bottom # fancy version of `top` with ASCII graphs
+      coreutils
+      moreutils
+      curl
 
-    tree
-    bat
-    httpie
+      tree
+      bat
+      httpie
 
-    du-dust # fancy version of `du`
-    exa # fancy version of `ls`
-    fd # fancy version of `find`
-    htop # fancy version of `top`
-    hyperfine # benchmarking tool
-    mosh # wrapper for `ssh` that better and not dropping connections
-    # parallel # runs commands in parallel
-    # python3Packages.shell-functools # a collection of functional programming tools for the shell
-    ripgrep # better version of `grep`
-    tealdeer # rust implementation of `tldr`
-    thefuck
-    unrar # extract RAR archives
-    wget
-    xz # extract XZ archives
+      du-dust # fancy version of `du`
+      exa # fancy version of `ls`
+      fd # fancy version of `find`
+      htop # fancy version of `top`
+      hyperfine # benchmarking tool
+      mosh # wrapper for `ssh` that better and not dropping connections
+      # parallel # runs commands in parallel
+      # python3Packages.shell-functools # a collection of functional programming tools for the shell
+      ripgrep # better version of `grep`
+      tealdeer # rust implementation of `tldr`
+      thefuck
+      unrar # extract RAR archives
+      wget
+      xz # extract XZ archives
 
-    # Dev stuff
-    # (agda.withPackages (p: [ p.standard-library ]))
-    docker
-    docker-compose
-    skaffold
-    go-task
+      # Dev stuff
+      # (agda.withPackages (p: [ p.standard-library ]))
+      docker
+      docker-compose
+      skaffold
+      go-task
 
-    fzf
-    gh
-    git
-    # kube-ps1
+      fzf
+      gh
+      git
+      # kube-ps1
 
-    # Cloud Stuff
-    kubectl
-    krew
-    kubectx
-    kubecfg
-    kustomize
-    kind
+      # Cloud Stuff
+      kubectl
+      krew
+      kubectx
+      kubecfg
+      kustomize
+      kind
 
-    cue
+      cue
 
-    awscli2
-    kubernetes-helm
-    argo
-    # argocd
-    chart-testing
-    # kube-prompt # seriously, pretty sure it's borken
+      awscli2
+      kubernetes-helm
+      argo
+      # argocd
+      chart-testing
+      # kube-prompt # seriously, pretty sure it's borken
 
-    # terraform-docs
-    # terraform
-    terragrunt
+      # terraform-docs
+      # terraform
+      terragrunt
 
-    jq
-    yq-go
-    nodePackages.typescript
-    nodejs
-    s3cmd
+      jq
+      yq-go
+      nodePackages.typescript
+      nodejs
+      s3cmd
 
-    # fun nonsense
-    youtube-dl
-    pandoc
+      # fun nonsense
+      youtube-dl
+      pandoc
 
-    # keybase
+      # keybase
 
-    # Useful nix related tools
-    cachix # adding/managing alternative binary caches hosted by Cachix
-    comma # run software from without installing it
-    niv # easy dependency management for nix projects
-    nix-tree # interactively browse dependency graphs of Nix derivations
-    nix-update # swiss-knife for updating nix packages
-    nixpkgs-fmt
-    nixpkgs-review # review pull-requests on nixpkgs
-    nix-prefetch-github
-    nodePackages.node2nix
-    yarn2nix
-    statix # lints and suggestions for the Nix programming language
-    # ] ++ lib.optionals stdenv.isDarwin [
-    #   cocoapods
-    #   m-cli # useful macOS CLI commands
-    #   prefmanager # tool for working with macOS defaults
-  ];
+      # Useful nix related tools
+      cachix # adding/managing alternative binary caches hosted by Cachix
+      comma # run software from without installing it
+      niv # easy dependency management for nix projects
+      nix-tree # interactively browse dependency graphs of Nix derivations
+      nix-update # swiss-knife for updating nix packages
+      nixpkgs-fmt
+      nixpkgs-review # review pull-requests on nixpkgs
+      nix-prefetch-github
+      nodePackages.node2nix
+      yarn2nix
+      statix # lints and suggestions for the Nix programming language
+      # ] ++ lib.optionals stdenv.isDarwin [
+      #   cocoapods
+      #   m-cli # useful macOS CLI commands
+      #   prefmanager # tool for working with macOS defaults
+    ] ++ distroSpecific;
 }
