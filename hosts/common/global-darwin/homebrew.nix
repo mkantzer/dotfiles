@@ -96,6 +96,7 @@
       #   "alt-tab"
       "1password"
       "1password-cli"
+      "anylist"
       "bartender"
       "docker"
       "rectangle-pro"

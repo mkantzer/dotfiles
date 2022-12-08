@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }: {
   imports = [ ./global
-    ./features/pkgs-darwin
+    ./features/packages
     ./features/iterm2
     ./features/kitty
     ./features/darwin-sound

@@ -1,6 +1,13 @@
-{ pkgs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
-{ 
+{
+  imports = [
+    ./lsp.nix
+    ./syntaxes.nix
+    # ./treesitter.nix
+    # ./ui.nix
+  ];
+
   home.sessionVariables.EDITOR = "nvim";
 
   programs.neovim = {
@@ -10,67 +17,30 @@
     vimAlias = true;
     vimdiffAlias = true;
 
-  #  extraConfig = ''
-  #     syntax on 
-  #     " --- visual ---
-  #     colorscheme onedark
-  #     let g:lightline = {
-  #         \ 'colorscheme': 'onedark',
-  #         \ }
-  #     set background=dark
-      
-  #     set termguicolors
-  #     set number
-  #     set noruler
-  #     set wrap
-  #     set showmatch
-  #     set matchtime=3
-  #     set list
-  #     highlight Comment cterm=italic gui=italic
-  #     set nofoldenable
-  #     let g:vim_markdown_frontmatter = 1
-  #     let g:vim_markdown_strikethrough = 1
-  #     " --- grep ---
-  #     set ignorecase
-  #     set smartcase
-  #     set wrapscan
-  #     set hlsearch
-  #     set incsearch
-  #     " --- indent ---
-  #     set smartindent
-  #     set expandtab
-  #     " --- keymap ---
-  #     " jk as esc
-  #     inoremap <silent> jk <Esc>
-  #   '';
+    extraConfig = builtins.readFile ./init.vim;
 
     plugins = with pkgs.vimPlugins; [
       onedark-vim
 
-      vim-nix
-      vim-cue
-      vim-markdown
+      comment-nvim
+      vim-closer
+      editorconfig-nvim
+      vim-trailing-whitespace
+      telescope-nvim
+      telescope-fzf-native-nvim
+      telescope-ui-select-nvim
 
 
-      auto-pairs
-      (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
-
-      # coc-nvim
-      # nvim-lspconfig
+      nvim-treesitter.withAllGrammars
+      nvim-treesitter-refactor
 
       vim-gitgutter
       nvim-tree-lua
-      # toggleterm-nvim
 
-      bufferline-nvim
-      # nvim-web-devicons
-
-      # markdown-preview-nvim
-      # nvim-colorizer-lua #vim-hexokinase
+      # bufferline-nvim
+      lightline-vim
     ];
-
-
-    # extraConfig = builtins.readFile ./init.vim;
   };
+
 }
 

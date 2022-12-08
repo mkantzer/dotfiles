@@ -34,6 +34,7 @@
       drs = "darwin-rebuild switch --flake ~/.config/dotfiles";
       nrs = "nixos-rebuild  switch --flake ~/.config/dotfiles";
       hms = "home-manager   switch --flake ~/.config/dotfiles";
+      cdot = "cd ~/.config/dotfiles";
       flakeup = "nix flake update ~/.config/dotfiles";
       nb = "nix build";
       nd = "nix develop";
@@ -92,7 +93,7 @@
       fish_add_path /users/(whoami)/.krew/bin
     '';
 
-    loginShellInit  = ''
+    loginShellInit = ''
     '';
 
     interactiveShellInit = ''
