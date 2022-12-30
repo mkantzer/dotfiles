@@ -47,6 +47,7 @@
       "Drafts" = 1435957248;
       "EventScripts" = 525319418;
       "Fantastical" = 975937182;
+      "forScore" = 363738376;
       "GIFwrapped" = 782319880;
       #   "GarageBand" = 682658836;
       #   "GoodNotes" = 1444383602;
