@@ -9,6 +9,7 @@
       terminal-notifier
     ];
 
+  fonts.fontDir.enable = true;
 
   system = {
     defaults = {
