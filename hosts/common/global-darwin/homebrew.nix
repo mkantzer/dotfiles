@@ -139,6 +139,9 @@
       # "chart-testing"
       # "avr-gcc"
       "steampipe"
+
+      "packer"
+      "ansible"
     ];
   };
 }
