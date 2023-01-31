@@ -120,6 +120,7 @@
       nodePackages.typescript
       nodejs
       s3cmd
+      go-jsonnet
 
       # fun nonsense
       youtube-dl
