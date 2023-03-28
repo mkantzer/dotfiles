@@ -60,6 +60,12 @@
           modules = [ ./hosts/workBook ];
         };
 
+        mikeBookM1 = darwin.lib.darwinSystem {
+          pkgs = legacyPackages."aarch64-darwin";
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/mikeBookM1 ];
+        };
+
         mikeBook = darwin.lib.darwinSystem {
           pkgs = legacyPackages."x86_64-darwin";
           specialArgs = { inherit inputs outputs; };
@@ -76,15 +82,15 @@
       };
 
       homeConfigurations = {
-        "mkantzer@workBook" = home-manager.lib.homeManagerConfiguration {
-          pkgs = legacyPackages."aarch64-darwin";
-          extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/mkantzer/workBook.nix ];
-        };
         "mk5r@workBook" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages."aarch64-darwin";
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home/mk5r/workBook.nix ];
+        };
+        "mk5r@mikeBookM1" = home-manager.lib.homeManagerConfiguration {
+          pkgs = legacyPackages."aarch64-darwin";
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home/mk5r/mikeBook.nix ];
         };
         "mk5r@mikeBook" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages."x86_64-darwin";
