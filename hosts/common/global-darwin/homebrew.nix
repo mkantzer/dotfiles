@@ -83,7 +83,7 @@
       "homebrew/core"
       "homebrew/services"
       "nrlquaker/createzap"
-      "qmk/qmk"
+      # "qmk/qmk"
       "osx-cross/avr"
       "osx-cross/arm"
       "turbot/tap"
