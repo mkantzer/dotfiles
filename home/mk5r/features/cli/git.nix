@@ -12,6 +12,12 @@
       init.defaultBranch = "main";
       pull.rebase = false;
       push.autoSetupRemote = true;
+
+      # 1password signing
+      user.signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF9K7mYtXECI6LD8iptulJC3eXZL4fE+M1M24UftlcnX";
+      gpg.format = "ssh";
+      "gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+      commit.gpgsign = true;
     };
 
     ignores = [
@@ -83,9 +89,6 @@
       lg = "log --graph --abbrev-commit --decorate --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %s %C(italic)- %an%C(reset)%C(magenta bold)%d%C(reset)' --all";
       rs = "restore --staged";
     };
-
-
-
   };
 
   # GitHub CLI
