@@ -136,6 +136,7 @@
       "tfenv"
       "go"
       "trufflehog"
+      "openscad"
       # "gcloud"
       # "chart-releaser"
       # "chart-testing"
