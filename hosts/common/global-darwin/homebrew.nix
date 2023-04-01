@@ -68,6 +68,7 @@
       "Steam Link" = 1246969117;
       "Super Agent" = 1568262835;
       "Telegram" = 747648890;
+      "TickTick:To-Do List, Calendar" = 966085870;
       "Todoist" = 585829637;
       #   "Tripsy" = 1429967544;
       #   "Tweetbot" = 1384080005;
