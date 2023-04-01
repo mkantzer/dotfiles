@@ -63,6 +63,7 @@
       "Numbers" = 409203825;
       "Pages" = 409201541;
       "Parcel" = 639968404;
+      "Shapr 3D CAD modeling" = 1091675654;
       "Slack" = 803453959;
       "Steam Link" = 1246969117;
       "Super Agent" = 1568262835;
