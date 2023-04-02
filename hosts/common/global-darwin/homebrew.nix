@@ -102,6 +102,7 @@
       "1password-cli"
       "anylist"
       "bartender"
+      "ultimaker-cura"
       "docker"
       "rectangle-pro"
       "soundsource"
