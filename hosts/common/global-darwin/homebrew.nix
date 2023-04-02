@@ -57,6 +57,7 @@
       "Kindle" = 405399194;
       #   "Kosmik" = 1479810209;
       #   "Matter" = 1548677272;
+      "Mela – Recipe Manager" = 1568924476;
       "Microsoft OneNote" = 784801555;
       "Muse" = 1501563902;
       "Notability" = 360593530;
