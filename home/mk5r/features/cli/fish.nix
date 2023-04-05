@@ -91,8 +91,6 @@
       fish_add_path --prepend --move /Users/(whoami)/.nix-profile/bin
       fish_add_path --prepend --move '/Applications/Visual Studio Code.app/Contents/Resources/app/bin'
       fish_add_path /users/(whoami)/.krew/bin
-      # aws auth via 1password
-      source /Users/(whoami)/.config/op/plugins.sh
     '';
 
     loginShellInit = ''
