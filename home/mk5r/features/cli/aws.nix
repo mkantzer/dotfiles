@@ -4,13 +4,14 @@
 { config, lib, pkgs, ... }:
 
 {
-  home.file.".aws/op-cred-helper.sh" = {
+  home.file.".aws/op-cred-helper-personal-admin.sh" = {
     executable = true;
     text = ''
       #!/bin/bash
 
-      vault="$1"
-      secret_id="$2"
+      # Can't actually provide these as arguments: it breaks when terrafrom / golang sdk tries to call it.
+      vault="Personal"
+      secret_id="Personal AWS - Mike"
 
       cat <<END | op inject
       {
@@ -22,11 +23,11 @@
     '';
   };
 
-  home.file.".aws/credentials" = {
+  home.file.".aws/config" = {
     text = ''
-    [personal-admin]
+    [profile personal-admin]
     region = us-east-1
-    credential_process = "/Users/${config.home.username}/.aws/op-cred-helper.sh" "Personal" "Personal AWS - Mike"
+    credential_process = "/Users/${config.home.username}/.aws/op-cred-helper-personal-admin.sh"
     '';
   };
 }
