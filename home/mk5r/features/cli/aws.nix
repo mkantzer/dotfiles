@@ -22,7 +22,7 @@
     '';
   };
 
-  home.file.".aws/config" = {
+  home.file.".aws/credentials" = {
     text = ''
     [personal-admin]
     region = us-east-1
