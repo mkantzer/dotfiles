@@ -72,7 +72,7 @@
       fd # fancy version of `find`
       htop # fancy version of `top`
       hyperfine # benchmarking tool
-      mosh # wrapper for `ssh` that better and not dropping connections
+      # mosh # wrapper for `ssh` that better and not dropping connections
       # parallel # runs commands in parallel
       # python3Packages.shell-functools # a collection of functional programming tools for the shell
       ripgrep # better version of `grep`
