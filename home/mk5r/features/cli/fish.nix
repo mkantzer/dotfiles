@@ -66,6 +66,8 @@
       tfwl = "terraform workspace list";
       tg = "terragrunt";
 
+      "aws-p" = "export AWS_PROFILE=personal-admin";
+
       # Work aliases:
       "d-sso" = "aws sso login --profile meta";
       "d-oprod" = "export AWS_PROFILE=old-prod";

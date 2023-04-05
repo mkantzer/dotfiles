@@ -15,8 +15,8 @@
       cat <<END | op inject
       {
         "Version": 1,
-        "AccessKeyId": "{{ op://${vault}/${secret_id}/aws_access_key_id }}",
-        "SecretAccessKey": "{{ op://${vault}/${secret_id}/aws_secret_access_key }}"
+        "AccessKeyId": "{{ op://''${vault}/''${secret_id}/access key id }}",
+        "SecretAccessKey": "{{ op://''${vault}/''${secret_id}/secret access key }}"
       }
       END
     '';
