@@ -139,7 +139,7 @@
       "tfenv"
       "go"
       "trufflehog"
-      "mosh"
+      # "mosh"
       # "gcloud"
       # "chart-releaser"
       # "chart-testing"
