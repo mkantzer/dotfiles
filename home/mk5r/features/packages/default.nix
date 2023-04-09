@@ -108,8 +108,9 @@
       awscli2
       kubernetes-helm
       argo
-      # argocd
+      argocd
       chart-testing
+      k9s
       # kube-prompt # seriously, pretty sure it's borken
 
       # terraform-docs
