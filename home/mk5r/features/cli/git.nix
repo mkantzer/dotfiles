@@ -96,6 +96,7 @@
   # Aliases config in ./gh-aliases.nix
   programs.gh = {
     enable = true;
+    enableGitCredentialHelper = true;
     settings = {
       #  git_protocol = "ssh";
       git_protocol = "https";
