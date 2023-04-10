@@ -109,6 +109,7 @@
       kubernetes-helm
       argo
       argocd
+      linkerd
       chart-testing
       k9s
       # kube-prompt # seriously, pretty sure it's borken
