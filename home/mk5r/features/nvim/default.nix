@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./lsp.nix
     ./syntaxes.nix
     # ./treesitter.nix
     # ./ui.nix
@@ -35,7 +34,6 @@
       nvim-treesitter-refactor
 
       vim-gitgutter
-      nvim-tree-lua
 
       # bufferline-nvim
       lightline-vim
