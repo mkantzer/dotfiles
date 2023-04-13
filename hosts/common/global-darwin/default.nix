@@ -6,4 +6,7 @@
     ./system.nix
     ./homebrew.nix
   ] ++ (builtins.attrValues outputs.darwinModules);
+
+  # Fix for mid-build `cannot-link` problems
+  nix.settings.auto-optimise-store = false;
 }

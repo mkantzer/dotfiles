@@ -44,6 +44,7 @@
       nf = "nix flake";
       nr = "nix run";
       ns = "nix search";
+      nso = "nix store optimise";
 
       # Other
       ".." = "cd ..";
