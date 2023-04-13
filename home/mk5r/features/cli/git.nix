@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+  # Set up 1Password CLI Alias
+  programs.fish.shellAliases = with pkgs; {
+    gh = "op plugin run -- gh";
+  };
+
   programs.git = {
     enable = true;
 

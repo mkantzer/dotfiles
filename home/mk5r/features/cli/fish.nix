@@ -69,11 +69,11 @@
       "aws-p" = "export AWS_PROFILE=personal-admin";
 
       # Work aliases:
-      "d-sso" = "aws sso login --profile meta";
-      "d-oprod" = "export AWS_PROFILE=old-prod";
-      "d-devclusters" = "export AWS_PROFILE=dev-clusters";
-      "d-prodclusters" = "export AWS_PROFILE=prod-clusters";
-      "d-registry" = "export AWS_PROFILE=registry";
+      # "d-sso" = "aws sso login --profile meta";
+      # "d-oprod" = "export AWS_PROFILE=old-prod";
+      # "d-devclusters" = "export AWS_PROFILE=dev-clusters";
+      # "d-prodclusters" = "export AWS_PROFILE=prod-clusters";
+      # "d-registry" = "export AWS_PROFILE=registry";
     };
 
     # Configuration that should be above `loginShellInit` and `interactiveShellInit`.
