@@ -28,7 +28,7 @@
 
     shellAliases = with pkgs; {
       # fishy nix-shell
-      nix-fish = "nix-shell --command=fish";
+      nix-fish = "nix-shell --command ${fish}";
 
       # Nix related
       drb = "darwin-rebuild build  --flake ~/.config/dotfiles";
