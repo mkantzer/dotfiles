@@ -28,23 +28,33 @@ Build your desired host with `nixos-rebuild --flake` (or `darwin-rebuild` on mac
 
 ## How to bootstrap
 
-All you need is nix (any version). Run:
-```
+If this is a new machine, make sure you add it to `flake.nix`.
+
+### MacOS
+```bash
+cd ~/Downloads
+
+# Install nix https://nixos.org/download.html#nix-install-macos
+sh <(curl -L https://nixos.org/nix/install)
+
+# Install nix-darwin https://github.com/LnL7/nix-darwin
+nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
+./result/bin/darwin-installer
+
+# Check out repo via unauthed https
+mkdir -p ~/.config/dotfiless
+git clone https://github.com/mkantzer/dotfiles.git
+
+# Launch nix-shell to ensure all needed tools are available
 nix-shell
+
+# Build and apply system config
+darwin-rebuild build --flake .
+darwin-rebuild switch --flake .
+
+# Build and apply user config
+home-manager build --flake .
+home-manager switch --flake .
 ```
 
-If you already have nix 2.4+, git, and have already enabled `flakes` and
-`nix-command`, you can also use the non-legacy command:
-```
-nix develop
-```
-
-`nixos-rebuild build --flake .` To build nixos system configurations
-`darwin-rebuild build --flake .` To build darwin system configurations
-
-`home-manager build --flake .` To build user configurations
-
-`nix build` (or shell or run) To build and use packages
-
-`sops` To manage secrets
-
+At this point, the environment should be _mostly_ configured. You'll _mainly_ just need to log into 1Password, at which point the credential helpers will be usable. 
