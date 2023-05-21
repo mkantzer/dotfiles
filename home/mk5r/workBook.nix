@@ -6,5 +6,5 @@
     ./features/darwin-sound
   ];
 
-  home.username = "mikekantzer"
+  home.username = "mikekantzer";
 }
