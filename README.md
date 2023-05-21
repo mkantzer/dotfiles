@@ -38,12 +38,15 @@ cd ~/Downloads
 sh <(curl -L https://nixos.org/nix/install)
 
 # Install nix-darwin https://github.com/LnL7/nix-darwin
+mkdir tmp && cd tmp
 nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
 ./result/bin/darwin-installer
 
 # Check out repo via unauthed https
-mkdir -p ~/.config/dotfiless
+mkdir -p ~/.config && cd ~/.config
 git clone https://github.com/mkantzer/dotfiles.git
+
+cd dotfiles
 
 # Launch nix-shell to ensure all needed tools are available
 nix-shell
