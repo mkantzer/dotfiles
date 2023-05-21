@@ -85,7 +85,7 @@
         "mikekantzer@workBook" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages."aarch64-darwin";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/mikekantzer/workBook.nix ];
+          modules = [ ./home/mk5r/workBook.nix ];
         };
         "mk5r@mikeBookM1" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages."aarch64-darwin";

@@ -5,4 +5,6 @@
     ./features/kitty
     ./features/darwin-sound
   ];
+
+  home.username = "mikekantzer"
 }
