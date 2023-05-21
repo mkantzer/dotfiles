@@ -34,6 +34,9 @@ If this is a new machine, make sure you add it to `flake.nix`.
 ```bash
 cd ~/Downloads
 
+# Install homebrew https://brew.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # Install nix https://nixos.org/download.html#nix-install-macos
 sh <(curl -L https://nixos.org/nix/install)
 
