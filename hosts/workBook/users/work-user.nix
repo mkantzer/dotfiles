@@ -1,14 +1,11 @@
 { lib, ... }:
-
 {
   imports = [
     ../../../users/work-user.nix
     ../../../modules/homebrew
   ];
 
-
-
-  home-manager.users.mkantzer = {
+  home-manager.users.mikekantzer = {
     imports = [
       ./git.nix
 

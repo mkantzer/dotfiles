@@ -2,7 +2,7 @@
 { pkgs, inputs, outputs, ... }: {
   imports = [
     ../common/global-darwin
-    ../common/users/mkantzer.nix
+    ../common/users/mikekantzer.nix
 
     ../common/optional/fonts.nix
   ];
