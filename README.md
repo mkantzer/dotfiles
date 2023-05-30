@@ -24,8 +24,6 @@ Build your desired host with `nixos-rebuild --flake` (or `darwin-rebuild` on mac
 - [malob/nixpkgs](https://github.com/malob/nixpkgs): random neat tricks and fun ideas. Probably also the security.pam for macOS
 - [samhh/dotfiles](https://github.com/samhh/dotfiles): a nice simple mixed-os setup. Hoping to steal some ideas, and the home-automation installation parts. Also, age and git-crypt for secrets management.
 
-
-
 ## How to bootstrap
 
 If this is a new machine, make sure you add it to `flake.nix`.
