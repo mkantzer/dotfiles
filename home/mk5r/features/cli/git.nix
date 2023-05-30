@@ -1,10 +1,10 @@
 { pkgs, ... }:
 
 {
-  # Set up 1Password CLI Alias
-  programs.fish.shellAliases = with pkgs; {
-    gh = "op plugin run -- gh";
-  };
+  # Set up 1Password CLI Alias. Not needed when using SSH for auth
+  # programs.fish.shellAliases = with pkgs; {
+  #   gh = "op plugin run -- gh";
+  # };
 
   programs.git = {
     enable = true;
@@ -98,13 +98,21 @@
 
   # GitHub CLI
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.gh.enable
-  # Aliases config in ./gh-aliases.nix
+  # small ssh auth setup?
+  home.file.".config/gh/hosts.yml" = {
+    text = ''
+    github.com:
+      user: mkantzer
+      git_protocol: ssh
+    '';
+  };
+
   programs.gh = {
     enable = true;
-    enableGitCredentialHelper = true;
+    # enableGitCredentialHelper = true; # Not needed when using SSH for auth
     settings = {
-      #  git_protocol = "ssh";
-      git_protocol = "https";
+      git_protocol = "ssh";
+      #  git_protocol = "https";
       prompt = true;
       editor = "${pkgs.neovim}/bin/nvim";
       aliases = {
