@@ -41,6 +41,7 @@
       #   # "1Password 8" = 1333542190;
       "1Blocker" = 1365531024;
       #   # "Bakery" = 1575220747;
+      "Bear – Markdown Notes" = 1091189122;
       #   # "CARROT Weather" = 993487541;
       "Craft" = 1487937127;
       "Dark Noise" = 1465439395;

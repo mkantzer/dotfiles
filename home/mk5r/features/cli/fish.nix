@@ -10,7 +10,7 @@
           owner = "IlanCosman";
           repo = "tide";
           rev = "v5.5.1";
-          sha256 = "/r+vaJIQ+yi7YDN7AThRKWDimdDuVmeYcg7t0GzebZE=";
+          sha256 = "vi4sYoI366FkIonXDlf/eE2Pyjq7E/kOKBrQS+LtE+M=";
         };
       }
       {
