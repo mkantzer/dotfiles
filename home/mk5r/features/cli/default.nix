@@ -11,7 +11,7 @@
     # ./ranger.nix
     # ./screen.nix
     # ./shellcolor.nix
-    # ./ssh.nix
+    ./ssh.nix
     # ./starship.nix
     # ./xpo.nix
   ];
