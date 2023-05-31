@@ -121,6 +121,7 @@
       "pocket-casts"
       "spotify"
       "openscad"
+      "rocket"
       # "keybase"
       # "qmk-toolbox"
       # "signal"
