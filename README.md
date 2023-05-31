@@ -61,4 +61,9 @@ home-manager build --flake .
 home-manager switch --flake .
 ```
 
-At this point, the environment should be _mostly_ configured. You'll _mainly_ just need to log into 1Password, at which point the credential helpers will be usable. 
+At this point, the environment should be _mostly_ configured. You'll _mainly_ just need to set up 1Password, at which point the credential helpers will be usable:
+1. open 1password, log in.
+2. General -> `keep 1password in the menu bar`, `start at login`
+3. Security -> `Unlock / Apple Watch`
+4. Developer -> `Use the SSH agent`, `Display key names when authorizing connections`, `Connect with 1password CLI`
+5. You may need to reboot the computer for this to take effect. 
