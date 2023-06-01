@@ -20,4 +20,9 @@
     home.stateVersion = "21.11";
   };
 
+      
+  # Weird bug in home-manager?
+  # https://github.com/nix-community/home-manager/issues/4026
+  users.users.mikekantzer.home = config.home.homeDirectory;
+
 }
