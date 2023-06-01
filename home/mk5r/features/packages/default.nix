@@ -112,6 +112,7 @@
       linkerd
       chart-testing
       k9s
+      google-cloud-sdk
       # kube-prompt # seriously, pretty sure it's borken
 
       # terraform-docs
