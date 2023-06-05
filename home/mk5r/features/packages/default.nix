@@ -54,7 +54,10 @@
       distroSpecific =
         if pkgs.stdenv.isDarwin
         then [ ]
-        else with pkgs; [ tshm ];
+        else with pkgs; [ 
+          tshm
+          obsidian # installs better on macos through brew/cask
+        ];
     in
     with pkgs; [
       # Some basics

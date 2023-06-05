@@ -118,6 +118,7 @@
       "google-drive"
       "zoom"
       "openvpn-connect"
+      "obsidian"
       "pocket-casts"
       "spotify"
       "openscad"
