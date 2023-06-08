@@ -3,9 +3,6 @@ scriptencoding utf-8
 syntax on 
 " --- visual ---
 colorscheme onedark
-let g:lightline = {
-    \ 'colorscheme': 'onedark',
-    \ }
 set background=dark
 
 set termguicolors

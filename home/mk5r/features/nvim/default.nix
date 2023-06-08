@@ -20,6 +20,7 @@
 
     plugins = with pkgs.vimPlugins; [
       onedark-vim
+      # onedarkpro-nvim
 
       comment-nvim
       vim-closer
@@ -36,7 +37,15 @@
       vim-gitgutter
 
       # bufferline-nvim
-      lightline-vim
+      # lightline-vim
+      {
+        plugin = lualine-nvim;
+        config = ''
+          lua << END
+          require('lualine').setup()
+          END
+        '';
+      }
     ];
   };
 

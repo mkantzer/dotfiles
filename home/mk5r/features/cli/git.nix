@@ -114,7 +114,7 @@
       git_protocol = "ssh";
       #  git_protocol = "https";
       prompt = true;
-      editor = "${pkgs.neovim}/bin/nvim";
+      # editor = "${pkgs.neovim}/bin/nvim"; # causing issues with plugins. Just use default (which ends up being neovim anyway)
       aliases = {
         rcl = "repo clone";
         rcr = "repo create";
