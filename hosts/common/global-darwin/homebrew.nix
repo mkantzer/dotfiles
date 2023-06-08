@@ -108,6 +108,7 @@
       "rectangle-pro"
       "soundsource"
       "loopback"
+      "logi-options-plus"
       "kitty"
       "visual-studio-code"
       "iterm2"
