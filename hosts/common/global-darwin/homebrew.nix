@@ -141,7 +141,7 @@
       "docker-credential-helper-ecr"
       "kube-ps1"
       "tfenv"
-      "go"
+      # "go"
       "trufflehog"
       # "mosh"
       # "gcloud"

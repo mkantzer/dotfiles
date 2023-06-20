@@ -39,8 +39,7 @@
   # https://github.com/ajeetdsouza/zoxide
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.zoxide.enable
 
-  # # Remove ASAP: only here for temp development while getting configs (like vscode) ready
-  # programs.go.enable = true;
+  programs.go.enable = true;
 
   programs.zoxide = {
     enable = true;
