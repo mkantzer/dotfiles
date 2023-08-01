@@ -15,6 +15,10 @@
       style = "plain";
       paging = "never";
       theme = "TwoDark";
+      tabs = "2";
+      map-syntax = [
+        "*.cue:Go"
+      ];
     };
   };
 
