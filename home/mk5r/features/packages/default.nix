@@ -20,6 +20,10 @@
         "*.cue:Go"
       ];
     };
+    extraPackages = with pkgs.bat-extras; [
+      batdiff
+      batman
+    ];
   };
 
   # Direnv, load and unload environment variables depending on the current directory.
