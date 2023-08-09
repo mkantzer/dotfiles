@@ -126,7 +126,7 @@
       "rocket"
       # "keybase"
       # "qmk-toolbox"
-      # "signal"
+      "signal"
       "steam"
     ];
 
