@@ -18,7 +18,7 @@
       pull.rebase = false;
       push.autoSetupRemote = true;
 
-      core.hooksPath = "$GIT_DIR/.git/hooks";
+      # core.hooksPath = "$GIT_DIR/hooks";
 
       # 1password signing
       user.signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF9K7mYtXECI6LD8iptulJC3eXZL4fE+M1M24UftlcnX";

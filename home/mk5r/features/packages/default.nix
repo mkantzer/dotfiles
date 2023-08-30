@@ -97,6 +97,7 @@
       # (agda.withPackages (p: [ p.standard-library ]))
       docker
       docker-compose
+      pre-commit
       skaffold
       go-task
 
