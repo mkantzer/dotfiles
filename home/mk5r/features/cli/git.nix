@@ -18,12 +18,18 @@
       pull.rebase = false;
       push.autoSetupRemote = true;
 
+      core.hooksPath = "$GIT_DIR/.git/hooks";
+
       # 1password signing
       user.signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF9K7mYtXECI6LD8iptulJC3eXZL4fE+M1M24UftlcnX";
       gpg.format = "ssh";
       "gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
       commit.gpgsign = true;
     };
+
+    # hooks = {
+    #   pre-commit = ./pre-commit-script;
+    # };
 
     ignores = [
       ".DS_Store"
@@ -101,9 +107,9 @@
   # small ssh auth setup?
   home.file.".config/gh/hosts.yml" = {
     text = ''
-    github.com:
-      user: mkantzer
-      git_protocol: ssh
+      github.com:
+        user: mkantzer
+        git_protocol: ssh
     '';
   };
 
