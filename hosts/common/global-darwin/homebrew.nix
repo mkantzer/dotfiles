@@ -124,6 +124,7 @@
       "spotify"
       "openscad"
       "rocket"
+      "firefox"
       # "keybase"
       # "qmk-toolbox"
       "signal"
@@ -149,6 +150,7 @@
       # "chart-testing"
       # "avr-gcc"
       "steampipe"
+      "youtube-dl"
 
       "packer"
       "ansible"

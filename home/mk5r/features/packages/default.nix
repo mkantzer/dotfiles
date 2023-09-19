@@ -141,7 +141,7 @@
       go-jsonnet
 
       # fun nonsense
-      youtube-dl
+      # youtube-dl
       pandoc
 
       # keybase
