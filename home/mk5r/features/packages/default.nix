@@ -61,7 +61,7 @@
       distroSpecific =
         if pkgs.stdenv.isDarwin
         then [ ]
-        else with pkgs; [ 
+        else with pkgs; [
           tshm
           obsidian # installs better on macos through brew/cask
         ];
@@ -83,7 +83,7 @@
       htop # fancy version of `top`
       hyperfine # benchmarking tool
       mosh # wrapper for `ssh` thats better at not dropping connections
-      
+
       # parallel # runs commands in parallel
       # python3Packages.shell-functools # a collection of functional programming tools for the shell
       ripgrep # better version of `grep`
@@ -115,7 +115,10 @@
       kind
 
       cue
-      lua
+      (lua.withPackages (ps: with ps; [ 
+        cjson
+        inspect
+      ]))
 
       awscli2
       kubernetes-helm
