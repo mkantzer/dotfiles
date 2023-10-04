@@ -115,6 +115,7 @@
       kind
 
       cue
+      lua
 
       awscli2
       kubernetes-helm
