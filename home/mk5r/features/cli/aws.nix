@@ -25,9 +25,9 @@
 
   home.file.".aws/config" = {
     text = ''
-    [profile personal-admin]
-    region = us-east-1
-    credential_process = "/Users/${config.home.username}/.aws/op-cred-helper-personal-admin.sh"
+      [profile personal-admin]
+      region = us-east-1
+      credential_process = "/Users/${config.home.username}/.aws/op-cred-helper-personal-admin.sh"
     '';
   };
 }

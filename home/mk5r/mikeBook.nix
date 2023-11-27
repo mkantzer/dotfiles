@@ -1,5 +1,6 @@
 { inputs, pkgs, ... }: {
-  imports = [ ./global
+  imports = [
+    ./global
     ./features/packages
     ./features/iterm2
     ./features/kitty

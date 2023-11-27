@@ -44,7 +44,7 @@ in
 
   home = {
     username = lib.mkDefault "mk5r";
-    homeDirectory = 
+    homeDirectory =
       if pkgs.stdenv.isDarwin
       then lib.mkDefault "/Users/${config.home.username}"
       else lib.mkDefault "home/${config.home.username}";
