@@ -1,6 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
+  # imports = [
+  #   ./k8s.nix
+  # ];
+
   programs.bottom = {
     enable = true;
     settings.flags.regex = true;
@@ -78,7 +82,7 @@
       httpie
 
       du-dust # fancy version of `du`
-      exa # fancy version of `ls`
+      eza # fancy version of `ls`
       fd # fancy version of `find`
       htop # fancy version of `top`
       hyperfine # benchmarking tool
@@ -106,32 +110,33 @@
       git
       # kube-ps1
 
-      # Cloud Stuff
       kubectl
+      # kubectl-argo-rollouts
+      kubernetes-helm
+      chart-testing
+      kustomize
       krew
       kubectx
       kubecfg
-      kustomize
+      k9s
       kind
+      argo
+      argocd
+      argo-rollouts
+      linkerd
+      # kube-prompt # seriously, pretty sure it's borken
 
       cue
-      (lua.withPackages (ps: with ps; [ 
+      (lua.withPackages (ps: with ps; [
         cjson
         inspect
       ]))
 
       awscli2
-      kubernetes-helm
-      argo
-      argocd
-      linkerd
-      chart-testing
-      k9s
       # google-cloud-sdk
       (google-cloud-sdk.withExtraComponents [
         google-cloud-sdk.components.gke-gcloud-auth-plugin
       ])
-      # kube-prompt # seriously, pretty sure it's borken
 
       # terraform-docs
       # terraform
