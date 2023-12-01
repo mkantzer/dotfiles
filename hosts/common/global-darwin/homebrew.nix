@@ -102,6 +102,7 @@
       "1password"
       "1password-cli"
       "anylist"
+      "autodesk-fusion360"
       "bartender"
       "ultimaker-cura"
       "docker"
