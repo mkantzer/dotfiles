@@ -80,11 +80,11 @@
     };
 
     taps = [
-      "homebrew/cask"
+      # "homebrew/cask" # Tapping cask is no longer typically necessary.
+      # "homebrew/core" # Tapping homebrew/core is no longer typically necessary.
       "homebrew/cask-drivers"
       "homebrew/cask-fonts"
       "homebrew/cask-versions"
-      "homebrew/core"
       "homebrew/services"
       "nrlquaker/createzap"
       # "qmk/qmk"
@@ -106,8 +106,9 @@
       "bartender"
       "ultimaker-cura"
       "docker"
-      "rectangle-pro"
+      # "rectangle-pro"
       "soundsource"
+      "lasso"
       "loopback"
       "logi-options-plus"
       "kitty"
