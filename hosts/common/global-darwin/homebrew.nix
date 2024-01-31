@@ -131,6 +131,7 @@
       # "qmk-toolbox"
       "signal"
       "steam"
+      "zed"
     ];
 
     # For cli packages that aren't currently available for macOS in `nixpkgs`.Packages should be
