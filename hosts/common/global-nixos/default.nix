@@ -21,4 +21,8 @@
     # Add terminfo files
     enableAllTerminfo = true;
   };
+
+  # Wireguard (https://www.wireguard.com/install/)
+  boot.extraModulePackages = [ config.boot.kernelPackages.wireguard ];
+  environment.systemPackages = [ pkgs.wireguard pkgs.wireguard-tools ];
 }

@@ -64,7 +64,9 @@
     let
       distroSpecific =
         if pkgs.stdenv.isDarwin
-        then [ ]
+        then with pkgs; [ 
+          wireguard-tools
+        ]
         else with pkgs; [
           tshm
           obsidian # installs better on macos through brew/cask

@@ -75,6 +75,8 @@
       #   "Tripsy" = 1429967544;
       #   "Tweetbot" = 1384080005;
       #   "UTM" = 1538878817;
+      "WhatsApp Messenger" = 310633997;
+      "WireGuard" = 1451685025;
       #   # "Xcode" = 497799835;
       #   # "iMovie" = 408981434;
     };
@@ -102,7 +104,7 @@
       "1password"
       "1password-cli"
       "anylist"
-      "autodesk-fusion360"
+      # "autodesk-fusion360"
       "bartender"
       "ultimaker-cura"
       "docker"
