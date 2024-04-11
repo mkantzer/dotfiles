@@ -110,6 +110,7 @@
       fzf
       gh
       git
+      usql
       # kube-ps1
 
       kubectl
@@ -154,6 +155,7 @@
       # fun nonsense
       # youtube-dl
       pandoc
+      d2
 
       # keybase
 

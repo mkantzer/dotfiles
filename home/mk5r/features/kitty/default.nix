@@ -1,11 +1,43 @@
 { config, pkgs, ... }:
+
+/*
+  Insparation for the theme management:
+  - https://ryan.himmelwright.net/post/home-manager-dark-mode/
+  - https://github.com/mkantzer/AppearanceNotifier
+
+  The basic idea is that I set up kitty as usual, but then also install my own fork of
+  AppearanceNotifier to swap to my other theme when the system changes.
+
+  Theme names can be found by running `kitty +kitten themes`
+  - https://mynixos.com/home-manager/option/programs.kitty.theme
+  - https://github.com/kovidgoyal/kitty-themes
+*/
+
+let
+  kitty-theme = {
+    dark = "Nord";
+    # light = "Leaf Light";
+    light = "Snow Light";
+  };
+in
 {
   home.sessionVariables = {
     TERMINAL = "kitty";
   };
 
+  # Create a themes.conf so we can use github.com/mkantzer/AppearanceNotifier
+  # to switch just this value. Also, use dark by default.
+  home.file.".config/kitty/themes.conf" = {
+    text = ''
+      theme ${kitty-theme.dark}
+    '';
+  };
+
   programs.kitty = {
     enable = true;
+    extraConfig = ''
+      include themes.conf
+    '';
     settings = {
       shell = "${pkgs.fish}/bin/fish";
       font_size = "16.0";
@@ -21,22 +53,24 @@
 
       foreground = "#979eab";
       background = "#282c34";
-      color0 = "#282c34";
-      color1 = "#e06c75";
-      color2 = "#98c379";
-      color3 = "#e5c07b";
-      color4 = "#61afef";
-      color5 = "#be5046";
-      color6 = "#56b6c2";
-      color7 = "#979eab";
-      color8 = "#393e48";
-      color9 = "#d19a66";
-      color10 = "#56b6c2";
-      color11 = "#e5c07b";
-      color12 = "#61afef";
-      color13 = "#be5046";
-      color14 = "#56b6c2";
-      color15 = "#abb2bf";
+
+      # Commented, because I'm going to try native theme management
+      # color0 = "#282c34";
+      # color1 = "#e06c75";
+      # color2 = "#98c379";
+      # color3 = "#e5c07b";
+      # color4 = "#61afef";
+      # color5 = "#be5046";
+      # color6 = "#56b6c2";
+      # color7 = "#979eab";
+      # color8 = "#393e48";
+      # color9 = "#d19a66";
+      # color10 = "#56b6c2";
+      # color11 = "#e5c07b";
+      # color12 = "#61afef";
+      # color13 = "#be5046";
+      # color14 = "#56b6c2";
+      # color15 = "#abb2bf";
 
 
       tab_bar_edge = "top";
