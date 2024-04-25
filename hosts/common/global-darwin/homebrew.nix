@@ -67,6 +67,7 @@
       "Parcel" = 639968404;
       "Shapr 3D CAD modeling" = 1091675654;
       "Slack" = 803453959;
+      "Soulver 3" = 1508732804;
       "Steam Link" = 1246969117;
       "Super Agent" = 1568262835;
       "Telegram" = 747648890;

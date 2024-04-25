@@ -40,6 +40,7 @@ in
     '';
     settings = {
       shell = "${pkgs.fish}/bin/fish";
+      scrollback_lines = 2000;
       font_size = "16.0";
       font_family = "FiraCode Nerd Font";
       bold_font = "auto";
