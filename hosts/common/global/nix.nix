@@ -22,7 +22,7 @@
       experimental-features = [ "nix-command" "flakes" ];
       warn-dirty = false;
     };
-    package = pkgs.nixUnstable;
+    # package = pkgs.nixUnstable;
     gc = {
       automatic = true;
     };

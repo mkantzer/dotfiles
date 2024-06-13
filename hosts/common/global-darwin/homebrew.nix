@@ -135,6 +135,7 @@
       "signal"
       "steam"
       "ultimaker-cura"
+      "vivaldi"
       "zed"
       "zoom"
     ];
