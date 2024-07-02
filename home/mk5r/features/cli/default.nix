@@ -3,6 +3,7 @@
     ./aws.nix
     # ./bash.nix
     # ./bat.nix
+    ./completions.nix
     ./fish.nix
     ./git.nix
     # ./gpg.nix

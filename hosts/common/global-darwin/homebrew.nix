@@ -153,7 +153,7 @@
       "tfenv"
       # "go"
       "trufflehog"
-      "datawire/blackbird/telepresence-arm64"
+      # "datawire/blackbird/telepresence-arm64"
       # "mosh"
       # "gcloud"
       # "chart-releaser"

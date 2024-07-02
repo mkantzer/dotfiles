@@ -127,6 +127,7 @@
       argocd
       argo-rollouts
       linkerd
+      telepresence2
       # kube-prompt # seriously, pretty sure it's borken
 
       cue
