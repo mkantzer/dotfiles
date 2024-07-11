@@ -70,6 +70,9 @@
         else with pkgs; [
           tshm
           obsidian # installs better on macos through brew/cask
+          podman
+          podman-compose
+          podman-desktop
         ];
     in
     with pkgs; [
@@ -101,8 +104,8 @@
 
       # Dev stuff
       # (agda.withPackages (p: [ p.standard-library ]))
-      docker
-      docker-compose
+      # docker
+      # docker-compose
       pre-commit
       skaffold
       go-task

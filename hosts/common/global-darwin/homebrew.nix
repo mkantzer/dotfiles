@@ -109,7 +109,7 @@
       # "autodesk-fusion360"
       "bartender"
       "calibre"
-      "docker"
+      # "docker"
       "firefox"
       # "rectangle-pro"
       "lasso"
@@ -127,6 +127,7 @@
       "obsidian"
       "openscad"
       "pocket-casts"
+      "podman-desktop"
       "spotify"
       "soundsource"
       "rocket"
@@ -148,7 +149,7 @@
       "switchaudio-osx"
       # "docker"
       # "docker-compose"
-      "docker-credential-helper-ecr"
+      # "docker-credential-helper-ecr"
       "kube-ps1"
       "tfenv"
       # "go"
@@ -159,6 +160,12 @@
       # "chart-releaser"
       # "chart-testing"
       # "avr-gcc"
+
+      # handled here instead of as any other package because of weird QEMU stuff?
+      "podman"
+      "podman-compose"
+      
+
       "steampipe"
       "youtube-dl"
 

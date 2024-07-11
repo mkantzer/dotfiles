@@ -67,6 +67,8 @@
       kx = "kubectx";
       kn = "kubens";
 
+      docker = "podman";
+
       # Terraform Stuff
       tf = "terraform";
       tfw = "terraform workspace";
