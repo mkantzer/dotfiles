@@ -4,7 +4,7 @@
 # TODO: Change terminals to use these fonts?
 {
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       dejavu_fonts
       jetbrains-mono
       fira
