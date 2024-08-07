@@ -44,11 +44,12 @@
       "Bear – Markdown Notes" = 1091189122;
       #   # "CARROT Weather" = 993487541;
       "Craft" = 1487937127;
+      "Crouton: Recipe Manager" = 1461650987;
       "Dark Noise" = 1465439395;
       "Drafts" = 1435957248;
-      "EventScripts" = 525319418;
+      # "EventScripts" = 525319418;
       "Fantastical" = 975937182;
-      "forScore" = 363738376;
+      # "forScore" = 363738376;
       "GIFwrapped" = 782319880;
       #   "GarageBand" = 682658836;
       #   "GoodNotes" = 1444383602;
@@ -113,7 +114,7 @@
       "firefox"
       # "rectangle-pro"
       "lasso"
-      "loopback"
+      # "loopback" # Not needed anymore: superseded by SoundSource's settings > audio > super volume keys
       "logi-options-plus"
       "kitty"
       "visual-studio-code"
@@ -164,7 +165,7 @@
       # handled here instead of as any other package because of weird QEMU stuff?
       "podman"
       "podman-compose"
-      
+
 
       "steampipe"
       "youtube-dl"
