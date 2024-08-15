@@ -97,6 +97,7 @@
       # python3Packages.shell-functools # a collection of functional programming tools for the shell
       ripgrep # better version of `grep`
       tealdeer # rust implementation of `tldr`
+      ffmpeg-full
       thefuck
       unrar # extract RAR archives
       wget
