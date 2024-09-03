@@ -31,6 +31,36 @@
         description = "Kubectl w/ -o yaml | yq";
         wraps = "kubectl";
       };
+
+      gwta = {
+        body = ''
+          set repoAddress (git rev-parse --show-toplevel)
+          set repoName (path basename $repoAddress)
+          set repoParent (path dirname $repoAddress)
+          set branchName $argv
+          set newDirName "$repoName-$branchName"
+          echo "repoAddress: $repoAddress"
+          echo "repoName: $repoName"
+          echo "repoParent: $repoParent"
+          echo "new dir: $repoParent/$newDirName"
+          if git show-ref --quiet refs/heads/$branchName
+            git worktree add $repoParent/$repoName-$branchName $branchName
+          else
+            git worktree add $repoParent/$repoName-$branchName -b $branchName
+          end
+          cd $repoParent/$newDirName
+        '';
+        # argumentNames = [""];
+        description = ''
+          Adds a git worktree and changes to its directory.
+          
+          Used as `gwta <branch-name`. Repo name is auto-derived.
+
+          Located at ../<repo-name>-<branch-name>.
+          Checked out to maybe-new branch <branch-name>.
+        '';
+        wraps = "git worktree add";
+      };
     };
 
     shellAliases = with pkgs; {
