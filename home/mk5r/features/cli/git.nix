@@ -38,15 +38,15 @@
       "result"
     ];
 
-    # Enhanced diffs
-    delta = {
-      enable = true;
-      options = {
-        line-numbers = true;
-        side-by-side = true;
-        navigate = true;
-      };
-    };
+    # # Enhanced diffs
+    # delta = {
+    #   enable = true;
+    #   options = {
+    #     line-numbers = true;
+    #     side-by-side = true;
+    #     navigate = true;
+    #   };
+    # };
 
     aliases = {
       # Basic commands

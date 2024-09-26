@@ -25,7 +25,7 @@
       ];
     };
     extraPackages = with pkgs.bat-extras; [
-      batdiff
+      # batdiff
       batman
     ];
   };
@@ -131,8 +131,9 @@
       argocd
       argo-rollouts
       linkerd
-      telepresence2
+      # telepresence2
       # kube-prompt # seriously, pretty sure it's borken
+      devspace
 
       cue
       (lua.withPackages (ps: with ps; [

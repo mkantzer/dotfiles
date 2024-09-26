@@ -114,6 +114,7 @@
       "firefox"
       # "rectangle-pro"
       "lasso"
+      "lens"
       # "loopback" # Not needed anymore: superseded by SoundSource's settings > audio > super volume keys
       "logi-options-plus"
       "kitty"
@@ -156,6 +157,7 @@
       # "go"
       "trufflehog"
       # "datawire/blackbird/telepresence-arm64"
+      "datawire/blackbird/telepresence"
       # "mosh"
       # "gcloud"
       # "chart-releaser"
