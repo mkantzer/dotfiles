@@ -163,7 +163,9 @@
       pandoc
       d2
 
-      # keybase
+      # App Scripts Nonsense
+      # https://github.com/google/clasp
+      google-clasp
 
       # Useful nix related tools
       cachix # adding/managing alternative binary caches hosted by Cachix
