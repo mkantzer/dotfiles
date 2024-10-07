@@ -97,6 +97,8 @@
       kx = "kubectx";
       kn = "kubens";
 
+      tp = "telepresence-oss";
+
       docker = "podman";
 
       # Terraform Stuff

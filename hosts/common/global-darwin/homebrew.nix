@@ -95,6 +95,7 @@
       "osx-cross/avr"
       "osx-cross/arm"
       "turbot/tap"
+      "argoproj/tap"
       "trufflesecurity/trufflehog"
       "helm/tap"
       "datawire/blackbird" # telepresence
@@ -157,7 +158,9 @@
       # "go"
       "trufflehog"
       # "datawire/blackbird/telepresence-arm64"
-      "datawire/blackbird/telepresence"
+      # "datawire/blackbird/telepresence"
+      # "datawire/blackbird/telepresence-oss"
+      "kubectl-argo-rollouts"
       # "mosh"
       # "gcloud"
       # "chart-releaser"

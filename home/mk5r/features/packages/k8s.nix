@@ -1,7 +1,7 @@
 # source / inspiration:
 # https://git.pleasantprogrammer.com/thatsmydoing/nixos-config/src/ab8e8c5bae4004292538ff5503ebcca96c0c55a9/includes/kubernetes/default.nix
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let
   buildBinPackage = options: pkgs.stdenv.mkDerivation {
     inherit (options) pname version;
@@ -28,13 +28,13 @@ let
   };
 
   # NOTE: GOTTA FIX UP FOR NON-DARWIN!
-  argocd = buildBinPackage rec {
-    pname = "argocd";
-    version = "2.9.2";
-    url = "https://github.com/argoproj/argo-cd/releases/download/v${version}/argocd-darwin-arm64";
-    sha256 = "sha256-xSlonn17+hQEzxsxmlKPBuSziptNpRDL4cFKsycIIiQ=";
-    hasCompletion = true;
-  };
+  # argocd = buildBinPackage rec {
+  #   pname = "argocd";
+  #   version = "2.9.2";
+  #   url = "https://github.com/argoproj/argo-cd/releases/download/v${version}/argocd-darwin-arm64";
+  #   sha256 = "sha256-xSlonn17+hQEzxsxmlKPBuSziptNpRDL4cFKsycIIiQ=";
+  #   hasCompletion = true;
+  # };
   # helm = buildBinPackage rec {
   #   pname = "helm";
   #   version = "3.0.0";
@@ -64,12 +64,12 @@ let
   #   url = "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v${version}/kustomize_kustomize.v${version}_linux_amd64";
   #   sha256 = "a91b38778945e8a63fe70bc7522703a94c1d572d5dcee245e96647359e1fd04b";
   # };
-  kubectl-argo-rollouts = buildBinPackage rec {
-    pname = "kubectl-argo-rollouts";
-    version = "0.6.0";
-    url = "https://github.com/argoproj/argo-rollouts/releases/download/v${version}/kubectl-argo-rollouts-linux-amd64";
-    sha256 = "1cad7038l2jpmkr1gn8293f3vg4jbypqxilix6qcvfdqkxda602p";
-  };
+  # kubectl-argo-rollouts = buildBinPackage rec {
+  #   pname = "kubectl-argo-rollouts";
+  #   version = "1.7.2";
+  #   url = "https://github.com/argoproj/argo-rollouts/releases/download/v${version}/kubectl-argo-rollouts-linux-amd64";
+  #   sha256 = "sha256-r36sZZO7ysTiGZYJleePaks7seaqR+FaSVvrGk0toXc=";
+  # };
   # velero = buildBinPackage rec {
   #   pname = "velero";
   #   version = "1.2.0";
@@ -77,21 +77,28 @@ let
   #   sha256 = "4080a37b487a859b5bba8391e965267cd0fe29cd67fd070b6f695fed45619e2c";
   #   binPath = "velero-v${version}-linux-amd64/velero";
   # };
+  telepresence-oss = buildBinPackage rec {
+    pname = "telepresence-oss";
+    version = "2.20.0";
+    url = "https://app.getambassador.io/download/tel2oss/releases/download/v${version}/telepresence-darwin-amd64";
+    sha256 = "sha256-fYYHsvblFBDMWGzcjQbvz6JS0IUmjKoxYw9ZjIT4dow=";
+  };
 in
 {
-  home.packages = with pkgs; [
+  home.packages = with pkgs;
+    [
+      telepresence-oss
 
-
-    kubectl
-    kubectx
-    kops
-    argocd
-    kubernetes-helm
-    eksctl
-    k9s
-    kustomize
-    kubectl-argo-rollouts
-    aws-iam-authenticator
-    velero
-  ];
+      # kubectl
+      # kubectx
+      # kops
+      # argocd
+      # kubernetes-helm
+      # eksctl
+      # k9s
+      # kustomize
+      # kubectl-argo-rollouts
+      # aws-iam-authenticator
+      # velero
+    ];
 }

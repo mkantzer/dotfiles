@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  # imports = [
-  #   ./k8s.nix
-  # ];
+  imports = [
+    ./k8s.nix
+  ];
 
   programs.bottom = {
     enable = true;
