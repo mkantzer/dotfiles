@@ -88,6 +88,7 @@ in
   home.packages = with pkgs;
     [
       telepresence-oss
+      helmfile
 
       # kubectl
       # kubectx
