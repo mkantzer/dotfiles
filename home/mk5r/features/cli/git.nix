@@ -96,6 +96,10 @@
       spu = "stash push";
       spua = "stash push --all";
 
+      # Worktree commands
+      wtl = "worktree list";
+      wtrm = "worktree remove";
+
       # Other commands
       lg = "log --graph --abbrev-commit --decorate --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %s %C(italic)- %an%C(reset)%C(magenta bold)%d%C(reset)' --all";
       rs = "restore --staged";
@@ -143,9 +147,6 @@
         pre = "pr reopen";
         pv = "pr view";
         pvw = "pr view --web";
-
-        wtl = "worktree list";
-        wtrm = "worktree remove";
 
         # prd = ''
         #   !export pr_message=$@
