@@ -144,6 +144,9 @@
         pv = "pr view";
         pvw = "pr view --web";
 
+        wtl = "worktree list";
+        wtrm = "worktree remove";
+
         # prd = ''
         #   !export pr_message=$@
         #   export branch_name=$(git symbolic-ref --short -q HEAD)

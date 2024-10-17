@@ -135,6 +135,7 @@
       fish_add_path --prepend --move /Users/(whoami)/.nix-profile/bin
       fish_add_path --prepend --move '/Applications/Visual Studio Code.app/Contents/Resources/app/bin'
       fish_add_path /users/(whoami)/.krew/bin
+
     '';
 
     loginShellInit = ''
@@ -152,6 +153,8 @@
       # https://github.com/fish-shell/fish-shell/issues/5593#issuecomment-458242921
       bind --erase --preset \cd
       bind \cd delete-char
+      
+      set -g PODMAN_COMPOSE_WARNING_LOGS false
     '';
   };
 }

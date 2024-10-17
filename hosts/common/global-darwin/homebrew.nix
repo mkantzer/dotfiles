@@ -139,6 +139,7 @@
       "signal"
       "steam"
       "ultimaker-cura"
+      # "virtualbox"
       "vivaldi"
       "zed"
       "zoom"
@@ -166,6 +167,9 @@
       # "chart-releaser"
       # "chart-testing"
       # "avr-gcc"
+
+      "qemu"
+      "socket_vmnet"
 
       # handled here instead of as any other package because of weird QEMU stuff?
       "podman"

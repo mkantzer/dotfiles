@@ -127,6 +127,7 @@
       kubecfg
       k9s
       kind
+      minikube
       argo
       argocd
       argo-rollouts
