@@ -48,7 +48,7 @@
       # Dock and Mission Control
       dock = {
         autohide = true;
-        expose-group-by-app = true;
+        expose-group-apps = true;
         mru-spaces = false;
         orientation = "bottom";
         tilesize = 60;

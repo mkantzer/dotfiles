@@ -9,7 +9,7 @@
       jetbrains-mono
       fira
       fira-code
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
+      nerd-fonts.fira-code
       noto-fonts-emoji
       comic-neue
     ];
