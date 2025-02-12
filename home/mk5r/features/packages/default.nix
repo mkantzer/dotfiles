@@ -64,7 +64,7 @@
     let
       distroSpecific =
         if pkgs.stdenv.isDarwin
-        then with pkgs; [ 
+        then with pkgs; [
           wireguard-tools
         ]
         else with pkgs; [
@@ -166,7 +166,7 @@
 
       # App Scripts Nonsense
       # https://github.com/google/clasp
-      google-clasp
+      # google-clasp
 
       # Useful nix related tools
       cachix # adding/managing alternative binary caches hosted by Cachix

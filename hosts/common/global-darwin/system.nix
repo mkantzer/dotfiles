@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
-  nix.configureBuildUsers = true;
-  services.nix-daemon.enable = true;
+  nix.enable = true;
   programs.nix-index.enable = true;
 
   environment.systemPackages =
