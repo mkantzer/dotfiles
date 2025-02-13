@@ -48,6 +48,7 @@
       "Fantastical" = 975937182;
       "Flighty" = 1358823008;
       "GIFwrapped" = 782319880;
+      "Hand Mirror" = 1502839586;
       "Kindle" = 405399194;
       "Logger" = 1611554653;
       "Mela – Recipe Manager" = 1568924476;
