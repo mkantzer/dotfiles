@@ -90,6 +90,10 @@ in
       telepresence-oss
       helmfile
 
+      # Make skaffold->minikube play nice with podman
+      (writeShellScriptBin "docker" ''
+        exec podman "$@"
+      '')
       # kubectl
       # kubectx
       # kops
