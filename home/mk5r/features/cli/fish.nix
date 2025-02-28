@@ -26,11 +26,6 @@
 
     # These can be set to run when an env var changes value!!!
     functions = {
-      kcy = {
-        body = "kubectl $argv -o yaml | yq ";
-        description = "Kubectl w/ -o yaml | yq";
-        wraps = "kubectl";
-      };
 
       gwta = {
         body = ''

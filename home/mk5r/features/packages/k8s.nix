@@ -85,15 +85,31 @@ let
   };
 in
 {
+  programs.fish.functions = {
+    kcy = {
+      body = "kubectl $argv -o yaml | yq ";
+      description = "Kubectl w/ -o yaml | yq";
+      wraps = "kubectl";
+    };
+    kce = {
+      body = "kubectl exec -it $argv -- /bin/bash";
+      description = "kubectl exec -it <pod> -- /bin/bash";
+      wraps = "kubectl exec -it";
+    };
+  };
   home.packages = with pkgs;
     [
       telepresence-oss
       helmfile
 
       # Make skaffold->minikube play nice with podman
-      (writeShellScriptBin "docker" ''
-        exec podman "$@"
-      '')
+      # (writeShellScriptBin "docker" ''
+      #   exec podman "$@"
+      # '')
+      # never mind: we can do the same thing by installing the client
+      docker-client
+
+
       # kubectl
       # kubectx
       # kops
