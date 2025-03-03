@@ -87,7 +87,7 @@
       "argoproj/tap"
       "trufflesecurity/trufflehog"
       "helm/tap"
-      "datawire/blackbird" # telepresence
+      # "datawire/blackbird" # telepresence
     ];
 
     # If an app isn't available in the Mac App Store, or the version in the App Store has
@@ -98,7 +98,7 @@
       "1password-cli"
       # "autodesk-fusion360"
       "bartender"
-      "calibre"
+      # "calibre"
       # "docker"
       "firefox"
       # "rectangle-pro"
@@ -126,7 +126,7 @@
       "signal"
       # "virtualbox"
       "vivaldi"
-      "zed"
+      # "zed"
       "zoom"
     ];
 
@@ -164,8 +164,8 @@
       "steampipe"
       "youtube-dl"
 
-      "packer"
-      "ansible"
+      # "packer"
+      # "ansible"
     ];
   };
 }

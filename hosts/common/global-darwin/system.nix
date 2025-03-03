@@ -74,6 +74,10 @@
       finder = {
         FXEnableExtensionChangeWarning = true;
         ShowPathbar = true;
+        # List view
+        FXPreferredViewStyle = "Nlsv";
+        _FXSortFoldersFirst = true;
+        _FXSortFoldersFirstOnDesktop = true;
       };
     };
 
@@ -83,5 +87,5 @@
       remapCapsLockToEscape = true;
     };
   };
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 }
