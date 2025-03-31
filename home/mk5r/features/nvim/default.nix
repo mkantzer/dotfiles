@@ -31,7 +31,7 @@
       telescope-ui-select-nvim
 
 
-      nvim-treesitter.withAllGrammars
+      # nvim-treesitter.withAllGrammars
       nvim-treesitter-refactor
 
       vim-gitgutter
