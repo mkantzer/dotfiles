@@ -131,6 +131,10 @@
       fish_add_path --prepend --move '/Applications/Visual Studio Code.app/Contents/Resources/app/bin'
       fish_add_path /users/(whoami)/.krew/bin
 
+      # Needed to get 1password SSH agents able to forward stuff around
+      # https://developer.1password.com/docs/ssh/get-started/#step-4-configure-your-ssh-or-git-client
+      # Note: in fish, `set` is instead of `export`
+      set SSH_AUTH_SOCK ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
     '';
 
     loginShellInit = ''
