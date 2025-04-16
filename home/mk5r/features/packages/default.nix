@@ -107,6 +107,7 @@
       # (agda.withPackages (p: [ p.standard-library ]))
       # docker
       # docker-compose
+      dive # for inspecting docker image layers
       pre-commit
       skaffold
       go-task
