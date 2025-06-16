@@ -93,10 +93,11 @@
     # If an app isn't available in the Mac App Store, or the version in the App Store has
     # limitiations, e.g., Transmit, install the Homebrew Cask.
     casks = [
-      "alt-tab"
       "1password"
       "1password-cli"
-      # "autodesk-fusion360"
+      "alt-tab"
+      "autodesk-fusion"
+      "bambu-studio"
       "bartender"
       # "calibre"
       # "docker"
@@ -118,6 +119,7 @@
       "obsidian"
       "pocket-casts"
       "podman-desktop"
+      "prusaslicer"
       "raspberry-pi-imager"
       "rocket"
       "spotify"

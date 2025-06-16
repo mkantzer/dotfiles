@@ -98,7 +98,8 @@
       ripgrep # better version of `grep`
       tealdeer # rust implementation of `tldr`
       ffmpeg-full
-      thefuck
+      # thefuck # Removed due to no upstream maintenance, python incompatibility
+      pay-respects
       unrar # extract RAR archives
       wget
       xz # extract XZ archives

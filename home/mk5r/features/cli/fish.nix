@@ -63,7 +63,7 @@
       drb = "darwin-rebuild build  --flake ~/.config/dotfiles";
       nrb = "nixos-rebuild  build  --flake ~/.config/dotfiles";
       hmb = "home-manager   build  --flake ~/.config/dotfiles";
-      drs = "darwin-rebuild switch --flake ~/.config/dotfiles";
+      drs = "sudo darwin-rebuild switch --flake ~/.config/dotfiles";
       nrs = "nixos-rebuild  switch --flake ~/.config/dotfiles";
       hms = "home-manager   switch --flake ~/.config/dotfiles";
       cdot = "cd ~/.config/dotfiles";
@@ -142,7 +142,6 @@
 
     interactiveShellInit = ''
       set -g fish_greeting ""
-      ${pkgs.thefuck}/bin/thefuck --alias | source
 
       # Tide Configuration
       # https://github.com/IlanCosman/tide/issues/304
@@ -154,6 +153,25 @@
       bind \cd delete-char
       
       set -g PODMAN_COMPOSE_WARNING_LOGS false
+    '';
+  };
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    initContent = lib.mkOrder 1000 ''
+      if [[ `uname` == Darwin ]]; then
+          MAX_MEMORY_UNITS=KB
+      else
+          MAX_MEMORY_UNITS=MB
+      fi
+
+      TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
+      'avg shared (code):         %X KB'$'\n'\
+      'avg unshared (data/stack): %D KB'$'\n'\
+      'total (sum):               %K KB'$'\n'\
+      'max memory:                %M '$MAX_MEMORY_UNITS''$'\n'\
+      'page faults from disk:     %F'$'\n'\
+      'other page faults:         %R'
     '';
   };
 }

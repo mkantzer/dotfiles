@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, lib, pkgs, ... }: {
   imports = [
     ./aws.nix
     # ./bash.nix
@@ -16,4 +16,11 @@
     # ./starship.nix
     # ./xpo.nix
   ];
+
+  programs.pay-respects = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    enableFishIntegration = true;
+  };
 }
