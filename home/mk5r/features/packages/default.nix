@@ -103,6 +103,7 @@
       unrar # extract RAR archives
       wget
       xz # extract XZ archives
+      gimp
 
       # Dev stuff
       # (agda.withPackages (p: [ p.standard-library ]))
