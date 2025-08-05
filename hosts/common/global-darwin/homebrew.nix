@@ -106,7 +106,7 @@
       "lasso"
       "lens"
       # "loopback" # Not needed anymore: superseded by SoundSource's settings > audio > super volume keys
-      "logi-options-plus"
+      "logi-options+"
       "kitty"
       "visual-studio-code"
       "iterm2"

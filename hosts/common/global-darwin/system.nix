@@ -10,6 +10,14 @@
 
   # fonts.fontDir.enable = true;
 
+  # Firewall
+  networking.applicationFirewall = {
+    enable = true;
+    enableStealthMode = true;
+    allowSigned = true;
+    allowSignedApp = true;
+  };
+
   system = {
     defaults = {
       NSGlobalDomain = {
@@ -36,13 +44,6 @@
         PMPrintingExpandedStateForPrint2 = true;
 
         _HIHideMenuBar = false;
-      };
-      # Firewall
-      alf = {
-        globalstate = 1;
-        allowsignedenabled = 1;
-        allowdownloadsignedenabled = 1;
-        stealthenabled = 1;
       };
       # Dock and Mission Control
       dock = {
