@@ -96,6 +96,8 @@
 
       docker = "podman";
 
+      "gcp-podman-login" = "gcloud auth print-access-token | podman login -u oauth2accesstoken --password-stdin us-docker.pkg.dev";
+
       # Terraform Stuff
       tf = "terraform";
       tfw = "terraform workspace";
