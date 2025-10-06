@@ -104,6 +104,7 @@
       wget
       xz # extract XZ archives
       gimp
+      shfmt
 
       # Dev stuff
       # (agda.withPackages (p: [ p.standard-library ]))
@@ -152,7 +153,7 @@
       ])
 
       # terraform-docs
-      # terraform
+      # terraform     # This is managed by tfenv now!
       terragrunt
 
       jq

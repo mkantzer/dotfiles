@@ -103,7 +103,7 @@
       # "docker"
       "firefox"
       # "rectangle-pro"
-      "lasso"
+      "lasso-app"
       "lens"
       # "loopback" # Not needed anymore: superseded by SoundSource's settings > audio > super volume keys
       "logi-options+"
@@ -156,8 +156,10 @@
       # "chart-testing"
       # "avr-gcc"
 
-      "qemu"
-      "socket_vmnet"
+      "vfkit"
+
+      # "qemu"
+      # "socket_vmnet"
 
       # handled here instead of as any other package because of weird QEMU stuff?
       "podman"
