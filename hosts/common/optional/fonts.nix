@@ -10,7 +10,7 @@
       fira
       fira-code
       nerd-fonts.fira-code
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       comic-neue
     ];
     # fontconfig = {

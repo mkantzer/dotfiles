@@ -137,6 +137,7 @@
     # installed in `../home/default.nix` whenever possible.
     brews = [
       "mas"
+      "nss" #certutils
       # "qmk/qmk/qmk"
       "switchaudio-osx"
       # "docker"

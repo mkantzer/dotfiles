@@ -86,7 +86,7 @@
       bat
       httpie
 
-      du-dust # fancy version of `du`
+      dust # fancy version of `du`
       eza # fancy version of `ls`
       fd # fancy version of `find`
       htop # fancy version of `top`
@@ -103,7 +103,7 @@
       unrar # extract RAR archives
       wget
       xz # extract XZ archives
-      gimp
+      # gimp
       shfmt
 
       # Dev stuff
@@ -114,6 +114,8 @@
       pre-commit
       skaffold
       go-task
+      mkcert
+      nss #certutil
 
       fzf
       gh
@@ -132,7 +134,7 @@
       k9s
       kind
       minikube
-      argo
+      argo-workflows
       argocd
       argo-rollouts
       linkerd

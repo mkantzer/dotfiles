@@ -67,7 +67,7 @@
       nrs = "nixos-rebuild  switch --flake ~/.config/dotfiles";
       hms = "home-manager   switch --flake ~/.config/dotfiles";
       cdot = "cd ~/.config/dotfiles";
-      flakeup = "nix flake update ~/.config/dotfiles";
+      flakeup = "nix flake update --flake ~/.config/dotfiles";
       nb = "nix build";
       nd = "nix develop";
       nf = "nix flake";
@@ -79,8 +79,8 @@
       ".." = "cd ..";
       ":q" = "exit";
       cat = "${bat}/bin/bat";
-      du = "${du-dust}/bin/dust";
-      g = "${gitAndTools.git}/bin/git";
+      du = "${dust}/bin/dust";
+      g = "${git}/bin/git";
       la = "ll -a";
       ll = "ls -l --time-style long-iso --icons";
       ls = "${eza}/bin/eza";
