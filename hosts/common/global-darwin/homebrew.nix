@@ -123,7 +123,7 @@
       "raspberry-pi-imager"
       "rocket"
       "spotify"
-      "soundsource"
+      # "soundsource"
       # "keybase"
       # "qmk-toolbox"
       "signal"
