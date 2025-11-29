@@ -123,7 +123,7 @@
       "raspberry-pi-imager"
       "rocket"
       "spotify"
-      "soundsource"
+      # "soundsource"
       # "keybase"
       # "qmk-toolbox"
       "signal"
@@ -141,6 +141,7 @@
     # installed in `../home/default.nix` whenever possible.
     brews = [
       "mas"
+      "nss" #certutils
       # "qmk/qmk/qmk"
       "switchaudio-osx"
       # "docker"
