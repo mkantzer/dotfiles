@@ -131,7 +131,11 @@
       "vivaldi"
       # "zed"
       "zoom"
-    ];
+    ] ++ (
+    if config.networking.hostName == "mikeBookM1"
+    then ["steam"]
+    else []
+    );
 
     # For cli packages that aren't currently available for macOS in `nixpkgs`.Packages should be
     # installed in `../home/default.nix` whenever possible.

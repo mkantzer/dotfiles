@@ -1,5 +1,5 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ lib, inputs, outputs, ... }:
+{ config, lib, inputs, outputs, ... }:
 {
   imports = [
     ../global
@@ -12,7 +12,10 @@
 
 
   # See note below
-  system.primaryUser = "mikekantzer";
+  system.primaryUser = 
+    if config.networking.hostName == "workBook"
+    then "mikekantzer"
+    else "mk5r";
 }
 
 
