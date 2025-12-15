@@ -28,7 +28,7 @@
       "gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
       commit.gpgsign = true;
 
-      aliases = {
+      alias = {
         # Basic commands
         a = "add";
         aa = "add --all";

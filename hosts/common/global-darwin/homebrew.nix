@@ -99,6 +99,7 @@
       "autodesk-fusion"
       "bambu-studio"
       "bartender"
+      "blender"
       # "calibre"
       # "docker"
       "firefox"
