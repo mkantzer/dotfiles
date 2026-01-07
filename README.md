@@ -4,8 +4,8 @@ Configuring all my nonsense with [Nix](https://nixos.org). Attempting to keep it
 
 The repo configures the following hosts:
 <!-- - mikeBox: a theoretical nixOS install on my main desktop computer -->
-<!-- - houseBox: a theoretical nixOS install on dad's old machine-->
-<!-- - housePi: a raspberry pi 4 with random stuff on it -->
+<!-- - tvBox: a theoretical nixOS install on dad's old machine-->
+<!-- - homePi: a raspberry pi 4 with random stuff on it -->
 - mikeBook: my personal macOS laptop
 - workBook: work-provided macOS laptop
 
