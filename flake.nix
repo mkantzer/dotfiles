@@ -22,54 +22,81 @@
   outputs = {
     self,
     nixpkgs,
-    # systems,
+    systems,
     home-manager,
     darwin,
     ...
   } @ inputs: let
-    # Supported systems for your flake packages, shell, etc.
-    systems = [
-      "aarch64-linux"
-      # "i686-linux"
-      "x86_64-linux"
-      "aarch64-darwin"
-      "x86_64-darwin"
-    ];
-    # This is a function that generates an attribute by calling a function you
-    # pass to it, with each system as an argument
-    forAllSystems = nixpkgs.lib.genAttrs systems;
+    inherit (self) outputs;
+    lib = nixpkgs.lib // home-manager.lib;
+    forEachSystem = f: lib.genAttrs (import systems) (system: f pkgsFor.${system});
+    pkgsFor = lib.genAttrs (import systems) (
+      system:
+        import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        }
+    );
   in {
-    # Your custom packages
-    # Accessible through 'nix build', 'nix shell', etc
-    packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
-    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
-
-    # Your custom packages and modifications, exported as overlays
-    overlays = import ./overlays {inherit inputs;};
-
-    # NOTE: I'm not using modules (at least for now); but I'm leaving it as a reference back.
-    # They're generally for things you'd upstream.
+    inherit lib;
+    # Modules are usually things you'll later upstream. Prob not gonna use these.
+    # NOT for my own custom config.
     nixosModules = import ./modules/nixos;
     homeManagerModules = import ./modules/home-manager;
+
+    # Your custom packages and modifications, exported as overlays
+    overlays = import ./overlays {inherit inputs outputs;};
+
+    # Your custom packages, accessible through 'nix build', 'nix shell', etc
+    packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
+
+    formatter = forEachSystem (pkgs: pkgs.alejandra);
+    devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
 
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      # homePi = nixpkgs.lib.nixosSystem {
-      #   specialArgs = { inherit inputs outputs };
+      # homePi = lib.nixosSystem {
       #   modules = [./hosts/homePi];
+      #   specialArgs = {inherit inputs outputs;};
       # };
-      # mikeBox = nixpkgs.lib.nixosSystem {
-      #   specialArgs = { inherit inputs outputs };
+      # mikeBox = lib.nixosSystem {
       #   modules = [./hosts/mikeBox];
+      #   specialArgs = {inherit inputs outputs;};
       # };
-      # tvBox  = nixpkgs.lib.nixosSystem {
-      #   specialArgs = { inherit inputs outputs };
-      #   modules = [./hosts/tvBox];
-      # };
+      tvBox = lib.nixosSystem {
+        modules = [./hosts/tvBox];
+        specialArgs = {inherit inputs outputs;};
+      };
     };
 
     darwinConfigurations = {
+      workbook = darwin.lib.darwinSystem {
+        modules = [./hosts/workBook];
+        specialArgs = {inherit inputs outputs;};
+      };
+      mikebook = darwin.lib.darwinSystem {
+        modules = [./hosts/mikeBook];
+        specialArgs = {inherit inputs outputs;};
+      };
+    };
+
+    homeConfigurations = {
+      "mk5r@workBook" = lib.homeManagerConfiguration {
+        modules = [./home/mk5r/workBook.nix];
+        pkgs = pkgsFor.aarch64-darwin;
+        extraSpecialArgs = {inherit inputs outputs;};
+      };
+      "mk5r@mikeBook" = lib.homeManagerConfiguration {
+        modules = [./home/mk5r/mikeBook.nix];
+        pkgs = pkgsFor.aarch64-darwin;
+        extraSpecialArgs = {inherit inputs outputs;};
+      };
+      "mk5r@tvBox" = lib.homeManagerConfiguration {
+        modules = [./home/mk5r/tvBox.nix];
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+      };
     };
   };
 }
