@@ -1,31 +1,41 @@
 # source / inspiration:
 # https://git.pleasantprogrammer.com/thatsmydoing/nixos-config/src/ab8e8c5bae4004292538ff5503ebcca96c0c55a9/includes/kubernetes/default.nix
-
-{ config, pkgs, lib, ... }:
-let
-  buildBinPackage = options: pkgs.stdenv.mkDerivation {
-    inherit (options) pname version;
-    src = pkgs.fetchurl {
-      inherit (options) url sha256;
-    };
-    unpackPhase = if options ? "binPath" then "unpackFile $src" else ":";
-    installPhase =
-      let
-        binPath = if options ? "binPath" then options.binPath else "$src";
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
+  buildBinPackage = options:
+    pkgs.stdenv.mkDerivation {
+      inherit (options) pname version;
+      src = pkgs.fetchurl {
+        inherit (options) url sha256;
+      };
+      unpackPhase =
+        if options ? "binPath"
+        then "unpackFile $src"
+        else ":";
+      installPhase = let
+        binPath =
+          if options ? "binPath"
+          then options.binPath
+          else "$src";
         completionCommands =
-          if options ? hasCompletion then ''
+          if options ? hasCompletion
+          then ''
             $out/bin/${options.pname} completion bash > $out/share/bash-completion/completions/${options.pname}
             $out/bin/${options.pname} completion zsh > $out/share/zsh/site-functions/_${options.pname}
             $out/bin/${options.pname} completion fish > $out/share/fish/completions/${options.pname}.fish
-          '' else "";
-      in
-      ''
+          ''
+          else "";
+      in ''
         mkdir -p $out/bin $out/share/bash-completion/completions $out/share/zsh/site-functions $out/share/fish/completions
         cp ${binPath} $out/bin/${options.pname}
         chmod +x $out/bin/${options.pname}
         ${completionCommands}
       '';
-  };
+    };
 
   # NOTE: GOTTA FIX UP FOR NON-DARWIN!
   # argocd = buildBinPackage rec {
@@ -83,8 +93,7 @@ let
     url = "https://app.getambassador.io/download/tel2oss/releases/download/v${version}/telepresence-darwin-amd64";
     sha256 = "sha256-fYYHsvblFBDMWGzcjQbvz6JS0IUmjKoxYw9ZjIT4dow=";
   };
-in
-{
+in {
   programs.fish.functions = {
     kcy = {
       body = "kubectl $argv -o yaml | yq ";
@@ -97,29 +106,27 @@ in
       wraps = "kubectl exec -it";
     };
   };
-  home.packages = with pkgs;
-    [
-      telepresence-oss
-      helmfile
+  home.packages = with pkgs; [
+    telepresence-oss
+    helmfile
 
-      # Make skaffold->minikube play nice with podman
-      # (writeShellScriptBin "docker" ''
-      #   exec podman "$@"
-      # '')
-      # never mind: we can do the same thing by installing the client
-      docker-client
+    # Make skaffold->minikube play nice with podman
+    # (writeShellScriptBin "docker" ''
+    #   exec podman "$@"
+    # '')
+    # never mind: we can do the same thing by installing the client
+    docker-client
 
-
-      # kubectl
-      # kubectx
-      # kops
-      # argocd
-      # kubernetes-helm
-      # eksctl
-      # k9s
-      # kustomize
-      # kubectl-argo-rollouts
-      # aws-iam-authenticator
-      # velero
-    ];
+    # kubectl
+    # kubectx
+    # kops
+    # argocd
+    # kubernetes-helm
+    # eksctl
+    # k9s
+    # kustomize
+    # kubectl-argo-rollouts
+    # aws-iam-authenticator
+    # velero
+  ];
 }

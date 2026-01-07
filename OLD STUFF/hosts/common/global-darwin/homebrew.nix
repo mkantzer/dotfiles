@@ -1,6 +1,8 @@
-{ config, lib, ... }:
-
 {
+  config,
+  lib,
+  ...
+}: {
   environment.shellInit = ''
     eval "$(/opt/homebrew/bin/brew shellenv)"
   '';
@@ -34,7 +36,7 @@
     #
     # Commented apps suffer continual update issue:
     # https://github.com/malob/nixpkgs/issues/9
-    # 
+    #
     # `mas list > mas.csv` to get list, then can rearrange by hand to get a CSV.
     # Can then sort via `sort -k[column] -t[delimeter] [filename]
     masApps = {
@@ -92,51 +94,53 @@
 
     # If an app isn't available in the Mac App Store, or the version in the App Store has
     # limitiations, e.g., Transmit, install the Homebrew Cask.
-    casks = [
-      "1password"
-      "1password-cli"
-      "alt-tab"
-      "autodesk-fusion"
-      "bambu-studio"
-      "bartender"
-      "blender"
-      # "calibre"
-      # "docker"
-      "firefox"
-      # "rectangle-pro"
-      "lasso-app"
-      "lens"
-      # "loopback" # Not needed anymore: superseded by SoundSource's settings > audio > super volume keys
-      "logi-options+"
-      "kitty"
-      "visual-studio-code"
-      "iterm2"
-      "mimestream"
-      "balenaetcher"
-      "discord"
-      "google-chrome"
-      "google-drive"
-      "openvpn-connect"
-      "obsidian"
-      "pocket-casts"
-      "podman-desktop"
-      "prusaslicer"
-      "raspberry-pi-imager"
-      "rocket"
-      "spotify"
-      # "soundsource"
-      # "keybase"
-      # "qmk-toolbox"
-      "signal"
-      # "virtualbox"
-      "vivaldi"
-      # "zed"
-      "zoom"
-    ] ++ (
-    if config.networking.hostName == "mikeBookM1"
-    then ["steam"]
-    else []
-    );
+    casks =
+      [
+        "1password"
+        "1password-cli"
+        "alt-tab"
+        "autodesk-fusion"
+        "bambu-studio"
+        "bartender"
+        "blender"
+        # "calibre"
+        # "docker"
+        "firefox"
+        # "rectangle-pro"
+        "lasso-app"
+        "lens"
+        # "loopback" # Not needed anymore: superseded by SoundSource's settings > audio > super volume keys
+        "logi-options+"
+        "kitty"
+        "visual-studio-code"
+        "iterm2"
+        "mimestream"
+        "balenaetcher"
+        "discord"
+        "google-chrome"
+        "google-drive"
+        "openvpn-connect"
+        "obsidian"
+        "pocket-casts"
+        "podman-desktop"
+        "prusaslicer"
+        "raspberry-pi-imager"
+        "rocket"
+        "spotify"
+        # "soundsource"
+        # "keybase"
+        # "qmk-toolbox"
+        "signal"
+        # "virtualbox"
+        "vivaldi"
+        # "zed"
+        "zoom"
+      ]
+      ++ (
+        if config.networking.hostName == "mikeBookM1"
+        then ["steam"]
+        else []
+      );
 
     # For cli packages that aren't currently available for macOS in `nixpkgs`.Packages should be
     # installed in `../home/default.nix` whenever possible.
@@ -170,7 +174,6 @@
       # handled here instead of as any other package because of weird QEMU stuff?
       "podman"
       "podman-compose"
-
 
       "steampipe"
       "youtube-dl"

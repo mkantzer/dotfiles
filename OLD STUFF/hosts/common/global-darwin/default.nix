@@ -1,24 +1,28 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ config, lib, inputs, outputs, ... }:
 {
-  imports = [
-    ../global
-    ./system.nix
-    ./homebrew.nix
-  ] ++ (builtins.attrValues outputs.darwinModules);
+  config,
+  lib,
+  inputs,
+  outputs,
+  ...
+}: {
+  imports =
+    [
+      ../global
+      ./system.nix
+      ./homebrew.nix
+    ]
+    ++ (builtins.attrValues outputs.darwinModules);
 
   # Fix for mid-build `cannot-link` problems
   nix.settings.auto-optimise-store = false;
 
-
   # See note below
-  system.primaryUser = 
+  system.primaryUser =
     if config.networking.hostName == "workBook"
     then "mikekantzer"
     else "mk5r";
 }
-
-
 # FROM AN ERROR:
 /*
   Failed assertions:
@@ -81,3 +85,4 @@
   open an issue at <https://github.com/nix-darwin/nix-darwin/issues/new>
   and include as much information as possible.
 */
+

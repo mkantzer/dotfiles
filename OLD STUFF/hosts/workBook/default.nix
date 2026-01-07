@@ -1,5 +1,10 @@
 # System configuration for my work laptop
-{ pkgs, inputs, outputs, ... }: {
+{
+  pkgs,
+  inputs,
+  outputs,
+  ...
+}: {
   imports = [
     ../common/global-darwin
     ../common/users/mikekantzer.nix

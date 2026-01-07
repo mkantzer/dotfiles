@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   # Set up 1Password CLI Alias. Not needed when using SSH for auth
   # programs.fish.shellAliases = with pkgs; {
   #   gh = "op plugin run -- gh";
@@ -162,7 +160,7 @@
         #       --assignee @me \
         #       --title "''${branch_title}" \
         #       --reviewer drizlyinc/chades \
-        #       --body "TICKET: [''${branch_board}-''${branch_ticket}](https://drizly.atlassian.net/browse/''${branch_board}-''${branch_ticket}) 
+        #       --body "TICKET: [''${branch_board}-''${branch_ticket}](https://drizly.atlassian.net/browse/''${branch_board}-''${branch_ticket})
         #      ''${pr_message}"
         #   else
         #     gh pr create \

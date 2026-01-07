@@ -1,6 +1,10 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ lib, inputs, outputs, ... }:
 {
+  lib,
+  inputs,
+  outputs,
+  ...
+}: {
   imports = [
     # ./fish.nix
     ./locale.nix
@@ -23,6 +27,6 @@
   };
 
   # Wireguard (https://www.wireguard.com/install/)
-  boot.extraModulePackages = [ config.boot.kernelPackages.wireguard ];
-  environment.systemPackages = [ pkgs.wireguard pkgs.wireguard-tools ];
+  boot.extraModulePackages = [config.boot.kernelPackages.wireguard];
+  environment.systemPackages = [pkgs.wireguard pkgs.wireguard-tools];
 }

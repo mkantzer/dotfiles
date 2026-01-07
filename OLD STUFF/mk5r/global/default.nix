@@ -1,13 +1,20 @@
-{ inputs, lib, pkgs, config, outputs, ... }:
-let
-  inherit (inputs.nix-colors) colorSchemes;
-in
 {
-  imports = [
-    inputs.nix-colors.homeManagerModule
-    ../features/cli
-    ../features/nvim
-  ] ++ (builtins.attrValues outputs.homeManagerModules);
+  inputs,
+  lib,
+  pkgs,
+  config,
+  outputs,
+  ...
+}: let
+  inherit (inputs.nix-colors) colorSchemes;
+in {
+  imports =
+    [
+      inputs.nix-colors.homeManagerModule
+      ../features/cli
+      ../features/nvim
+    ]
+    ++ (builtins.attrValues outputs.homeManagerModules);
 
   # https://github.com/tinted-theming/base16-schemes
   colorscheme = lib.mkDefault colorSchemes.onedark;
@@ -37,7 +44,7 @@ in
   nix = {
     package = pkgs.nix;
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = ["nix-command" "flakes"];
       warn-dirty = false;
     };
   };
@@ -50,5 +57,4 @@ in
       else lib.mkDefault "home/${config.home.username}";
     stateVersion = lib.mkDefault "22.05";
   };
-
 }
