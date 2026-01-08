@@ -11,7 +11,7 @@
   additionalFiles = import ./files.nix {inherit user config pkgs;};
 in {
   imports = [
-    ./dock
+    # ./dock
   ];
 
   # It me
