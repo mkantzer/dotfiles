@@ -106,7 +106,7 @@ in
       rebase.autoStash = true;
     };
 
-    alias = {
+    aliases = {
       # Basic commands
       a = "add";
       aa = "add --all";
