@@ -87,42 +87,34 @@
     devShells = forAllSystems devShell;
     apps = nixpkgs.lib.genAttrs linuxSystems mkLinuxApps // nixpkgs.lib.genAttrs darwinSystems mkDarwinApps;
 
-    darwinConfigurations =
-      nixpkgs.lib.genAttrs darwinSystems (
-        system: let
-          user = "mk5r";
-        in
-          darwin.lib.darwinSystem {
-            inherit system;
-            specialArgs = inputs;
-            modules = [
-              home-manager.darwinModules.home-manager
-              nix-homebrew.darwinModules.nix-homebrew
-              {
-                nix-homebrew = {
-                  inherit user;
-                  enable = true;
-                  taps = {
-                    "homebrew/homebrew-core" = homebrew-core;
-                    "homebrew/homebrew-cask" = homebrew-cask;
-                    "homebrew/homebrew-bundle" = homebrew-bundle;
-                  };
-                  mutableTaps = false;
-                  autoMigrate = true;
+    darwinConfigurations = nixpkgs.lib.genAttrs darwinSystems (
+      system: let
+        user = "mk5r";
+      in
+        darwin.lib.darwinSystem {
+          inherit system;
+          specialArgs = inputs;
+          modules = [
+            home-manager.darwinModules.home-manager
+            nix-homebrew.darwinModules.nix-homebrew
+            {
+              nix-homebrew = {
+                inherit user;
+                enable = true;
+                taps = {
+                  "homebrew/homebrew-core" = homebrew-core;
+                  "homebrew/homebrew-cask" = homebrew-cask;
+                  "homebrew/homebrew-bundle" = homebrew-bundle;
                 };
-              }
-              ./hosts/darwin
-            ];
-          }
-      )
-      // # Named host configurations
-      {
-        workbook-mk5r = nixpkgs.lib.darwinSystem {
-          system = "aarch64-darwin";
-          specialArgs = inputs // {inherit user;};
-          
+                mutableTaps = false;
+                autoMigrate = true;
+              };
+            }
+            ./hosts/darwin
+          ];
         }
-      };
+    );
+    # Might be able to put a named host config set in here???? see nixOS stuff???
 
     nixosConfigurations =
       nixpkgs.lib.genAttrs linuxSystems (system:
