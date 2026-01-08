@@ -71,7 +71,7 @@
     };
 
     darwinConfigurations = {
-      workbook = darwin.lib.darwinSystem {
+      workbook-mk5r = darwin.lib.darwinSystem {
         modules = [./hosts/workBook];
         specialArgs = {inherit inputs outputs;};
       };
@@ -82,8 +82,8 @@
     };
 
     homeConfigurations = {
-      "mk5r@workBook" = lib.homeManagerConfiguration {
-        modules = [./home/mk5r/workBook.nix];
+      "mk5r@workbook-mk5r" = lib.homeManagerConfiguration {
+        modules = [./home/mk5r/workbook-mk5r.nix];
         pkgs = pkgsFor.aarch64-darwin;
         extraSpecialArgs = {inherit inputs outputs;};
       };
