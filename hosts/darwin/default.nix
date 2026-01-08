@@ -130,10 +130,10 @@ in {
         TrackpadThreeFingerDrag = true;
       };
       # keyboard
-      keyboard = {
-        enableKeyMapping = true;
-        remapCapsLockToEscape = true;
-      };
+    };
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToEscape = true;
     };
   };
   security.pam.services.sudo_local.touchIdAuth = true;
