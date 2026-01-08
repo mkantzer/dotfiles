@@ -13,7 +13,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    darwin = {
+    nix-darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -71,11 +71,11 @@
     };
 
     darwinConfigurations = {
-      workbook-mk5r = darwin.lib.darwinSystem {
+      workbook-mk5r = nix-darwin.lib.darwinSystem {
         modules = [./hosts/workBook];
         specialArgs = {inherit inputs outputs;};
       };
-      mikebook = darwin.lib.darwinSystem {
+      mikebook = nix-darwin.lib.darwinSystem {
         modules = [./hosts/mikeBook];
         specialArgs = {inherit inputs outputs;};
       };
