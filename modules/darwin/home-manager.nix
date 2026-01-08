@@ -97,14 +97,14 @@ in {
       "kube-ps1"
       "tfenv"
       "trufflehog"
-      "kubectl-argo-rollouts"
+      # "kubectl-argo-rollouts"
       "vfkit"
 
       # handled here instead of as any other package because of weird QEMU stuff?
       # "podman"
       # "podman-compose"
       "steampipe"
-      "youtube-dl"
+      # "youtube-dl"
     ];
   };
 

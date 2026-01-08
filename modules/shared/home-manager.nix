@@ -1,13 +1,14 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: let
+{ config
+, pkgs
+, lib
+, ...
+}:
+let
   name = "mk5r";
   user = "mk5r";
   email = "github@kantzer.io";
-in {
+in
+{
   # # Shared shell configurations
   # fish = {
   #   enable = true;
@@ -72,27 +73,104 @@ in {
 
   git = {
     enable = true;
-    ignores = ["*.swp"];
-    userName = name;
-    userEmail = email;
-    lfs = {
-      enable = true;
+    user = {
+      name = name;
+      email = email;
     };
+    ignores = [
+      "*.swp"
+      ".DS_Store"
+      ".vscode"
+      ".direnv"
+      "result"
+    ];
+
+    # 1password signing
+    user.signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF9K7mYtXECI6LD8iptulJC3eXZL4fE+M1M24UftlcnX";
+    gpg.format = "ssh";
+    "gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"; # How do I do this for NON macOS???
+    commit.gpgsign = true;
+
+    diff.colorMoved = "default";
+    init.defaultBranch = "main";
+    pull.rebase = false;
+    push.autoSetupRemote = true;
+    lfs.enable = true;
+
     extraConfig = {
       init.defaultBranch = "main";
       core = {
         editor = "vim";
         autocrlf = "input";
       };
-      pull.rebase = true;
       rebase.autoStash = true;
     };
+
+    alias = {
+      # Basic commands
+      a = "add";
+      aa = "add --all";
+      d = "diff";
+      dc = "diff --cached";
+      pl = "pull";
+      pu = "push";
+      puf = "push --force";
+      s = "status";
+
+      # Checkout commands
+      co = "checkout";
+      cob = "checkout -b";
+      com = "checkout master";
+
+      # Branch commands
+      sw = "switch";
+      sc = "switch -c";
+
+      # Commit commands
+      amend = "commit --amend --no-edit";
+      c = "commit";
+      ca = "commit -a";
+      cam = "commit -a -m";
+      cm = "commit -m";
+
+      # Rebase commands
+      rb = "rebase";
+      rba = "rebase --abort";
+      rbc = "rebase --continue";
+      rbi = "rebase --interactive";
+      rbs = "rebase --skip";
+
+      # Reset commands
+      r = "reset HEAD";
+      r1 = "reset HEAD^";
+      r2 = "reset HEAD^^";
+      rhard = "reset --hard";
+      rhard1 = "reset HEAD^ --hard";
+      rhard2 = "reset HEAD^^ --hard";
+
+      # Stash commands
+      sd = "stash drop";
+      spo = "stash pop";
+      spu = "stash push";
+      spua = "stash push --all";
+
+      # Worktree commands
+      wtl = "worktree list";
+      wtrm = "worktree remove";
+
+      # Other commands
+      lg = "log --graph --abbrev-commit --decorate --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %s %C(italic)- %an%C(reset)%C(magenta bold)%d%C(reset)' --all";
+      rs = "restore --staged";
+    };
+
+
+
   };
 
   vim = {
     enable = true;
-    plugins = with pkgs.vimPlugins; [vim-airline vim-airline-themes vim-startify vim-tmux-navigator];
-    settings = {ignorecase = true;};
+    plugins = with pkgs.vimPlugins; [ vim-airline vim-airline-themes vim-startify vim-tmux-navigator ];
+    settings = { ignorecase = true; };
     extraConfig = ''
       "" General
       set number
@@ -270,17 +348,17 @@ in {
     includes = [
       (
         lib.mkIf pkgs.stdenv.hostPlatform.isLinux
-        "/home/${user}/.ssh/config_external"
+          "/home/${user}/.ssh/config_external"
       )
       (
         lib.mkIf pkgs.stdenv.hostPlatform.isDarwin
-        "/Users/${user}/.ssh/config_external"
+          "/Users/${user}/.ssh/config_external"
       )
     ];
     matchBlocks = {
       "*" = {
         # Set the default values we want to keep
-        sendEnv = ["LANG" "LC_*"];
+        sendEnv = [ "LANG" "LC_*" ];
         hashKnownHosts = true;
       };
       # Example SSH configuration for GitHub
