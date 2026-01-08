@@ -31,13 +31,13 @@ cd ~/Downloads
 # Install lix - https://lix.systems/install/#on-any-other-linuxmacos-system
 curl -sSf -L https://install.lix.systems/lix | sh -s -- install
 
-# # Install nix-darwin
-sudo nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch
-
 # Check out repo via unauthed https
 mkdir -p ~/.config && cd ~/.config
 git clone https://github.com/mkantzer/dotfiles.git
 cd dotfiles
+
+# Install nix-darwin configuration
+sudo nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch --flake .
 
 # Build and apply system config
 darwin-rebuild build --flake .
