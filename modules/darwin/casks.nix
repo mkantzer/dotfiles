@@ -1,30 +1,34 @@
 _: [
-  # Development Tools
-  "homebrew/cask/docker"
+  "1password"
+  "1password-cli"
+  "alt-tab"
+  "autodesk-fusion"
+  "bambu-studio"
+  "bartender"
+  "blender"
+  # "docker"
+  "firefox"
+  "lasso-app"
+  "lens"
+  "logi-options+"
+  "kitty"
   "visual-studio-code"
   "iterm2"
-  "postman"
-  "cursor"
-
-  # Productivity Tools
-  "raycast"
-
-  # Browsers
+  "mimestream"
+  "balenaetcher"
+  "discord"
   "google-chrome"
-
-  # Communication Tools - Examples (uncomment as needed)
-  # "discord"
-  # "notion"
-  # "slack"
-  # "telegram"
-  # "zoom"
-
-  # Utility Tools - Examples (uncomment as needed)
-  # "syncthing"
-  # "1password"
-  # "rectangle"
-
-  # Entertainment Tools - Examples (uncomment as needed)
-  # "spotify"
-  # "vlc"
+  "google-drive"
+  "openvpn-connect"
+  "obsidian"
+  "pocket-casts"
+  "podman-desktop"
+  "prusaslicer"
+  "raspberry-pi-imager"
+  "rocket"
+  "spotify"
+  "signal"
+  "vivaldi"
+  "zoom"
+  "vlc"
 ]
