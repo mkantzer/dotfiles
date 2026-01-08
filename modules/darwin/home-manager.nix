@@ -73,12 +73,6 @@ in {
       #   # "iMovie" = 408981434;
     };
     taps = [
-      # "homebrew/cask" # Tapping cask is no longer typically necessary.
-      # "homebrew/core" # Tapping homebrew/core is no longer typically necessary.
-      "homebrew/cask-drivers"
-      "homebrew/cask-fonts"
-      "homebrew/cask-versions"
-      "homebrew/services"
       "nrlquaker/createzap"
       # "qmk/qmk"
       "osx-cross/avr"
