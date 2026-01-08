@@ -48,7 +48,7 @@
     overlays = import ./overlays {inherit inputs outputs;};
 
     # Your custom packages, accessible through 'nix build', 'nix shell', etc
-    # packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
+    packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
 
     formatter = forEachSystem (pkgs: pkgs.alejandra);
     # devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
