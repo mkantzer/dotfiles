@@ -24,7 +24,7 @@
     nixpkgs,
     systems,
     home-manager,
-    darwin,
+    nix-darwin,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -51,7 +51,7 @@
     # packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
 
     formatter = forEachSystem (pkgs: pkgs.alejandra);
-    devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
+    # devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
 
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
