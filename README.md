@@ -14,10 +14,16 @@ The repo configures the following hosts:
 
 
 ## Inspirations
-- [LongerHV/nixos-configuration](https://github.com/LongerHV/nixos-configuration): seems like a solid place to start, and also has decent links out.
-- [Misterio77/nix-starter-configs](https://github.com/Misterio77/nix-starter-configs/blob/main/README.md): pretty okay templates?
+- [dustinlyons/nixos-config](https://github.com/dustinlyons/nixos-config): Includes both darwin and nixos, and a lot of docs.
+
+- Older stuff:
+  - [LongerHV/nixos-configuration](https://github.com/LongerHV/nixos-configuration): seems like a solid place to start, and also has decent links out.
+  - [Misterio77/nix-starter-configs](https://github.com/Misterio77/nix-starter-configs/blob/main/README.md): pretty okay templates?
 
 ## How to bootstrap
+
+
+
 
 If this is a new machine, make sure you add it to `flake.nix`.
 
