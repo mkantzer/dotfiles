@@ -8,15 +8,15 @@
   user = "mk5r";
   email = "github@kantzer.io";
 in {
-  # Shared shell configurations
-  fish = {
-    enable = true;
-    vendor = {
-      completions.enable = true;
-      config.enable = true;
-      functions.enable = true;
-    };
-  };
+  # # Shared shell configurations
+  # fish = {
+  #   enable = true;
+  #   vendor = {
+  #     completions.enable = true;
+  #     config.enable = true;
+  #     functions.enable = true;
+  #   };
+  # };
 
   zsh = {
     enable = true;
