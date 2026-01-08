@@ -9,7 +9,7 @@
   email = "github@kantzer.io";
 in {
   # Shared shell configurations
-  programs.fish = {
+  fish = {
     enable = true;
     vendor = {
       completions.enable = true;
