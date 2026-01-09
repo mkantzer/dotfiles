@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.neovim.plugins = with pkgs.vimPlugins; [
     plantuml-syntax
     vim-markdown

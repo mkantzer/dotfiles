@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   programs.fish = {
     enable = true;
     plugins = [
@@ -26,7 +29,6 @@
 
     # These can be set to run when an env var changes value!!!
     functions = {
-
       gwta = {
         body = ''
           set repoAddress (git rev-parse --show-toplevel)
@@ -48,7 +50,7 @@
         # argumentNames = [""];
         description = ''
           Adds a git worktree and changes to its directory.
-          
+
           Used as `gwta <branch-name`. Repo name is auto-derived.
 
           Located at ../<repo-name>-<branch-name>.
@@ -153,7 +155,7 @@
       # https://github.com/fish-shell/fish-shell/issues/5593#issuecomment-458242921
       bind --erase --preset \cd
       bind \cd delete-char
-      
+
       set -g PODMAN_COMPOSE_WARNING_LOGS false
     '';
   };

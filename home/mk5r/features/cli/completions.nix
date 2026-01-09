@@ -1,8 +1,10 @@
 # Autocompletion for various tools.
-
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   home.file.".config/fish/completions/telepresence.fish" = {
     executable = false;
     text = ''

@@ -1,6 +1,10 @@
-{ config, pkgs, lib, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   imports = [
     ./syntaxes.nix
     # ./treesitter.nix
@@ -30,7 +34,6 @@
       telescope-fzf-native-nvim
       telescope-ui-select-nvim
 
-
       # nvim-treesitter.withAllGrammars
       nvim-treesitter-refactor
 
@@ -48,6 +51,4 @@
       }
     ];
   };
-
 }
-

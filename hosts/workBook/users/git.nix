@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{config, ...}: {
   # programs = {
   #   git = {
   #     userEmail = "mike.kantzer@drizly.com";
@@ -23,7 +22,7 @@
   #           --assignee @me \
   #           --title "''${branch_title}" \
   #           --reviewer drizlyinc/chades \
-  #           --body "TICKET: [''${branch_board}-''${branch_ticket}](https://drizly.atlassian.net/browse/''${branch_board}-''${branch_ticket}) 
+  #           --body "TICKET: [''${branch_board}-''${branch_ticket}](https://drizly.atlassian.net/browse/''${branch_board}-''${branch_ticket})
   #          ''${pr_message}"
   #       else
   #         gh pr create \

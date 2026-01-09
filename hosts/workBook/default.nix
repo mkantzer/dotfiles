@@ -1,6 +1,12 @@
 # System configuration for my work laptop
-{ pkgs, inputs, outputs, ... }: {
+{
+  pkgs,
+  inputs,
+  outputs,
+  ...
+}: {
   imports = [
+    ../common/global
     ../common/global-darwin
     ../common/users/mikekantzer.nix
 
@@ -9,6 +15,4 @@
 
   # Hostname
   networking.hostName = "workBook";
-
-  system.stateVersion = 4; # Did you read the comment?
 }
