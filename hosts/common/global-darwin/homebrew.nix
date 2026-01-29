@@ -20,6 +20,13 @@
   #   end
   # '';
 
+  nix-homebrew = {
+    enable = true;
+    enableRosetta = true;
+    user = "mk5r";
+    autoMigrate = true;
+  };
+
   homebrew = {
     enable = true;
     onActivation = {
@@ -51,7 +58,7 @@
       "Flighty" = 1358823008;
       "GIFwrapped" = 782319880;
       "Hand Mirror" = 1502839586;
-      "Kindle" = 405399194;
+      # "Kindle" = 405399194;
       "Logger" = 1611554653;
       "Mela – Recipe Manager" = 1568924476;
       "Microsoft OneNote" = 784801555;
@@ -75,12 +82,6 @@
     };
 
     taps = [
-      # "homebrew/cask" # Tapping cask is no longer typically necessary.
-      # "homebrew/core" # Tapping homebrew/core is no longer typically necessary.
-      "homebrew/cask-drivers"
-      "homebrew/cask-fonts"
-      "homebrew/cask-versions"
-      "homebrew/services"
       "nrlquaker/createzap"
       # "qmk/qmk"
       "osx-cross/avr"
@@ -147,39 +148,16 @@
     brews = [
       "mas"
       "nss" #certutils
-      # "qmk/qmk/qmk"
       "switchaudio-osx"
-      # "docker"
-      # "docker-compose"
-      # "docker-credential-helper-ecr"
       "kube-ps1"
       "tfenv"
-      # "go"
       "trufflehog"
-      # "datawire/blackbird/telepresence-arm64"
-      # "datawire/blackbird/telepresence"
-      # "datawire/blackbird/telepresence-oss"
       "kubectl-argo-rollouts"
-      # "mosh"
-      # "gcloud"
-      # "chart-releaser"
-      # "chart-testing"
-      # "avr-gcc"
-
       "vfkit"
-
-      # "qemu"
-      # "socket_vmnet"
-
       # handled here instead of as any other package because of weird QEMU stuff?
       "podman"
       "podman-compose"
-
       "steampipe"
-      "youtube-dl"
-
-      # "packer"
-      # "ansible"
     ];
   };
 }

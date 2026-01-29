@@ -14,6 +14,8 @@
     systems.url = "github:nix-systems/default";
     # hardware.url = "github:nixos/nixos-hardware";
     nix-colors.url = "github:misterio77/nix-colors";
+
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
   };
 
   outputs = {
@@ -23,6 +25,7 @@
     darwin,
     systems,
     nix-colors,
+    nix-homebrew,
     ...
   } @ inputs: let
     inherit (nixpkgs.lib) filterAttrs traceVal;
@@ -60,11 +63,16 @@
     #   default = import ./shell.nix { pkgs = legacyPackages.${system}; };
     # });
 
-    darwinConfigurations = rec {
-      # workBook = darwin.lib.darwinSystem {
-      #   specialArgs = { inherit inputs outputs; };
-      #   modules = [ ./hosts/workBook ];
-      # };
+    darwinConfigurations = {
+      workBook = darwin.lib.darwinSystem {
+        pkgs = pkgsFor.aarch64-darwin;
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./hosts/workBook
+          home-manager.darwinModules.home-manager
+          nix-homebrew.darwinModules.nix-homebrew
+        ];
+      };
 
       mikeBookM1 = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
@@ -81,16 +89,19 @@
 
     # nixosConfigurations = {
     #   homePi = nixpkgs.lib.nixosSystem {
-    #     specialArgs = { inherit inputs outputs; };
-    #     modules = [ ./hosts/homePi ];
+    #     specialArgs = {inherit inputs outputs;};
+    #     modules = [
+    #       ./hosts/homePi
+    #       home-manager.nixosModules.home-manager
+    #     ];
     #   };
     # };
 
     # homeConfigurations = {
     #   "mikekantzer@workBook" = home-manager.lib.homeManagerConfiguration {
-    #     pkgs = legacyPackages."aarch64-darwin";
-    #     extraSpecialArgs = { inherit inputs outputs; };
-    #     modules = [ ./home/mk5r/workBook.nix ];
+    #     pkgs = pkgsFor."aarch64-darwin";
+    #     extraSpecialArgs = {inherit inputs outputs;};
+    #     modules = [./home/mk5r/workBook.nix];
     #   };
     #   "mk5r@mikeBookM1" = home-manager.lib.homeManagerConfiguration {
     #     pkgs = legacyPackages."aarch64-darwin";

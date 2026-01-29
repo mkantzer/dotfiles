@@ -1,11 +1,21 @@
 #  Primarily for allowing AWS authentication via 1password
 # https://tenmilesquare.com/resources/security/how-to-use-1password-to-securely-store-your-aws-credentials/
 {
-  config,
+  inputs,
   lib,
   pkgs,
+  config,
+  outputs,
   ...
 }: {
+  imports = [
+    builtins.attrValues
+    outputs.homeManagerModules
+  ];
+
+  # NOTE: this doesn't actually work right now, because of how I re-did everything in the major refactor.
+  # The username
+
   home.file.".aws/op-cred-helper-personal-admin.sh" = {
     executable = true;
     text = ''

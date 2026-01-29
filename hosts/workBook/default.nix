@@ -8,11 +8,12 @@
   imports = [
     ../common/global
     ../common/global-darwin
-    ../common/users/mikekantzer.nix
-
     ../common/optional/fonts.nix
+
+    ../../home/mk5r/global
   ];
 
   # Hostname
   networking.hostName = "workBook";
+  system.stateVersion = 6;
 }
