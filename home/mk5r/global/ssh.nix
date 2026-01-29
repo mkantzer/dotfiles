@@ -1,4 +1,13 @@
 {pkgs, ...}: {
+  # home.file.".ssh/authorized_keys" = {
+  #   enable = true;
+  #   executable = false;
+  #   text = ''
+  #     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF9K7mYtXECI6LD8iptulJC3eXZL4fE+M1M24UftlcnX mbkantzer@gmail.com
+  #     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIFnW0M2ZOK4/q5zQgMb03Cvq+DkVGaOEcqbozJXbVWh
+  #   '';
+  # };
+
   programs.ssh = {
     enable = true;
     # See in programs.fish.shellInit : set SSH_AUTH_SOCK

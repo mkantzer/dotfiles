@@ -5,12 +5,6 @@
   inputs,
   ...
 }: {
-  imports = [
-    ./syntaxes.nix
-    # ./treesitter.nix
-    # ./ui.nix
-  ];
-
   home.sessionVariables.EDITOR = "nvim";
 
   programs.neovim = {
@@ -38,6 +32,18 @@
       nvim-treesitter-refactor
 
       vim-gitgutter
+
+      # syntaxes
+      plantuml-syntax
+      vim-markdown
+      vim-nix
+      vim-toml
+      kotlin-vim
+      pgsql-vim
+      vim-terraform
+      vim-cue
+      vim-fish
+      vim-go
 
       # bufferline-nvim
       # lightline-vim

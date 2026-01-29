@@ -36,7 +36,6 @@
         ${completionCommands}
       '';
     };
-
   # NOTE: GOTTA FIX UP FOR NON-DARWIN!
   # argocd = buildBinPackage rec {
   #   pname = "argocd";
@@ -87,12 +86,12 @@
   #   sha256 = "4080a37b487a859b5bba8391e965267cd0fe29cd67fd070b6f695fed45619e2c";
   #   binPath = "velero-v${version}-linux-amd64/velero";
   # };
-  telepresence-oss = buildBinPackage rec {
-    pname = "telepresence-oss";
-    version = "2.20.0";
-    url = "https://app.getambassador.io/download/tel2oss/releases/download/v${version}/telepresence-darwin-amd64";
-    sha256 = "sha256-fYYHsvblFBDMWGzcjQbvz6JS0IUmjKoxYw9ZjIT4dow=";
-  };
+  # telepresence-oss = buildBinPackage rec {
+  #   pname = "telepresence-oss";
+  #   version = "2.20.0";
+  #   url = "https://app.getambassador.io/download/tel2oss/releases/download/v${version}/telepresence-darwin-amd64";
+  #   sha256 = "sha256-fYYHsvblFBDMWGzcjQbvz6JS0IUmjKoxYw9ZjIT4dow=";
+  # };
 in {
   programs.fish.functions = {
     kcy = {
@@ -107,7 +106,7 @@ in {
     };
   };
   home.packages = with pkgs; [
-    telepresence-oss
+    # telepresence-oss
     helmfile
 
     # Make skaffold->minikube play nice with podman
