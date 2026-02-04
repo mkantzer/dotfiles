@@ -122,6 +122,7 @@
         "google-drive"
         "openvpn-connect"
         "obsidian"
+        "notion"
         "pocket-casts"
         "podman-desktop"
         "prusaslicer"
