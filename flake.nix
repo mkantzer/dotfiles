@@ -64,6 +64,16 @@
     # });
 
     darwinConfigurations = {
+      mikeBook = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./hosts/mikeBook
+          home-manager.darwinModules.home-manager
+          nix-homebrew.darwinModules.nix-homebrew
+        ];
+      };
+
       workBook = darwin.lib.darwinSystem {
         pkgs = pkgsFor.aarch64-darwin;
         specialArgs = {inherit inputs outputs;};
@@ -73,56 +83,24 @@
           nix-homebrew.darwinModules.nix-homebrew
         ];
       };
-
-      mikeBookM1 = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/mikeBookM1];
-      };
-
-      # mikeBook = darwin.lib.darwinSystem {
-      #   pkgs = legacyPackages."x86_64-darwin";
-      #   specialArgs = { inherit inputs outputs; };
-      #   modules = [ ./hosts/mikeBook ];
-      # };
     };
 
     # nixosConfigurations = {
-    #   homePi = nixpkgs.lib.nixosSystem {
+    #   # homePi = nixpkgs.lib.nixosSystem {
+    #   #   specialArgs = {inherit inputs outputs;};
+    #   #   modules = [
+    #   #     ./hosts/homePi
+    #   #     home-manager.nixosModules.home-manager
+    #   #   ];
+    #   # };
+
+    #   media = nixpkgs.lib.nixosSystem {
+    #     pkgs = pkgsFor.x86_64-linux;
     #     specialArgs = {inherit inputs outputs;};
     #     modules = [
-    #       ./hosts/homePi
+    #       ./hosts/media
     #       home-manager.nixosModules.home-manager
     #     ];
-    #   };
-    # };
-
-    # homeConfigurations = {
-    #   "mikekantzer@workBook" = home-manager.lib.homeManagerConfiguration {
-    #     pkgs = pkgsFor."aarch64-darwin";
-    #     extraSpecialArgs = {inherit inputs outputs;};
-    #     modules = [./home/mk5r/workBook.nix];
-    #   };
-    #   "mk5r@mikeBookM1" = home-manager.lib.homeManagerConfiguration {
-    #     pkgs = legacyPackages."aarch64-darwin";
-    #     extraSpecialArgs = { inherit inputs outputs; };
-    #     modules = [ ./home/mk5r/mikeBook.nix ];
-    #   };
-    #   "mk5r@mikeBook" = home-manager.lib.homeManagerConfiguration {
-    #     pkgs = legacyPackages."x86_64-darwin";
-    #     extraSpecialArgs = { inherit inputs outputs; };
-    #     modules = [ ./home/mk5r/mikeBook.nix ];
-    #   };
-    #   "mk5r@homePi" = home-manager.lib.homeManagerConfiguration {
-    #     pkgs = legacyPackages."aarch64-linux";
-    #     extraSpecialArgs = { inherit inputs outputs; };
-    #     modules = [ ./home/mk5r/homePi.nix ];
-    #   };
-    #   # For easy bootstraping from a nixos live usb
-    #   "nixos@nixos" = home-manager.lib.homeManagerConfiguration {
-    #     pkgs = legacyPackages."x86_64-linux";
-    #     extraSpecialArgs = { inherit inputs outputs; };
-    #     modules = [ ./home/misterio/generic.nix ];
     #   };
     # };
   };
