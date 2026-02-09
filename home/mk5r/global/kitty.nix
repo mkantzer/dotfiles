@@ -26,37 +26,39 @@ in {
     TERMINAL = "kitty";
   };
 
-  # Create a themes.conf so we can use github.com/mkantzer/AppearanceNotifier
-  # to switch just this value. Also, use dark by default.
-  home.file.".config/kitty/themes.conf" = {
-    text = ''
-      theme ${kitty-theme.dark}
-    '';
-  };
+  # # Create a themes.conf so we can use github.com/mkantzer/AppearanceNotifier
+  # # to switch just this value. Also, use dark by default.
+  # home.file.".config/kitty/themes.conf" = {
+  #   text = ''
+  #     theme ${kitty-theme.dark}
+  #   '';
+  # };
 
   programs.kitty = {
     enable = true;
-    extraConfig = ''
-      include themes.conf
-    '';
+    # extraConfig = ''
+    #   include themes.conf
+    # '';
     settings = {
       shell = "${pkgs.fish}/bin/fish";
       scrollback_lines = 2000;
-      font_size = "16.0";
+      font_size = "13.0";
       font_family = "FiraCode Nerd Font";
       bold_font = "auto";
       italic_font = "auto";
       bold_italic_font = "auto";
 
-      active_tab_foreground = "#282c34";
-      active_tab_background = "#979eab";
-      inactive_tab_foreground = "#abb2bf";
-      inactive_tab_background = "#282c34";
+      themeFile = "Nordfox";
 
-      foreground = "#979eab";
-      background = "#282c34";
+      # active_tab_foreground = "#282c34";
+      # active_tab_background = "#979eab";
+      # inactive_tab_foreground = "#abb2bf";
+      # inactive_tab_background = "#282c34";
 
-      # Commented, because I'm going to try native theme management
+      # foreground = "#979eab";
+      # background = "#282c34";
+
+      # # Commented, because I'm going to try native theme management
       # color0 = "#282c34";
       # color1 = "#e06c75";
       # color2 = "#98c379";
