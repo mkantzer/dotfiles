@@ -67,10 +67,10 @@
     bottom # fancy version of `top` with ASCII graphs
     coreutils
     moreutils
-    curl
+    # curl
     tree
     bat
-    httpie
+    # httpie
     dust # fancy version of `du`
     eza # fancy version of `ls`
     fd # fancy version of `find`

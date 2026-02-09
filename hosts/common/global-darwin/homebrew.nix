@@ -149,6 +149,7 @@
     # installed in `../home/default.nix` whenever possible.
     brews = [
       "mas"
+      "httpie" # annoyingly, it won't use the system ca certs...
       "nss" #certutils
       "switchaudio-osx"
       "kube-ps1"
@@ -156,10 +157,10 @@
       "trufflehog"
       "kubectl-argo-rollouts"
       "vfkit"
+      "steampipe"
       # handled here instead of as any other package because of weird QEMU stuff?
       "podman"
       "podman-compose"
-      "steampipe"
     ];
   };
 }

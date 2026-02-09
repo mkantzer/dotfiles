@@ -65,7 +65,7 @@
 
     darwinConfigurations = {
       mikeBook = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
+        pkgs = pkgsFor.aarch64-darwin;
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/mikeBook

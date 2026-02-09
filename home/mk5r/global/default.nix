@@ -11,6 +11,7 @@
     ./fish.nix
     ./git.nix
     ./kitty.nix
+    ./programs.nix
     ./ssh.nix
     ./vim.nix
     ./zsh.nix
