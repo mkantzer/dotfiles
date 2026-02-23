@@ -36,7 +36,6 @@
     };
     global = {
       brewfile = true;
-      lockfiles = false;
     };
 
     # Prefer installing application from the Mac App Store

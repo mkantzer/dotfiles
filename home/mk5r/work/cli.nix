@@ -5,7 +5,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    argocd
+    # argocd
     argo-workflows
     argo-rollouts
 
