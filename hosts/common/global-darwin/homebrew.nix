@@ -90,6 +90,7 @@
       "argoproj/tap"
       "trufflesecurity/trufflehog"
       "helm/tap"
+      "slp/krunkit"
       # "datawire/blackbird" # telepresence
     ];
 
@@ -152,6 +153,7 @@
       "nss" #certutils
       "switchaudio-osx"
       "kube-ps1"
+      "krunkit"
       "tfenv"
       "trufflehog"
       "kubectl-argo-rollouts"
