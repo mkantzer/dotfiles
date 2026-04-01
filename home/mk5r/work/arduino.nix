@@ -39,7 +39,7 @@ let
 
 
   bossac_arduino2 = buildBinPackage rec {
-    pname = "arduino2";
+    pname = "bossac_arduino2";
     version = "1.9.1";
     url = "http://downloads.arduino.cc/tools/bossac-1.9.1-arduino2-osx.tar.gz";
     sha256 = "sha256-t3MhKTZKN4Z2YE22V5ybjatQ3ZZftQ16Ov/xg5yX/4A=";
