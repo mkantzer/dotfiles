@@ -96,7 +96,7 @@
 
       tp = "telepresence-oss";
 
-      docker = "podman";
+      # docker = "podman";
 
       "gcp-podman-login" = "gcloud auth print-access-token | podman login -u oauth2accesstoken --password-stdin us-docker.pkg.dev";
 

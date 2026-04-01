@@ -90,7 +90,6 @@
       "argoproj/tap"
       "trufflesecurity/trufflehog"
       "helm/tap"
-      "slp/krunkit"
       # "datawire/blackbird" # telepresence
     ];
 
@@ -101,18 +100,20 @@
         "1password"
         "1password-cli"
         "alt-tab"
+        "arduino-ide"
         "autodesk-fusion"
         "bambu-studio"
         "bartender"
         "blender"
         # "calibre"
-        # "docker"
+        "docker-desktop"
         "firefox"
         # "rectangle-pro"
         "lasso-app"
         "lens"
         # "loopback" # Not needed anymore: superseded by SoundSource's settings > audio > super volume keys
         "logi-options+"
+        "kicad"
         "kitty"
         "visual-studio-code"
         "iterm2"
@@ -123,9 +124,10 @@
         "google-drive"
         "openvpn-connect"
         "obsidian"
+        "moonlight"
         "notion"
         "pocket-casts"
-        "podman-desktop"
+        # "podman-desktop"
         "prusaslicer"
         "raspberry-pi-imager"
         "rocket"
@@ -153,15 +155,15 @@
       "nss" #certutils
       "switchaudio-osx"
       "kube-ps1"
-      "krunkit"
       "tfenv"
       "trufflehog"
       "kubectl-argo-rollouts"
       "vfkit"
       "steampipe"
+      "mpack" # https://apple.stackexchange.com/questions/346982/command-line-tool-to-batch-convert-eml-emlx-mbox-to-searchable-pdfs
       # handled here instead of as any other package because of weird QEMU stuff?
-      "podman"
-      "podman-compose"
+      # "podman"
+      # "podman-compose"
     ];
   };
 }

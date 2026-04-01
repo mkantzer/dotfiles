@@ -114,6 +114,7 @@
     cue
     jq
     yq-go
+    postgresql
 
     # Useful nix related tools
     cachix # adding/managing alternative binary caches hosted by Cachix
@@ -131,5 +132,9 @@
     #   cocoapods
     #   m-cli # useful macOS CLI commands
     #   prefmanager # tool for working with macOS defaults
+
+
+    # arduino-ide # linux only for some reason
+    arduino-cli
   ];
 }

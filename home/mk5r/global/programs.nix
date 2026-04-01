@@ -8,5 +8,6 @@
     firefox = {
       enable = true;
     };
+
   };
 }
