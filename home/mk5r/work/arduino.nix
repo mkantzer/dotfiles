@@ -42,7 +42,8 @@ let
     pname = "bossac";
     version = "1.9.1";
     url = "http://downloads.arduino.cc/tools/bossac-1.9.1-arduino2-osx.tar.gz";
-    sha256 = "butt";
+    sha256 = "sha256-t3MhKTZKN4Z2YE22V5ybjatQ3ZZftQ16Ov/xg5yX/4A=";
+    # sha256 = "107zjyf87wgz79x0vdazjvfm1awdkff5gdjdc1v8cdsa6qlj2wxp";
     binPath = "bin/bossac";
   };
 
