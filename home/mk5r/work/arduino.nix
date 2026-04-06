@@ -38,14 +38,15 @@ let
     };
 
 
-  bossac_arduino2 = buildBinPackage rec {
-    pname = "bossac_arduino2";
-    version = "1.9.1";
-    url = "http://downloads.arduino.cc/tools/bossac-1.9.1-arduino2-osx.tar.gz";
-    sha256 = "sha256-t3MhKTZKN4Z2YE22V5ybjatQ3ZZftQ16Ov/xg5yX/4A=";
-    # sha256 = "107zjyf87wgz79x0vdazjvfm1awdkff5gdjdc1v8cdsa6qlj2wxp";
-    binPath = "bin/bossac";
-  };
+  # Needed for the NANO 33 BLE. Not needed for the Nano 33 IOT
+  # bossac_arduino2 = buildBinPackage rec {
+  #   pname = "bossac_arduino2";
+  #   version = "1.9.1";
+  #   url = "http://downloads.arduino.cc/tools/bossac-1.9.1-arduino2-osx.tar.gz";
+  #   sha256 = "sha256-t3MhKTZKN4Z2YE22V5ybjatQ3ZZftQ16Ov/xg5yX/4A=";
+  #   # sha256 = "107zjyf87wgz79x0vdazjvfm1awdkff5gdjdc1v8cdsa6qlj2wxp";
+  #   binPath = "bin/bossac";
+  # };
 
 
   # velero = buildBinPackage rec {
@@ -57,7 +58,9 @@ let
 in
 {
   home.packages = with pkgs; [
-    bossac_arduino2
+    # bossac_arduino2
+    # bossa-arduino
+    bossa
     tinygo
   ];
 }

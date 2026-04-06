@@ -8,6 +8,7 @@
     # argocd
     argo-workflows
     argo-rollouts
+    argocd
 
     awscli2
     # google-cloud-sdk
