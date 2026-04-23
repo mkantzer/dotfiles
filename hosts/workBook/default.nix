@@ -1,9 +1,8 @@
 # System configuration for my work laptop
-{
-  pkgs,
-  inputs,
-  outputs,
-  ...
+{ pkgs
+, inputs
+, outputs
+, ...
 }: {
   imports = [
     ../common/global
@@ -51,5 +50,26 @@
     # Before changing this value read the documentation for this option
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
     home.stateVersion = "25.11"; # Did you read the comment?
+  };
+
+
+  # Just some arduino stuff
+  homebrew = {
+    taps = [
+      "ARMmbed/homebrew-formulae"
+    ];
+
+    brews = [
+      "open-ocd"
+      "arm-none-eabi-gcc"
+      "libtool"
+      "automake"
+      "libusb"
+      "aclocal"
+      "texinfo"
+      "pkg-config"
+      "capstone"
+      "gdb"
+    ];
   };
 }
