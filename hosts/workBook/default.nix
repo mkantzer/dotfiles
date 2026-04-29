@@ -53,23 +53,23 @@
   };
 
 
-  # Just some arduino stuff
-  homebrew = {
-    taps = [
-      "ARMmbed/homebrew-formulae"
-    ];
+  # # Just some arduino stuff
+  # homebrew = {
+  #   taps = [
+  #     "ARMmbed/homebrew-formulae"
+  #   ];
 
-    brews = [
-      "open-ocd"
-      "arm-none-eabi-gcc"
-      "libtool"
-      "automake"
-      "libusb"
-      "aclocal"
-      "texinfo"
-      "pkg-config"
-      "capstone"
-      "gdb"
-    ];
-  };
+  #   brews = [
+  #     "open-ocd"
+  #     "arm-none-eabi-gcc"
+  #     "libtool"
+  #     "automake"
+  #     "libusb"
+  #     "aclocal"
+  #     "texinfo"
+  #     "pkg-config"
+  #     "capstone"
+  #     "gdb"
+  #   ];
+  # };
 }

@@ -1,8 +1,7 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }: {
   programs.fish = {
     enable = true;
@@ -51,12 +50,17 @@
         description = ''
           Adds a git worktree and changes to its directory.
 
-          Used as `gwta <branch-name`. Repo name is auto-derived.
+          Used as `gwta <branch-name>`. Repo name is auto-derived.
 
           Located at ../<repo-name>-<branch-name>.
           Checked out to maybe-new branch <branch-name>.
         '';
         wraps = "git worktree add";
+      };
+      codee = {
+        body = "code $argv && exit";
+        description = "Opens vscode in first arg directory, then exits shell.";
+        wraps = "code";
       };
     };
 

@@ -34,7 +34,7 @@
     };
     extraPackages = with pkgs.bat-extras; [
       # batdiff
-      batman
+      # batman
     ];
   };
 
@@ -81,7 +81,7 @@
     # python3Packages.shell-functools # a collection of functional programming tools for the shell
     ripgrep # better version of `grep`
     tealdeer # rust implementation of `tldr`
-    ffmpeg-full
+    # ffmpeg-full
     # thefuck # Removed due to no upstream maintenance, python incompatibility
     pay-respects
     unrar # extract RAR archives
@@ -125,16 +125,14 @@
     nixpkgs-fmt
     nixpkgs-review # review pull-requests on nixpkgs
     nix-prefetch-github
-    nodePackages.node2nix
-    yarn2nix
     statix # lints and suggestions for the Nix programming language
     # ] ++ lib.optionals stdenv.isDarwin [
     #   cocoapods
     #   m-cli # useful macOS CLI commands
     #   prefmanager # tool for working with macOS defaults
 
-
     # arduino-ide # linux only for some reason
     arduino-cli
+    mpremote
   ];
 }

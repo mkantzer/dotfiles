@@ -1,12 +1,10 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   nix.enable = true;
   programs.nix-index.enable = true;
 
   environment.systemPackages = with pkgs; [
     terminal-notifier
   ];
-
-  # fonts.fontDir.enable = true;
 
   # Firewall
   networking.applicationFirewall = {

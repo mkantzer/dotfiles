@@ -20,6 +20,6 @@
     terragrunt
     # terraform     # This is managed by tfenv now!
     pandoc
-    d2
+    # d2
   ];
 }
