@@ -134,5 +134,8 @@
     # arduino-ide # linux only for some reason
     arduino-cli
     mpremote
+    esptool
+    espflash
+    clang-format
   ];
 }
