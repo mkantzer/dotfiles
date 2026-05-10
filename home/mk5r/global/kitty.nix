@@ -1,18 +1,19 @@
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }:
 /*
-  Insparation for the theme management:
-  - https://ryan.himmelwright.net/post/home-manager-dark-mode/
-  - https://github.com/mkantzer/AppearanceNotifier
+Insparation for the theme management:
+- https://ryan.himmelwright.net/post/home-manager-dark-mode/
+- https://github.com/mkantzer/AppearanceNotifier
 
-  The basic idea is that I set up kitty as usual, but then also install my own fork of
-  AppearanceNotifier to swap to my other theme when the system changes.
+The basic idea is that I set up kitty as usual, but then also install my own fork of
+AppearanceNotifier to swap to my other theme when the system changes.
 
-  Theme names can be found by running `kitty +kitten themes`
-  - https://mynixos.com/home-manager/option/programs.kitty.theme
-  - https://github.com/kovidgoyal/kitty-themes
+Theme names can be found by running `kitty +kitten themes`
+- https://mynixos.com/home-manager/option/programs.kitty.theme
+- https://github.com/kovidgoyal/kitty-themes
 */
 let
   kitty-theme = {
@@ -20,8 +21,7 @@ let
     # light = "Leaf Light";
     # light = "Snow Light";
   };
-in
-{
+in {
   home.sessionVariables = {
     TERMINAL = "kitty";
   };
@@ -55,8 +55,6 @@ in
       bold_font = "auto";
       italic_font = "auto";
       bold_italic_font = "auto";
-
-
 
       # active_tab_foreground = "#282c34";
       # active_tab_background = "#979eab";

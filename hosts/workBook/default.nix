@@ -1,8 +1,9 @@
 # System configuration for my work laptop
-{ pkgs
-, inputs
-, outputs
-, ...
+{
+  pkgs,
+  inputs,
+  outputs,
+  ...
 }: {
   imports = [
     ../common/global
@@ -51,7 +52,6 @@
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
     home.stateVersion = "25.11"; # Did you read the comment?
   };
-
 
   # # Just some arduino stuff
   # homebrew = {

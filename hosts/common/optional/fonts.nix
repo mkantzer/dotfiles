@@ -1,7 +1,8 @@
-{ pkgs
-, inputs
-, outputs
-, ...
+{
+  pkgs,
+  inputs,
+  outputs,
+  ...
 }:
 # TODO: Change terminals to use these fonts?
 {

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   nix.enable = true;
   programs.nix-index.enable = true;
 
