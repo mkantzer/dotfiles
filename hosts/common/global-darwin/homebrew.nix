@@ -142,7 +142,7 @@
         "zoom"
       ]
       ++ (
-        if config.networking.hostName == "mikeBookM1"
+        if config.networking.hostName == "mikeBook"
         then ["steam"]
         else []
       );
