@@ -1,9 +1,13 @@
 #  Primarily for allowing AWS authentication via 1password
 # https://tenmilesquare.com/resources/security/how-to-use-1password-to-securely-store-your-aws-credentials/
-
-{ config, lib, pkgs, ... }:
-
 {
+  inputs,
+  lib,
+  pkgs,
+  config,
+  outputs,
+  ...
+}: {
   home.file.".aws/op-cred-helper-personal-admin.sh" = {
     executable = true;
     text = ''

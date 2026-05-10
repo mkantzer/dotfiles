@@ -1,12 +1,10 @@
-{ config, pkgs, lib, inputs, ... }:
-
 {
-  imports = [
-    ./syntaxes.nix
-    # ./treesitter.nix
-    # ./ui.nix
-  ];
-
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   home.sessionVariables.EDITOR = "nvim";
 
   programs.neovim = {
@@ -17,6 +15,8 @@
     vimdiffAlias = true;
 
     extraConfig = builtins.readFile ./init.vim;
+    withRuby = false; # Changing from old to new default; should be fine??
+    withPython3 = false; # Changing from old to new default; should be fine?
 
     plugins = with pkgs.vimPlugins; [
       onedark-vim
@@ -30,16 +30,28 @@
       telescope-fzf-native-nvim
       telescope-ui-select-nvim
 
-
       # nvim-treesitter.withAllGrammars
-      nvim-treesitter-refactor
+      nvim-treesitter
 
       vim-gitgutter
+
+      # syntaxes
+      plantuml-syntax
+      vim-markdown
+      vim-nix
+      vim-toml
+      kotlin-vim
+      pgsql-vim
+      vim-terraform
+      vim-cue
+      vim-fish
+      vim-go
 
       # bufferline-nvim
       # lightline-vim
       {
         plugin = lualine-nvim;
+        type = "lua";
         config = ''
           lua << END
           require('lualine').setup()
@@ -48,6 +60,4 @@
       }
     ];
   };
-
 }
-

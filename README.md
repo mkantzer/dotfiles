@@ -32,16 +32,19 @@ If this is a new machine, make sure you add it to `flake.nix`.
 ```bash
 cd ~/Downloads
 
+# Install nix using Lix:
+curl -sSf -L https://install.lix.systems/lix | sh -s -- install
+
 # Install homebrew https://brew.sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Install nix https://nixos.org/download.html#nix-install-macos
-sh <(curl -L https://nixos.org/nix/install)
+# sh <(curl -L https://nixos.org/nix/install)
 
 # Install nix-darwin https://github.com/LnL7/nix-darwin
-mkdir tmp && cd tmp
-nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
-./result/bin/darwin-installer
+# mkdir tmp && cd tmp
+# nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
+# ./result/bin/darwin-installer
 
 # Check out repo via unauthed https
 mkdir -p ~/.config && cd ~/.config
@@ -49,16 +52,12 @@ git clone https://github.com/mkantzer/dotfiles.git
 
 cd dotfiles
 
-# Launch nix-shell to ensure all needed tools are available
-nix-shell
+# Initial install of nix-darwin?
+sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .
 
-# Build and apply system config
-darwin-rebuild build --flake .
-darwin-rebuild switch --flake .
-
-# Build and apply user config
-home-manager build --flake .
-home-manager switch --flake .
+# Build and apply config
+sudo darwin-rebuild build --flake .
+sudo darwin-rebuild switch --flake .
 ```
 
 At this point, the environment should be _mostly_ configured. You'll _mainly_ just need to set up 1Password, at which point the credential helpers will be usable:

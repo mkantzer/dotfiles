@@ -1,11 +1,15 @@
-{ pkgs, inputs, lib, config, ... }:
 {
+  pkgs,
+  inputs,
+  lib,
+  config,
+  ...
+}: {
   # nixpkgs.config = {
   #   allowUnfree = true;
   #   allowBroken = true;
   # };
   nix = {
-
     settings = {
       # substituters = [
       #   "https://cache.m7.rs"
@@ -17,19 +21,25 @@
       #   "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       #   "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       # ];
-      trusted-users = [ "root" "@wheel" ];
+      trusted-users = ["root" "@wheel"];
       auto-optimise-store = lib.mkDefault true;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = ["nix-command" "flakes"];
       warn-dirty = false;
     };
     # package = pkgs.nixUnstable;
     gc = {
       automatic = true;
+      interval = {
+        Weekday = 0;
+        Hour = 2;
+        Minute = 0;
+      };
+      options = "--delete-older-than 30d";
     };
 
     # Add each flake input as a registry
     # To make nix3 commands consistent with the flake
-    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
+    registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
 
     # Map registries to channels
     # Very useful when using legacy commands

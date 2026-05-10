@@ -1,14 +1,10 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   nix.enable = true;
   programs.nix-index.enable = true;
 
-  environment.systemPackages =
-    with pkgs; [
-      terminal-notifier
-    ];
-
-  # fonts.fontDir.enable = true;
+  environment.systemPackages = with pkgs; [
+    terminal-notifier
+  ];
 
   # Firewall
   networking.applicationFirewall = {
@@ -19,6 +15,8 @@
   };
 
   system = {
+    primaryUser = "mk5r";
+
     defaults = {
       NSGlobalDomain = {
         "com.apple.trackpad.scaling" = 1.0;

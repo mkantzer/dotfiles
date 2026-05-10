@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   programs.fish = {
     enable = true;
     plugins = [
@@ -26,7 +29,6 @@
 
     # These can be set to run when an env var changes value!!!
     functions = {
-
       gwta = {
         body = ''
           set repoAddress (git rev-parse --show-toplevel)
@@ -48,13 +50,18 @@
         # argumentNames = [""];
         description = ''
           Adds a git worktree and changes to its directory.
-          
-          Used as `gwta <branch-name`. Repo name is auto-derived.
+
+          Used as `gwta <branch-name>`. Repo name is auto-derived.
 
           Located at ../<repo-name>-<branch-name>.
           Checked out to maybe-new branch <branch-name>.
         '';
         wraps = "git worktree add";
+      };
+      codee = {
+        body = "code $argv && exit";
+        description = "Opens vscode in first arg directory, then exits shell.";
+        wraps = "code";
       };
     };
 
@@ -94,7 +101,7 @@
 
       tp = "telepresence-oss";
 
-      docker = "podman";
+      # docker = "podman";
 
       "gcp-podman-login" = "gcloud auth print-access-token | podman login -u oauth2accesstoken --password-stdin us-docker.pkg.dev";
 
@@ -153,27 +160,8 @@
       # https://github.com/fish-shell/fish-shell/issues/5593#issuecomment-458242921
       bind --erase --preset \cd
       bind \cd delete-char
-      
-      set -g PODMAN_COMPOSE_WARNING_LOGS false
-    '';
-  };
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    initContent = lib.mkOrder 1000 ''
-      if [[ `uname` == Darwin ]]; then
-          MAX_MEMORY_UNITS=KB
-      else
-          MAX_MEMORY_UNITS=MB
-      fi
 
-      TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
-      'avg shared (code):         %X KB'$'\n'\
-      'avg unshared (data/stack): %D KB'$'\n'\
-      'total (sum):               %K KB'$'\n'\
-      'max memory:                %M '$MAX_MEMORY_UNITS''$'\n'\
-      'page faults from disk:     %F'$'\n'\
-      'other page faults:         %R'
+      set -g PODMAN_COMPOSE_WARNING_LOGS false
     '';
   };
 }
