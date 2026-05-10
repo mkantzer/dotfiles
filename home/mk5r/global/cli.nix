@@ -130,12 +130,5 @@
     #   cocoapods
     #   m-cli # useful macOS CLI commands
     #   prefmanager # tool for working with macOS defaults
-
-    # arduino-ide # linux only for some reason
-    arduino-cli
-    mpremote
-    esptool
-    espflash
-    clang-format
   ];
 }

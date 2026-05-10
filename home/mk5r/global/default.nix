@@ -7,6 +7,7 @@
   ...
 }: {
   imports = [
+    ./arduino.nix
     ./cli.nix
     ./fish.nix
     ./git.nix

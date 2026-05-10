@@ -44,5 +44,10 @@ in
   home.packages = with pkgs; [
     bossa
     tinygo
+    # arduino-ide # linux only for some reason
+    arduino-cli
+    mpremote
+    esptool
+    espflash
   ];
 }
