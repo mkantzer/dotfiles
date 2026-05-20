@@ -1,8 +1,7 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }: {
   programs.fish = {
     enable = true;
@@ -74,6 +73,7 @@
       nrs = "nixos-rebuild  switch --flake ~/.config/dotfiles";
       hms = "home-manager   switch --flake ~/.config/dotfiles";
       cdot = "cd ~/.config/dotfiles";
+      cdote = "cd ~/.config/dotfiles && code . && exit";
       flakeup = "nix flake update --flake ~/.config/dotfiles";
       nb = "nix build";
       nd = "nix develop";
