@@ -1,7 +1,6 @@
-{
-  config,
-  lib,
-  ...
+{ config
+, lib
+, ...
 }: {
   # environment.shellInit = ''
   #   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -45,41 +44,42 @@
     #
     # `mas list > mas.csv` to get list, then can rearrange by hand to get a CSV.
     # Can then sort via `sort -k[column] -t[delimeter] [filename]
-    # masApps = {
-    #   "1Blocker" = 1365531024;
-    #   "Actions" = 1586435171;
-    #   #   # "CARROT Weather" = 993487541;
-    #   "Craft" = 1487937127;
-    #   "Crouton: Recipe Manager" = 1461650987;
-    #   "Dark Noise" = 1465439395;
-    #   "Drafts" = 1435957248;
-    #   "Fantastical" = 975937182;
-    #   "Flighty" = 1358823008;
-    #   "forScore" = 363738376;
-    #   "GIFwrapped" = 782319880;
-    #   "Hand Mirror" = 1502839586;
-    #   # "Kindle" = 405399194;
-    #   "Logger" = 1611554653;
-    #   "Mela – Recipe Manager" = 1568924476;
-    #   # "Microsoft OneNote" = 784801555;
-    #   "Muse" = 1501563902;
-    #   "Nautomate" = 1608529689;
-    #   "Notability" = 360593530;
-    #   "Numbers" = 409203825;
-    #   "Pages" = 409201541;
-    #   "Parcel" = 375589283;
-    #   "Slack" = 803453959;
-    #   "Soulver 3" = 1508732804;
-    #   "Steam Link" = 1246969117;
-    #   "Super Agent" = 1568262835;
-    #   "Telegram" = 747648890;
-    #   "Todoist" = 585829637;
-    #   #   "Tripsy" = 1429967544;
-    #   #   "UTM" = 1538878817;
-    #   "WireGuard" = 1451685025;
-    #   #   # "Xcode" = 497799835;
-    #   #   # "iMovie" = 408981434;
-    # };
+    masApps = {
+      "1Blocker" = 1365531024;
+      "Actions" = 1586435171;
+      #   # "CARROT Weather" = 993487541;
+      "Craft" = 1487937127;
+      "Crouton: Recipe Manager" = 1461650987;
+      "Dark Noise" = 1465439395;
+      "Drafts" = 1435957248;
+      "Fantastical" = 975937182;
+      "Flighty" = 1358823008;
+      "forScore" = 363738376;
+      "GIFwrapped" = 782319880;
+      "Hand Mirror" = 1502839586;
+      # "Kindle" = 405399194;
+      "Logger" = 1611554653;
+      "Mela – Recipe Manager" = 1568924476;
+      # "Microsoft OneNote" = 784801555;
+      "Muse" = 1501563902;
+      "Nautomate" = 1608529689;
+      "Notability" = 360593530;
+      "Numbers" = 409203825;
+      "Pages" = 409201541;
+      "Parcel" = 375589283;
+      "Slack" = 803453959;
+      "Soulver 3" = 1508732804;
+      "Steam Link" = 1246969117;
+      "Super Agent" = 1568262835;
+      "Telegram" = 747648890;
+      "Todoist" = 585829637;
+      #   "Tripsy" = 1429967544;
+      #   "UTM" = 1538878817;
+      "WheelClick" = 6793554096;
+      "WireGuard" = 1451685025;
+      #   # "Xcode" = 497799835;
+      #   # "iMovie" = 408981434;
+    };
 
     taps = [
       "nrlquaker/createzap"
@@ -104,7 +104,7 @@
         "autodesk-fusion"
         # "bambu-studio"
         "bartender"
-        "blender"
+        # "blender"
         # "calibre"
         "docker-desktop"
         "firefox"
@@ -129,8 +129,9 @@
         "pocket-casts"
         # "podman-desktop"
         "prusaslicer"
-        # "raspberry-pi-imager"
+        "raspberry-pi-imager"
         "rocket"
+        "rodecaster"
         "spotify"
         # "soundsource"
         # "keybase"
@@ -143,8 +144,8 @@
       ]
       ++ (
         if config.networking.hostName == "mikeBook"
-        then ["steam"]
-        else []
+        then [ "steam" ]
+        else [ ]
       );
 
     # For cli packages that aren't currently available for macOS in `nixpkgs`.Packages should be
@@ -157,13 +158,16 @@
       "kube-ps1"
       "tfenv"
       "trufflehog"
-      "kubectl-argo-rollouts"
+      # "kubectl-argo-rollouts"
       "vfkit"
       "steampipe"
       "mpack" # https://apple.stackexchange.com/questions/346982/command-line-tool-to-batch-convert-eml-emlx-mbox-to-searchable-pdfs
       # handled here instead of as any other package because of weird QEMU stuff?
       # "podman"
       # "podman-compose"
+
+      # "kubectl"
+      "minikube"
     ];
   };
 }

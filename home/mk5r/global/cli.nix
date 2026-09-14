@@ -1,10 +1,9 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }: {
-  imports = [];
+  imports = [ ];
 
   programs.pay-respects = {
     enable = true;
@@ -55,6 +54,10 @@
 
   programs.go.enable = true;
 
+  programs.kubecolor = {
+    enable = true;
+    enableAlias = true;
+  };
   programs.zoxide = {
     enable = true;
     # enableBashIntegration = true;
@@ -100,7 +103,6 @@
     gh
     git
     usql
-    kubectl
     kubernetes-helm
     chart-testing
     kustomize
@@ -109,7 +111,10 @@
     kubecfg
     k9s
     kind
-    minikube
+    kubectl
+    # minikube # having weird collisions with kubectl, moving to brew.
+    yamllint
+    shellcheck
 
     cue
     jq
@@ -126,7 +131,7 @@
     nixpkgs-review # review pull-requests on nixpkgs
     nix-prefetch-github
     statix # lints and suggestions for the Nix programming language
-    # ] ++ lib.optionals stdenv.isDarwin [
+    # ] ++ lib.optionals stdenv.hostPlatform.isDarwin [
     #   cocoapods
     #   m-cli # useful macOS CLI commands
     #   prefmanager # tool for working with macOS defaults

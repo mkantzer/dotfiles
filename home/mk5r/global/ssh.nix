@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   # home.file.".ssh/authorized_keys" = {
   #   enable = true;
   #   executable = false;
@@ -14,7 +14,7 @@
     # https://developer.1password.com/docs/ssh/get-started/#step-4-configure-your-ssh-or-git-client
     extraConfig =
       # TODO: if Darwin, instead create a symlink from the linux location to the Darwin one
-      if pkgs.stdenv.isDarwin
+      if pkgs.stdenv.hostPlatform.isDarwin
       # https://developer.1password.com/docs/ssh/get-started/#step-4-configure-your-ssh-or-git-client
       then ''
         IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
@@ -23,7 +23,7 @@
         IdentityAgent "~/.1password/agent.sock"
       '';
     enableDefaultConfig = false;
-    matchBlocks."*" = {
+    settings."*" = {
       forwardAgent = false;
       addKeysToAgent = "yes";
       compression = false;

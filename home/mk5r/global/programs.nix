@@ -1,12 +1,15 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }: {
   programs = {
     firefox = {
       enable = true;
     };
   };
+
+  home.packages = with pkgs; [
+    openscad
+  ];
 }
