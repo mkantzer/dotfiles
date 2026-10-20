@@ -96,6 +96,8 @@
     dive # for inspecting docker image layers
     pre-commit
     skaffold
+    tilt
+    devspace
     go-task
     mkcert
     nss #certutil

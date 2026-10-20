@@ -1,9 +1,15 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }: {
+
+  programs.go.env.GOPRIVATE = [
+    "github.com/LeagueApps/*"
+  ];
+
+  programs.git.settings.url."git@github.com:LeagueApps/".insteadOf = "https://github.com/LeagueApps/";
+
   home.packages = with pkgs; [
     # argocd
     argo-workflows

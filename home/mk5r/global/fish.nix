@@ -94,6 +94,8 @@
       tb = "toggle-background";
       gitroot = "cd $(g rev-parse --show-toplevel)";
 
+      tcs = "pushd /Users/mk5r/workspace/leagueapps/local-k8s ; gcloud auth login --update-adc ; task cluster:start ; popd";
+
       # Kubernetes Stuff
       kc = "kubectl";
       kx = "kubectx";
@@ -111,6 +113,7 @@
       tfws = "terraform workspace select";
       tfwl = "terraform workspace list";
       tg = "terragrunt";
+      ot = "opentofu";
 
       "aws-p" = "export AWS_PROFILE=personal-admin";
 
