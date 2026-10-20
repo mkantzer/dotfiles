@@ -1,8 +1,7 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }:
 let
   flake = "${config.home.homeDirectory}/.config/dotfiles";
@@ -103,7 +102,7 @@ in
       tfws = "terraform workspace select";
       tfwl = "terraform workspace list";
       tg = "terragrunt";
-      ot = "opentofu";
+      ot = "tofu";
     };
 
     # Runs before loginShellInit and interactiveShellInit.
