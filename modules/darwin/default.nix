@@ -14,6 +14,11 @@ in
   system.primaryUser = user;
   users.users.${user}.home = "/Users/${user}";
 
+  services.openssh.extraConfig = ''
+    PasswordAuthentication no
+    KbdInteractiveAuthentication no
+  '';
+
   nix = {
     settings.trusted-users = [
       "root"

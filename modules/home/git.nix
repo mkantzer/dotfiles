@@ -1,16 +1,27 @@
-{ pkgs, ... }:
+{
+  lib,
+  osConfig,
+  pkgs,
+  ...
+}:
+let
+  inherit (pkgs.stdenv.hostPlatform) isDarwin;
+  # Only NixOS has this option; the 1Password app comes from a Homebrew cask on macOS.
+  onePasswordGui = osConfig.programs._1password-gui or { enable = false; };
+in
 {
   programs.git = {
     enable = true;
 
-    signing = {
+    # Signing needs the 1Password app; without it every commit would fail.
+    signing = lib.mkIf (isDarwin || onePasswordGui.enable) {
       format = "ssh";
       key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF9K7mYtXECI6LD8iptulJC3eXZL4fE+M1M24UftlcnX";
       signer =
-        if pkgs.stdenv.hostPlatform.isDarwin then
+        if isDarwin then
           "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
         else
-          "/opt/1Password/op-ssh-sign";
+          lib.getExe' onePasswordGui.package "op-ssh-sign";
       signByDefault = true;
     };
 

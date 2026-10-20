@@ -232,7 +232,13 @@ One rule to remember: **`imports` can't depend on `config`.** Don't write `impor
 }
 ```
 
-`modules/nixos` already creates the `my.user.name` account (normal user, `wheel`, fish shell). Set its password with `passwd` as root, or add `users.users.mk5r.hashedPassword` / SSH keys in the host. On the machine, run `sudo nixos-rebuild switch --flake .#<host>`. Inside a fresh installer without flakes enabled, run `nix-shell` in the repo first.
+`modules/nixos` already creates the `my.user.name` account (normal user, `wheel`, fish shell) with no password; log in over SSH (see [SSH server](#ssh-server)), or set a password with `passwd` as root for console and `sudo` use. On the machine, run `sudo nixos-rebuild switch --flake .#<host>`. Inside a fresh installer without flakes enabled, run `nix-shell` in the repo first.
+
+Git commit signing goes through the 1Password app. On NixOS it is only switched on when the host sets `programs._1password-gui.enable = true;`; otherwise commits are unsigned rather than failing.
+
+## SSH server
+
+Every host runs sshd (macOS: Remote Login) and accepts only the keys in `modules/shared/sshd.nix`. Password and keyboard-interactive logins are disabled. NixOS opens port 22 in its firewall automatically.
 
 ## Bootstrap (macOS)
 

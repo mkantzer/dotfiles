@@ -13,6 +13,11 @@
     shell = pkgs.fish;
   };
 
+  services.openssh.settings = {
+    PasswordAuthentication = false;
+    KbdInteractiveAuthentication = false;
+  };
+
   nix = {
     settings.trusted-users = [
       "root"

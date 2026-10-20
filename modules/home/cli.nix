@@ -62,7 +62,7 @@
     devspace
     go-task
     mkcert
-    nss # certutil, used by mkcert
+    nss.tools # certutil, used by mkcert
     fzf
     usql
     kubernetes-helm
