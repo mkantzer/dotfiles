@@ -1,5 +1,4 @@
-{pkgs, ...}: {
-  nix.enable = true;
+{ pkgs, ... }: {
   programs.nix-index.enable = true;
 
   environment.systemPackages = with pkgs; [
@@ -15,8 +14,6 @@
   };
 
   system = {
-    primaryUser = "mk5r";
-
     defaults = {
       NSGlobalDomain = {
         "com.apple.trackpad.scaling" = 1.0;

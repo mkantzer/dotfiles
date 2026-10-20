@@ -1,13 +1,8 @@
 {
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    initContent = lib.mkOrder 1000 ''
+    initContent = ''
       if [[ `uname` == Darwin ]]; then
           MAX_MEMORY_UNITS=KB
       else

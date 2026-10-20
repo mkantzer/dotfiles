@@ -1,8 +1,15 @@
-{ config
-, lib
-, pkgs
-, ...
-}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+let
+  flake = "${config.home.homeDirectory}/.config/dotfiles";
+in
+{
+  home.sessionPath = [ "${config.home.homeDirectory}/.krew/bin" ];
+
   programs.fish = {
     enable = true;
     plugins = [
@@ -26,7 +33,6 @@
       }
     ];
 
-    # These can be set to run when an env var changes value!!!
     functions = {
       gwta = {
         body = ''
@@ -46,7 +52,6 @@
           end
           cd $repoParent/$newDirName
         '';
-        # argumentNames = [""];
         description = ''
           Adds a git worktree and changes to its directory.
 
@@ -64,17 +69,14 @@
       };
     };
 
-    shellAliases = with pkgs; {
-      # Nix related
-      drb = "darwin-rebuild build  --flake ~/.config/dotfiles";
-      nrb = "nixos-rebuild  build  --flake ~/.config/dotfiles";
-      hmb = "home-manager   build  --flake ~/.config/dotfiles";
-      drs = "sudo darwin-rebuild switch --flake ~/.config/dotfiles";
-      nrs = "nixos-rebuild  switch --flake ~/.config/dotfiles";
-      hms = "home-manager   switch --flake ~/.config/dotfiles";
-      cdot = "cd ~/.config/dotfiles";
-      cdote = "cd ~/.config/dotfiles && code . && exit";
-      flakeup = "nix flake update --flake ~/.config/dotfiles";
+    shellAliases = {
+      drb = "darwin-rebuild build --flake ${flake}";
+      drs = "sudo darwin-rebuild switch --flake ${flake}";
+      nrb = "nixos-rebuild build --flake ${flake}";
+      nrs = "sudo nixos-rebuild switch --flake ${flake}";
+      cdot = "cd ${flake}";
+      cdote = "cd ${flake} && code . && exit";
+      flakeup = "nix flake update --flake ${flake}";
       nb = "nix build";
       nd = "nix develop";
       nf = "nix flake";
@@ -82,52 +84,30 @@
       ns = "nix search";
       nso = "nix store optimise";
 
-      # Other
       ".." = "cd ..";
       ":q" = "exit";
-      cat = "${bat}/bin/bat";
-      du = "${dust}/bin/dust";
-      g = "${git}/bin/git";
+      cat = lib.getExe pkgs.bat;
+      du = lib.getExe pkgs.dust;
+      g = lib.getExe pkgs.git;
       la = "ll -a";
       ll = "ls -l --time-style long-iso --icons";
-      ls = "${eza}/bin/eza";
-      tb = "toggle-background";
+      ls = lib.getExe pkgs.eza;
       gitroot = "cd $(g rev-parse --show-toplevel)";
 
-      tcs = "pushd /Users/mk5r/workspace/leagueapps/local-k8s ; gcloud auth login --update-adc ; task cluster:start ; popd";
-
-      # Kubernetes Stuff
       kc = "kubectl";
       kx = "kubectx";
       kn = "kubens";
 
-      tp = "telepresence-oss";
-
-      # docker = "podman";
-
-      "gcp-podman-login" = "gcloud auth print-access-token | podman login -u oauth2accesstoken --password-stdin us-docker.pkg.dev";
-
-      # Terraform Stuff
       tf = "terraform";
       tfw = "terraform workspace";
       tfws = "terraform workspace select";
       tfwl = "terraform workspace list";
       tg = "terragrunt";
       ot = "opentofu";
-
-      "aws-p" = "export AWS_PROFILE=personal-admin";
-
-      # Work aliases:
-      # "d-sso" = "aws sso login --profile meta";
-      # "d-oprod" = "export AWS_PROFILE=old-prod";
-      # "d-devclusters" = "export AWS_PROFILE=dev-clusters";
-      # "d-prodclusters" = "export AWS_PROFILE=prod-clusters";
-      # "d-registry" = "export AWS_PROFILE=registry";
     };
 
-    # Configuration that should be above `loginShellInit` and `interactiveShellInit`.
-    # For loop needed to address bug where $PATH is not properly set for fish:
-    # https://github.com/LnL7/nix-darwin/issues/122
+    # Runs before loginShellInit and interactiveShellInit.
+    # The loop works around $PATH ordering on nix-darwin: https://github.com/LnL7/nix-darwin/issues/122
     shellInit = ''
       for p in /run/current-system/sw/bin
         if not contains $p $fish_user_paths
@@ -139,32 +119,23 @@
 
       fish_add_path --prepend --move /nix/var/nix/profiles/default/bin
       fish_add_path --prepend --move /etc/profiles/per-user/(whoami)/bin
-      fish_add_path --prepend --move /Users/(whoami)/.nix-profile/bin
+      fish_add_path --prepend --move ${config.home.homeDirectory}/.nix-profile/bin
       fish_add_path --prepend --move '/Applications/Visual Studio Code.app/Contents/Resources/app/bin'
-      fish_add_path /users/(whoami)/.krew/bin
-
-      # Needed to get 1password SSH agents able to forward stuff around
-      # https://developer.1password.com/docs/ssh/get-started/#step-4-configure-your-ssh-or-git-client
-      # Note: in fish, `set` is instead of `export`
-      set SSH_AUTH_SOCK ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
-    '';
-
-    loginShellInit = ''
     '';
 
     interactiveShellInit = ''
       set -g fish_greeting ""
 
-      # Tide Configuration
+      # Tide stores its settings in universal variables, so configure only once.
       # https://github.com/IlanCosman/tide/issues/304
-      echo 2 1 3 2 3 3 1 2 2 1 2 1 1 y | tide configure >/dev/null
+      if not set -q tide_left_prompt_items
+        echo 2 1 3 2 3 3 1 2 2 1 2 1 1 y | tide configure >/dev/null
+      end
 
-      # Don't have extra delete's exit shell
+      # Don't let a stray ctrl-d exit the shell
       # https://github.com/fish-shell/fish-shell/issues/5593#issuecomment-458242921
       bind --erase --preset \cd
       bind \cd delete-char
-
-      set -g PODMAN_COMPOSE_WARNING_LOGS false
     '';
   };
 }
