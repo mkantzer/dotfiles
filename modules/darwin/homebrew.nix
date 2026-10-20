@@ -6,7 +6,7 @@
   config = lib.mkIf config.my.homebrew.enable {
     nix-homebrew = {
       enable = true;
-      enableRosetta = true;
+      enableRosetta = false;
       user = config.system.primaryUser;
       autoMigrate = true;
     };
