@@ -88,6 +88,7 @@
     nix-update
     nixpkgs-review
     nix-prefetch-github
+    nixfmt
     statix
   ];
 }

@@ -10,7 +10,7 @@
   users.users.${config.my.user.name} = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
   };
 
   services.openssh.settings = {

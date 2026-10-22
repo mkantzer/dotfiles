@@ -21,7 +21,8 @@
         };
 
         settings = {
-          shell = lib.getExe pkgs.fish;
+          # An explicit shell isn't started as a login shell; .zprofile holds the $PATH fix.
+          shell = "${lib.getExe pkgs.zsh} --login --interactive";
           scrollback_lines = 2000;
           font_size = "13.0";
           font_family = "FiraCode Nerd Font";
