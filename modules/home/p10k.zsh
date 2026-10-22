@@ -1,0 +1,30 @@
+# Overrides on top of p10k-classic.zsh to match the tide config in fish.nix
+# (`tide configure` answers: classic, true color, dark, 24h time, slanted separators,
+# slanted heads, flat tails, two lines, dotted connection, no frame, light connection,
+# compact, few icons).
+
+typeset -g POWERLEVEL9K_BACKGROUND=236
+typeset -g POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR='%244F\u2571'
+typeset -g POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR='%244F\u2571'
+typeset -g POWERLEVEL9K_VCS_LOADING_FOREGROUND=244
+
+typeset -g POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR='\uE0BC'
+typeset -g POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR='\uE0BA'
+typeset -g POWERLEVEL9K_LEFT_PROMPT_FIRST_SEGMENT_START_SYMBOL=''
+typeset -g POWERLEVEL9K_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL='\uE0BC'
+typeset -g POWERLEVEL9K_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL='\uE0BA'
+typeset -g POWERLEVEL9K_RIGHT_PROMPT_LAST_SEGMENT_END_SYMBOL=''
+
+typeset -g POWERLEVEL9K_MULTILINE_{FIRST,NEWLINE,LAST}_PROMPT_{PREFIX,SUFFIX}=
+typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR='·'
+typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND=242
+typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
+
+typeset -g POWERLEVEL9K_{VCS,COMMAND_EXECUTION_TIME,TIME}_VISUAL_IDENTIFIER_EXPANSION=
+typeset -g POWERLEVEL9K_DIR_CLASSES=()
+
+# Tide only shows status on failure; the prompt char carries it otherwise.
+typeset -g POWERLEVEL9K_STATUS_OK=false
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS+=(prompt_char)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS[(i)newline]=(time newline)

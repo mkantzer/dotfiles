@@ -5,5 +5,6 @@
     ./nix.nix
     ./sshd.nix
     ./user.nix
+    ./zsh.nix
   ];
 }

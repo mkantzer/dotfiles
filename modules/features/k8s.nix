@@ -5,7 +5,7 @@
   ...
 }:
 {
-  options.my.k8s.enable = lib.mkEnableOption "extra Kubernetes tooling (helmfile, kubectl fish helpers)";
+  options.my.k8s.enable = lib.mkEnableOption "extra Kubernetes tooling (helmfile, kubectl shell helpers)";
 
   config = lib.mkIf config.my.k8s.enable {
     home-manager.users.${config.my.user.name} = {
@@ -20,6 +20,14 @@
           description = "kubectl exec -it <pod> -- /bin/bash";
           wraps = "kubectl exec -it";
         };
+      };
+
+      programs.zsh = {
+        siteFunctions = {
+          kcy = ''kubectl "$@" -o yaml | yq'';
+          kce = ''kubectl exec -it "$@" -- /bin/bash'';
+        };
+        initContent = "compdef kcy=kubectl";
       };
 
       home.packages = [ pkgs.helmfile ];
