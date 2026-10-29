@@ -103,7 +103,7 @@ in
         source ${./p10k.zsh}
       '')
       ''
-        zstyle ':completion:*' menu select
+        zstyle ':completion:*' menu yes select
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z} l:|=* r:|=*'
 
         WORDCHARS=''${WORDCHARS//\/}
