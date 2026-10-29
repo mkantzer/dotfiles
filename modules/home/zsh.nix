@@ -104,7 +104,7 @@ in
       '')
       ''
         zstyle ':completion:*' menu select
-        zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+        zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z} l:|=* r:|=*'
 
         WORDCHARS=''${WORDCHARS//\/}
         bindkey '^[[1;3D' backward-word
