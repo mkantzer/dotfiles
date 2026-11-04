@@ -106,7 +106,7 @@ in
         zstyle ':completion:*' menu yes select
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z} l:|=* r:|=*'
 
-        WORDCHARS=''${WORDCHARS//\/}
+        WORDCHARS=''${WORDCHARS//[\/._-]}
         bindkey '^[[1;3D' backward-word
         bindkey '^[[1;3C' forward-word
         bindkey '^[[1;5D' backward-word
