@@ -13,6 +13,9 @@
 
       programs.kitty = {
         enable = true;
+        # Lasso can't manage windows of a nixpkgs kitty opened from the Dock or Finder,
+        # so macOS uses the Homebrew cask (../darwin/homebrew.nix).
+        package = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin null;
         # Theme names: `kitty +kitten themes`
         autoThemeFiles = {
           noPreference = "Nordfox";
