@@ -59,7 +59,8 @@
         "vivaldi"
         "zoom"
       ]
-      ++ lib.optional config.my.kitty.enable "kitty";
+      ++ lib.optional config.my.kitty.enable "kitty"
+      ++ lib.optional config.my.firefox.enable "firefox";
 
       # CLI tools that aren't available (or don't work) from nixpkgs on macOS.
       # Everything else belongs in home/mk5r.
