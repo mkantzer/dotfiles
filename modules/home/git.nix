@@ -16,7 +16,7 @@ in
     # Signing needs the 1Password app; without it every commit would fail.
     signing = lib.mkIf (isDarwin || onePasswordGui.enable) {
       format = "ssh";
-      key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF9K7mYtXECI6LD8iptulJC3eXZL4fE+M1M24UftlcnX";
+      key = osConfig.my.user.sshKey;
       signer =
         if isDarwin then
           "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"

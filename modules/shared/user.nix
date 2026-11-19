@@ -9,6 +9,11 @@ in
       default = "mk5r";
       description = "Primary user. Owns the home-manager config and the per-feature home settings.";
     };
+    sshKey = lib.mkOption {
+      type = lib.types.str;
+      default = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF9K7mYtXECI6LD8iptulJC3eXZL4fE+M1M24UftlcnX";
+      description = "Public half of the primary user's 1Password SSH key. Authorizes SSH logins and signs git commits.";
+    };
     homeStateVersion = lib.mkOption {
       type = lib.types.str;
       example = "26.05";

@@ -5,6 +5,6 @@
   services.openssh.enable = true;
 
   users.users.${config.my.user.name}.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF9K7mYtXECI6LD8iptulJC3eXZL4fE+M1M24UftlcnX"
+    config.my.user.sshKey
   ];
 }
